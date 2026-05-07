@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スクスク 회화입문 - 일본어 학습</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #0f0f0f;
+  color: #e6e6e6;
+  font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+  min-height: 100vh;
+}
+.layout { display: flex; min-height: 100vh; }
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 256px; min-width: 256px;
+  background: #111111;
+  border-right: 1px solid #2a2a2a;
+  display: flex; flex-direction: column;
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+}
+.sidebar-header {
+  padding: 24px 20px 18px;
+  border-bottom: 1px solid #2a2a2a;
+}
+.sidebar-logo {
+  font-size: 16px; font-weight: 700;
+  color: #FFFA00;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.sidebar-sub { font-size: 11px; color: #555; margin-top: 5px; letter-spacing: 0.5px; }
+.sidebar-section {
+  padding: 14px 20px 6px;
+  font-size: 10px; color: #444;
+  text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;
+}
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 20px;
+  text-decoration: none; color: #888;
+  font-size: 12px;
+  border-left: 2px solid transparent;
+  transition: all 0.15s;
+}
+.nav-item:hover { background: #1a1a1a; color: #FFFA00; border-left-color: #FFFA00; }
+.nav-item.active { background: #1c1c00; color: #FFFA00; border-left-color: #FFFA00; font-weight: 600; }
+.nav-num { font-size: 10px; color: #444; min-width: 22px; text-align: right; font-family: monospace; }
+.nav-item.active .nav-num { color: #888; }
+.nav-item:hover .nav-num { color: #888; }
+
+/* ── Main ── */
+.main { flex: 1; padding: 44px 52px; max-width: 960px; }
+
+.hero { margin-bottom: 44px; }
+.hero-label {
+  font-size: 10px; letter-spacing: 3px; color: #FFFA00;
+  text-transform: uppercase; margin-bottom: 12px; font-weight: 700;
+}
+.hero h1 {
+  font-size: 34px; font-weight: 700;
+  color: #f0f0f0;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+.hero h1 span { color: #FFFA00; }
+.hero p { font-size: 14px; color: #666; line-height: 1.7; }
+.hero p strong { color: #FFFA00; font-weight: 600; }
+
+.stats { display: flex; gap: 14px; margin-top: 28px; }
+.stat {
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  border-top: 2px solid #FFFA00;
+  border-radius: 4px;
+  padding: 16px 22px; text-align: center;
+  min-width: 90px;
+}
+.stat-num { font-size: 26px; font-weight: 700; color: #FFFA00; font-family: monospace; }
+.stat-label { font-size: 10px; color: #555; margin-top: 4px; letter-spacing: 1px; text-transform: uppercase; }
+
+/* ── Cards ── */
+.section-label {
+  font-size: 10px; color: #FFFA00; text-transform: uppercase;
+  letter-spacing: 2px; margin-bottom: 18px; font-weight: 700;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: #222; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.card {
+  background: #141414;
+  border: 1px solid #262626;
+  border-radius: 4px;
+  padding: 18px;
+  text-decoration: none; color: inherit;
+  transition: all 0.18s;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 0; height: 2px;
+  background: #FFFA00;
+  transition: width 0.25s;
+}
+.card:hover::before { width: 100%; }
+.card:hover { border-color: #3a3a00; background: #181800; transform: translateY(-1px); }
+.card-num {
+  font-size: 10px; color: #444; font-weight: 700;
+  letter-spacing: 1px; margin-bottom: 8px;
+  font-family: monospace;
+}
+.card:hover .card-num { color: #888; }
+.card-title { font-size: 14px; color: #e0e0e0; font-weight: 600; margin-bottom: 5px; }
+.card:hover .card-title { color: #FFFA00; }
+.card-sub { font-size: 11px; color: #555; }
+.card-icon { font-size: 20px; margin-bottom: 10px; opacity: 0.7; }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">スクスク 日本語</div>
+      <div class="sidebar-sub">전화 수업 · 24 Sessions + 특별수업</div>
+    </div>
+    <div class="sidebar-section">Sessions</div>
+    <a class="nav-item active" href="index.html"><span class="nav-num">00</span> 홈</a>
+    <a class="nav-item" href="session_01.html"><span class="nav-num">01</span> 히라가나 익히기</a>
+    <a class="nav-item" href="session_02.html"><span class="nav-num">02</span> 인사 (긍정/부정)</a>
+    <a class="nav-item" href="session_03.html"><span class="nav-num">03</span> 지시대명사/시간표현</a>
+    <a class="nav-item" href="session_04.html"><span class="nav-num">04</span> イ형용사 표현</a>
+    <a class="nav-item" href="session_05.html"><span class="nav-num">05</span> ナ형용사 표현</a>
+    <a class="nav-item" href="session_06.html"><span class="nav-num">06</span> 가타가나 익히기</a>
+    <a class="nav-item" href="session_07.html"><span class="nav-num">07</span> 숫자/가격/위치</a>
+    <a class="nav-item" href="session_08.html"><span class="nav-num">08</span> 가족명칭/い형용사과거</a>
+    <a class="nav-item" href="session_09.html"><span class="nav-num">09</span> な형용사·명사 과거형</a>
+    <a class="nav-item" href="session_10.html"><span class="nav-num">10</span> 동사·동사분류/조사</a>
+    <a class="nav-item" href="session_11.html"><span class="nav-num">11</span> 동사 표현 익히기</a>
+    <a class="nav-item" href="session_12.html"><span class="nav-num">12</span> 동사 과거형 응용</a>
+    <a class="nav-item" href="session_13.html"><span class="nav-num">13</span> ます＋に</a>
+    <a class="nav-item" href="session_14.html"><span class="nav-num">14</span> ~ながら</a>
+    <a class="nav-item" href="session_15.html"><span class="nav-num">15</span> て형 만들기</a>
+    <a class="nav-item" href="session_16.html"><span class="nav-num">16</span> ~ています</a>
+    <a class="nav-item" href="session_17.html"><span class="nav-num">17</span> ~てもいいです</a>
+    <a class="nav-item" href="session_18.html"><span class="nav-num">18</span> ~たことがあります</a>
+    <a class="nav-item" href="session_19.html"><span class="nav-num">19</span> たことがあります 응용</a>
+    <a class="nav-item" href="session_20.html"><span class="nav-num">20</span> ~ない형 만들기</a>
+    <a class="nav-item" href="session_21.html"><span class="nav-num">21</span> 형용사의 부사형</a>
+    <a class="nav-item" href="session_22.html"><span class="nav-num">22</span> ことができる</a>
+    <a class="nav-item" href="session_23.html"><span class="nav-num">23</span> ~た後で</a>
+    <a class="nav-item" href="session_24.html"><span class="nav-num">24</span> な형용사·명사과거(반말)</a>
+    <div class="sidebar-section">넥슨게임즈</div>
+    <a class="nav-item" href="Session_20260507.html"><span class="nav-num">🗓</span> 형용사의 부사형</a>
+  </nav>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="hero">
+      <div class="hero-label">▶ Arknights: Endfield Theme</div>
+      <h1>스쿠스쿠 <span>회화입문</span></h1>
+      <p>일본어 전화 수업 학습 자료입니다.<br>
+      세션을 선택하면 <strong>일본어 원문 · 로마지 · 한국어</strong>를 한눈에 확인할 수 있습니다.</p>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">24</div><div class="stat-label">Sessions</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">View Modes</div></div>
+        <div class="stat"><div class="stat-num">JP·RO·KR</div><div class="stat-label">Languages</div></div>
+      </div>
+    </div>
+
+    <div class="section-label">전체 강의 세션</div>
+    <div class="grid">
+      <a class="card" href="session_01.html"><div class="card-icon">🔤</div><div class="card-num">SESSION 01</div><div class="card-title">히라가나 익히기</div><div class="card-sub">あいうえお ~ わをん</div></a>
+      <a class="card" href="session_02.html"><div class="card-icon">👋</div><div class="card-num">SESSION 02</div><div class="card-title">인사 (긍정/부정)</div><div class="card-sub">はじめまして · こんにちは</div></a>
+      <a class="card" href="session_03.html"><div class="card-icon">🕐</div><div class="card-num">SESSION 03</div><div class="card-title">지시대명사/시간표현</div><div class="card-sub">これ · それ · あれ · 何時</div></a>
+      <a class="card" href="session_04.html"><div class="card-icon">✨</div><div class="card-num">SESSION 04</div><div class="card-title">イ형용사 표현</div><div class="card-sub">おいしい · たかい · いい</div></a>
+      <a class="card" href="session_05.html"><div class="card-icon">🌟</div><div class="card-num">SESSION 05</div><div class="card-title">ナ형용사 표현</div><div class="card-sub">きれいな · しずかな</div></a>
+      <a class="card" href="session_06.html"><div class="card-icon">🔡</div><div class="card-num">SESSION 06</div><div class="card-title">가타가나 익히기</div><div class="card-sub">アイウエオ ~ ワヲン</div></a>
+      <a class="card" href="session_07.html"><div class="card-icon">🔢</div><div class="card-num">SESSION 07</div><div class="card-title">숫자/가격/위치</div><div class="card-sub">いくら · どこ · うえ·した</div></a>
+      <a class="card" href="session_08.html"><div class="card-icon">👨‍👩‍👧</div><div class="card-num">SESSION 08</div><div class="card-title">가족명칭/い형용사과거</div><div class="card-sub">ちち · はは · かった</div></a>
+      <a class="card" href="session_09.html"><div class="card-icon">⏮</div><div class="card-num">SESSION 09</div><div class="card-title">な형용사·명사 과거형</div><div class="card-sub">でした · じゃありませんでした</div></a>
+      <a class="card" href="session_10.html"><div class="card-icon">🏃</div><div class="card-num">SESSION 10</div><div class="card-title">동사·동사분류/조사</div><div class="card-sub">ます · ません · を · に</div></a>
+      <a class="card" href="session_11.html"><div class="card-icon">💬</div><div class="card-num">SESSION 11</div><div class="card-title">동사 표현 익히기</div><div class="card-sub">たい · たくない · ましょう</div></a>
+      <a class="card" href="session_12.html"><div class="card-icon">⏪</div><div class="card-num">SESSION 12</div><div class="card-title">동사 과거형 응용</div><div class="card-sub">ました · ませんでした</div></a>
+      <a class="card" href="session_13.html"><div class="card-icon">🙋</div><div class="card-num">SESSION 13</div><div class="card-title">ます＋に</div><div class="card-sub">～しませんか · ～しに行く</div></a>
+      <a class="card" href="session_14.html"><div class="card-icon">🎵</div><div class="card-num">SESSION 14</div><div class="card-title">~ながら (~하고싶다)</div><div class="card-sub">ながら · たい · たくない</div></a>
+      <a class="card" href="session_15.html"><div class="card-icon">📝</div><div class="card-num">SESSION 15</div><div class="card-title">て형 만들기</div><div class="card-sub">て형 · てください</div></a>
+      <a class="card" href="session_16.html"><div class="card-icon">🔄</div><div class="card-num">SESSION 16</div><div class="card-title">~ています</div><div class="card-sub">진행·상태 표현</div></a>
+      <a class="card" href="session_17.html"><div class="card-icon">✅</div><div class="card-num">SESSION 17</div><div class="card-title">~てもいいです</div><div class="card-sub">~해도 돼요 · ~하면 안돼요</div></a>
+      <a class="card" href="session_18.html"><div class="card-icon">📖</div><div class="card-num">SESSION 18</div><div class="card-title">~たことがあります</div><div class="card-sub">~한 적이 있어요</div></a>
+      <a class="card" href="session_19.html"><div class="card-icon">🔁</div><div class="card-num">SESSION 19</div><div class="card-title">たことがあります 응용</div><div class="card-sub">경험 표현 심화</div></a>
+      <a class="card" href="session_20.html"><div class="card-icon">🚫</div><div class="card-num">SESSION 20</div><div class="card-title">~ない형 만들기</div><div class="card-sub">ないでください</div></a>
+      <a class="card" href="session_21.html"><div class="card-icon">🔀</div><div class="card-num">SESSION 21</div><div class="card-title">형용사의 부사형</div><div class="card-sub">く · に 부사형 변환</div></a>
+      <a class="card" href="session_22.html"><div class="card-icon">💪</div><div class="card-num">SESSION 22</div><div class="card-title">ことができる</div><div class="card-sub">~할 수 있어요</div></a>
+      <a class="card" href="session_23.html"><div class="card-icon">⏭</div><div class="card-num">SESSION 23</div><div class="card-title">~た後で</div><div class="card-sub">~한 후에 · 순서 표현</div></a>
+      <a class="card" href="session_24.html"><div class="card-icon">🗣</div><div class="card-num">SESSION 24</div><div class="card-title">な형용사·명사과거(반말)</div><div class="card-sub">だった · じゃなかった</div></a>
+    </div>
+
+    <div class="section-label" style="margin-top:44px;">넥슨게임즈 특별수업</div>
+    <div class="grid">
+      <a class="card" href="Session_20260507.html" style="border-top-color:#4e9af1;">
+        <div class="card-icon">📘</div>
+        <div class="card-num" style="color:#4e9af1;">2026-05-07</div>
+        <div class="card-title">형용사의 부사형 익히기</div>
+        <div class="card-sub">～ないでください · く/に 부사형</div>
+      </a>
+    </div>
+  </main>
+</div>
+</body>
+</html>
