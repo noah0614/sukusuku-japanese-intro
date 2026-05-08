@@ -3,180 +3,298 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>スクスク 회화입문 - 일본어 학습</title>
+<title>넥슨게임즈 · 일본어 학습노트</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  background: #0f0f0f;
-  color: #e6e6e6;
-  font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+  background: #ebebeb;
+  color: #333;
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', sans-serif;
   min-height: 100vh;
 }
 .layout { display: flex; min-height: 100vh; }
 
+/* ── Top Bar ── */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: #1c1c1c;
+  height: 44px;
+  display: flex; align-items: center; padding: 0 24px; gap: 6px;
+}
+.topbar-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 4px;
+  font-size: 12px; font-weight: 600; color: #fff;
+  text-decoration: none; border: none; cursor: pointer;
+}
+.topbar-btn.home { background: transparent; color: #ccc; }
+.topbar-btn.home:hover { color: #fff; }
+.topbar-btn.phone {
+  background: #E84040; margin-left: 4px;
+}
+.topbar-right { margin-left: auto; color: #999; font-size: 12px; }
+.topbar-logo-text {
+  font-size: 13px; font-weight: 700; color: #fff;
+  letter-spacing: 0.5px; margin-left: 8px;
+}
+
 /* ── Sidebar ── */
 .sidebar {
-  width: 256px; min-width: 256px;
-  background: #111111;
-  border-right: 1px solid #2a2a2a;
+  width: 240px; min-width: 240px;
+  background: #fff;
+  border-right: 1px solid #ddd;
   display: flex; flex-direction: column;
-  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  position: sticky; top: 44px; height: calc(100vh - 44px); overflow-y: auto;
+  margin-top: 44px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.06);
 }
 .sidebar-header {
-  padding: 24px 20px 18px;
-  border-bottom: 1px solid #2a2a2a;
+  padding: 22px 20px 16px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
 }
 .sidebar-logo {
-  font-size: 16px; font-weight: 700;
-  color: #FFFA00;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 15px; font-weight: 700;
+  color: #1c1c1c;
+  letter-spacing: 0.3px;
 }
-.sidebar-sub { font-size: 11px; color: #555; margin-top: 5px; letter-spacing: 0.5px; }
+.sidebar-sub { font-size: 11px; color: #999; margin-top: 4px; }
 .sidebar-section {
-  padding: 14px 20px 6px;
-  font-size: 10px; color: #444;
+  padding: 16px 20px 6px;
+  font-size: 10px; color: #aaa;
   text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;
 }
 .nav-item {
   display: flex; align-items: center; gap: 10px;
-  padding: 9px 20px;
-  text-decoration: none; color: #888;
-  font-size: 12px;
-  border-left: 2px solid transparent;
+  padding: 10px 20px;
+  text-decoration: none; color: #555;
+  font-size: 12.5px;
+  border-left: 3px solid transparent;
   transition: all 0.15s;
 }
-.nav-item:hover { background: #1a1a1a; color: #FFFA00; border-left-color: #FFFA00; }
-.nav-item.active { background: #1c1c00; color: #FFFA00; border-left-color: #FFFA00; font-weight: 600; }
-.nav-num { font-size: 10px; color: #444; min-width: 22px; text-align: right; font-family: monospace; }
-.nav-item.active .nav-num { color: #888; }
-.nav-item:hover .nav-num { color: #888; }
+.nav-item:hover { background: #fff7ed; color: #F5A41F; border-left-color: #F5A41F; }
+.nav-item.active { background: #fff7ed; color: #E84040; border-left-color: #E84040; font-weight: 700; }
+.nav-num {
+  font-size: 10px; color: #bbb; min-width: 36px;
+  font-family: monospace; font-weight: 600;
+}
+.nav-item.active .nav-num { color: #E84040; }
+.nav-item:hover .nav-num { color: #F5A41F; }
 
 /* ── Main ── */
-.main { flex: 1; padding: 44px 52px; max-width: 960px; }
+.main {
+  flex: 1;
+  padding: 56px 48px 48px;
+  margin-top: 44px;
+  max-width: 900px;
+}
 
-.hero { margin-bottom: 44px; }
+/* ── Hero ── */
+.hero { margin-bottom: 40px; }
 .hero-label {
-  font-size: 10px; letter-spacing: 3px; color: #FFFA00;
-  text-transform: uppercase; margin-bottom: 12px; font-weight: 700;
+  display: inline-block;
+  background: #F5A41F;
+  color: #fff;
+  font-size: 11px; font-weight: 700;
+  padding: 4px 12px; border-radius: 3px;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
 }
 .hero h1 {
-  font-size: 34px; font-weight: 700;
-  color: #f0f0f0;
+  font-size: 32px; font-weight: 700;
+  color: #1c1c1c;
   letter-spacing: -0.5px;
   margin-bottom: 10px;
+  line-height: 1.2;
 }
-.hero h1 span { color: #FFFA00; }
-.hero p { font-size: 14px; color: #666; line-height: 1.7; }
-.hero p strong { color: #FFFA00; font-weight: 600; }
+.hero h1 span { color: #F5A41F; }
+.hero p { font-size: 14px; color: #777; line-height: 1.8; }
+.hero p strong { color: #E84040; font-weight: 600; }
 
-.stats { display: flex; gap: 14px; margin-top: 28px; }
+.stats { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
 .stat {
-  background: #161616;
-  border: 1px solid #2a2a2a;
-  border-top: 2px solid #FFFA00;
-  border-radius: 4px;
-  padding: 16px 22px; text-align: center;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-top: 3px solid #F5A41F;
+  border-radius: 6px;
+  padding: 14px 22px; text-align: center;
   min-width: 90px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
-.stat-num { font-size: 26px; font-weight: 700; color: #FFFA00; font-family: monospace; }
-.stat-label { font-size: 10px; color: #555; margin-top: 4px; letter-spacing: 1px; text-transform: uppercase; }
+.stat-num { font-size: 24px; font-weight: 700; color: #F5A41F; font-family: monospace; }
+.stat-label { font-size: 10px; color: #aaa; margin-top: 4px; letter-spacing: 1px; text-transform: uppercase; }
+
+/* ── Section Label ── */
+.section-label {
+  font-size: 12px; font-weight: 700; color: #F5A41F;
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px;
+  padding-left: 2px;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 4px; height: 16px;
+  background: #F5A41F;
+  border-radius: 2px;
+}
+.section-label::after {
+  content: ''; flex: 1; height: 1px; background: #ddd;
+}
 
 /* ── Cards ── */
-.section-label {
-  font-size: 10px; color: #FFFA00; text-transform: uppercase;
-  letter-spacing: 2px; margin-bottom: 18px; font-weight: 700;
-  display: flex; align-items: center; gap: 10px;
-}
-.section-label::after { content: ''; flex: 1; height: 1px; background: #222; }
-
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
 }
 .card {
-  background: #141414;
-  border: 1px solid #262626;
-  border-radius: 4px;
-  padding: 18px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 20px;
   text-decoration: none; color: inherit;
-  transition: all 0.18s;
+  transition: all 0.2s;
   display: block;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
-.card::before {
+.card::after {
   content: '';
-  position: absolute; top: 0; left: 0;
-  width: 0; height: 2px;
-  background: #FFFA00;
-  transition: width 0.25s;
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #F5A41F, #E84040);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s;
 }
-.card:hover::before { width: 100%; }
-.card:hover { border-color: #3a3a00; background: #181800; transform: translateY(-1px); }
-.card-num {
-  font-size: 10px; color: #444; font-weight: 700;
+.card:hover::after { transform: scaleX(1); }
+.card:hover {
+  border-color: #F5A41F;
+  box-shadow: 0 6px 20px rgba(245,164,31,0.15);
+  transform: translateY(-2px);
+}
+.card-date {
+  font-size: 10px; color: #E84040; font-weight: 700;
   letter-spacing: 1px; margin-bottom: 8px;
   font-family: monospace;
+  background: #fff0f0; display: inline-block;
+  padding: 2px 8px; border-radius: 3px;
 }
-.card:hover .card-num { color: #888; }
-.card-title { font-size: 14px; color: #e0e0e0; font-weight: 600; margin-bottom: 5px; }
-.card:hover .card-title { color: #FFFA00; }
-.card-sub { font-size: 11px; color: #555; }
-.card-icon { font-size: 20px; margin-bottom: 10px; opacity: 0.7; }
+.card-title {
+  font-size: 14px; color: #1c1c1c; font-weight: 700;
+  margin-bottom: 6px; line-height: 1.4;
+}
+.card:hover .card-title { color: #F5A41F; }
+.card-sub { font-size: 11.5px; color: #999; line-height: 1.5; }
+.card-icon { font-size: 22px; margin-bottom: 10px; }
+.card-tag {
+  display: inline-block;
+  background: #fff7ed; color: #F5A41F;
+  font-size: 10px; font-weight: 600;
+  padding: 2px 8px; border-radius: 10px;
+  margin-top: 10px; border: 1px solid #fde8b8;
+}
+
+/* ── Footer ── */
+footer {
+  margin-top: 52px;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  font-size: 11px; color: #bbb;
+}
 </style>
 </head>
 <body>
+
+<!-- Top Bar -->
+<div class="topbar">
+  <span class="topbar-logo-text">🇯🇵 日本語 学習ノート</span>
+  <div class="topbar-right">넥슨게임즈 · 전화외국어 수업</div>
+</div>
+
 <div class="layout">
 
   <!-- Sidebar -->
   <nav class="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-logo">日本語 学習</div>
+      <div class="sidebar-logo">일본어 학습노트</div>
       <div class="sidebar-sub">넥슨게임즈 전화 수업</div>
     </div>
     <div class="sidebar-section">넥슨게임즈</div>
-    <a class="nav-item active" href="index.html"><span class="nav-num">00</span> 홈</a>
-    <a class="nav-item" href="Session_20260507.html"><span class="nav-num">05/07</span> 형용사의 부사형</a>
-    <a class="nav-item" href="Session_20260512.html"><span class="nav-num">05/12</span> ことができる／前に</a>
-    <a class="nav-item" href="Session_20260514.html"><span class="nav-num">05/14</span> た後で／과거형반말</a>
+    <a class="nav-item active" href="index.html">
+      <span class="nav-num">HOME</span> 홈
+    </a>
+    <a class="nav-item" href="Session_20260507.html">
+      <span class="nav-num">05/07</span> 형용사의 부사형
+    </a>
+    <a class="nav-item" href="Session_20260512.html">
+      <span class="nav-num">05/12</span> ことができる／前に
+    </a>
+    <a class="nav-item" href="Session_20260514.html">
+      <span class="nav-num">05/14</span> た後で／과거형반말
+    </a>
   </nav>
 
   <!-- Main -->
   <main class="main">
+
     <div class="hero">
-      <div class="hero-label">넥슨게임즈 · 일본어 전화 수업</div>
+      <div class="hero-label">넥슨게임즈 · 전화외국어 수업</div>
       <h1>일본어 <span>학습노트</span></h1>
       <p>수업별 학습 자료입니다.<br>
-      세션을 선택하면 <strong>일본어 원문 · 로마지 · 한국어</strong>를 한눈에 확인할 수 있습니다.</p>
+         세션을 선택하면 <strong>일본어 원문 · 로마자 · 한국어</strong>를 한눈에 확인할 수 있습니다.</p>
       <div class="stats">
-        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Sessions</div></div>
-        <div class="stat"><div class="stat-num">JP·RO·KR</div><div class="stat-label">Languages</div></div>
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Sessions</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">JP·RO·KR</div>
+          <div class="stat-label">Languages</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">スクスク</div>
+          <div class="stat-label">교재</div>
+        </div>
       </div>
     </div>
 
-    <div class="section-label">넥슨게임즈 수업 세션</div>
+    <div class="section-label">수업 세션</div>
     <div class="grid">
-      <a class="card" href="Session_20260507.html" style="border-top-color:#4e9af1;">
+
+      <a class="card" href="Session_20260507.html">
         <div class="card-icon">📘</div>
-        <div class="card-num" style="color:#4e9af1;">2026-05-07</div>
+        <div class="card-date">2026-05-07</div>
         <div class="card-title">형용사의 부사형 익히기</div>
-        <div class="card-sub">～ないでください · く/に 부사형</div>
+        <div class="card-sub">～ないでください<br>く형 / に형 부사형 변환</div>
+        <div class="card-tag"># 부사형</div>
       </a>
-      <a class="card" href="Session_20260512.html" style="border-top-color:#4e9af1;">
+
+      <a class="card" href="Session_20260512.html">
         <div class="card-icon">📗</div>
-        <div class="card-num" style="color:#4e9af1;">2026-05-12</div>
+        <div class="card-date">2026-05-12</div>
         <div class="card-title">기본형＋ことができる／前に</div>
-        <div class="card-sub">～할 수 있다 · ～하기 전에</div>
+        <div class="card-sub">～할 수 있다<br>～하기 전에</div>
+        <div class="card-tag"># 가능표현</div>
       </a>
-      <a class="card" href="Session_20260514.html" style="border-top-color:#4e9af1;">
+
+      <a class="card" href="Session_20260514.html">
         <div class="card-icon">📙</div>
-        <div class="card-num" style="color:#4e9af1;">2026-05-14</div>
+        <div class="card-date">2026-05-14</div>
         <div class="card-title">～た後で／い형용사 과거형</div>
-        <div class="card-sub">～한 후에 · かった/くなかった(반말)</div>
+        <div class="card-sub">～한 후에<br>かった / くなかった (반말)</div>
+        <div class="card-tag"># 순서 · 과거</div>
       </a>
+
     </div>
+
+    <footer>
+      © 2026 넥슨게임즈 일본어 전화 수업 학습노트 · GitHub Pages
+    </footer>
+
   </main>
 </div>
 </body>
