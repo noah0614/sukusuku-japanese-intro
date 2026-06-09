@@ -21,9 +21,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
 /* ── Top Bar ── */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-  background: #00439C; height: 44px;
+  background: linear-gradient(90deg, #002260 0%, #00439C 45%, #0070CC 100%);
+  height: 44px;
   display: flex; align-items: center; padding: 0 20px; gap: 12px;
-  border-bottom: 2px solid #003080;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .topbar-logo { font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
 .topbar-badge {
@@ -115,7 +116,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
 
 /* Hero */
 .hero-strip {
-  background: #00439C; padding: 34px 48px 30px;
+  background: linear-gradient(135deg, #002260 0%, #003580 40%, #0065BB 80%, #0070CC 100%);
+  padding: 34px 48px 30px;
   position: relative; overflow: hidden;
 }
 .hero-strip::before {
@@ -165,7 +167,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
 
 /* Cards Grid */
 .cards-area { padding: 28px 48px 48px; }
-.cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 
 /* News-style card */
 .ncard {
@@ -180,9 +182,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
 
 /* Thumbnail - PS Blue color family */
 .ncard-thumb {
-  height: 148px; position: relative;
+  height: 108px; position: relative;
   display: flex; flex-direction: column;
-  justify-content: flex-end; padding: 14px 16px;
+  justify-content: flex-end; padding: 10px 12px;
   overflow: hidden;
 }
 /* dot pattern overlay (shared) */
@@ -196,38 +198,35 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
   content: ''; position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(to bottom, transparent 25%, rgba(0,0,0,0.5) 100%);
 }
-/* Month thumbnail variants — all PS Blue family */
-.t01 { background: linear-gradient(140deg, #00439C 0%, #003080 100%); }
-.t02 { background: linear-gradient(140deg, #0070CC 0%, #00439C 100%); }
-.t03 { background: linear-gradient(140deg, #001D60 0%, #00439C 100%); }
-.t04 { background: linear-gradient(140deg, #00439C 0%, #0060B8 100%); }
-.t05 { background: linear-gradient(140deg, #003580 0%, #0070CC 100%); }
-.t06 { background: linear-gradient(140deg, #000000 0%, #00439C 100%); }
+/* Month thumbnail — unified PS Blue */
+.t01, .t02, .t03, .t04, .t05, .t06 {
+  background: linear-gradient(140deg, #003580 0%, #0070CC 100%);
+}
 
 .ncard-grammar {
   position: relative; z-index: 2;
-  font-size: 18px; font-weight: 700; color: #fff; line-height: 1.35;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.4); letter-spacing: 0.3px;
+  font-size: 15px; font-weight: 700; color: #fff; line-height: 1.35;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4); letter-spacing: 0.2px;
 }
 .ncard-badge {
-  position: absolute; top: 10px; right: 10px; z-index: 2;
+  position: absolute; top: 8px; right: 8px; z-index: 2;
   background: rgba(255,255,255,0.15); color: #fff;
-  font-size: 9px; font-weight: 700; padding: 3px 8px;
-  border: 1px solid rgba(255,255,255,0.3); letter-spacing: 1px; text-transform: uppercase;
+  font-size: 9px; font-weight: 700; padding: 2px 7px;
+  border: 1px solid rgba(255,255,255,0.3); letter-spacing: 0.8px; text-transform: uppercase;
 }
 
 /* Card body */
-.ncard-body { padding: 12px 14px 14px; flex: 1; display: flex; flex-direction: column; }
-.ncard-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+.ncard-body { padding: 10px 12px 12px; flex: 1; display: flex; flex-direction: column; }
+.ncard-meta { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
 .ncard-cat {
   background: #f0f0f0; color: #6C6C6C;
-  font-size: 10px; font-weight: 700; padding: 2px 7px;
+  font-size: 9px; font-weight: 700; padding: 2px 6px;
   border: 1px solid #ADADAD; letter-spacing: 0.3px;
 }
-.ncard-date { font-size: 11px; color: #ADADAD; }
-.ncard-title { font-size: 13.5px; font-weight: 700; color: #000; line-height: 1.4; margin-bottom: 5px; }
+.ncard-date { font-size: 10.5px; color: #ADADAD; }
+.ncard-title { font-size: 12.5px; font-weight: 700; color: #000; line-height: 1.4; margin-bottom: 4px; }
 .ncard:hover .ncard-title { color: #00439C; }
-.ncard-sub { font-size: 11.5px; color: #6C6C6C; line-height: 1.55; margin-top: auto; padding-top: 5px; }
+.ncard-sub { font-size: 11px; color: #6C6C6C; line-height: 1.5; margin-top: auto; padding-top: 4px; }
 </style>
 </head>
 <body>
