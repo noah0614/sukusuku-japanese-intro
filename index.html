@@ -5,25 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>일본어 학습노트 · 넥슨게임즈</title>
 <style>
+/* ═══════════════════════════════════════════
+   PS Brand Colors
+   Primary Blue:  #00439C
+   Light Blue:    #0070CC
+   Black:         #000000
+   Dark Gray:     #6C6C6C
+   Light Gray:    #ADADAD
+   White:         #FFFFFF
+═══════════════════════════════════════════ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; overflow: hidden; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', 'Noto Sans KR', sans-serif; color: #172B4D; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', 'Noto Sans KR', sans-serif; color: #000; background: #f0f0f0; }
 
 /* ── Top Bar ── */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-  background: #0747A6; height: 44px;
+  background: #00439C; height: 44px;
   display: flex; align-items: center; padding: 0 20px; gap: 12px;
-  border-bottom: 1px solid #003A8C;
+  border-bottom: 2px solid #003080;
 }
-.topbar-logo { font-size: 13px; font-weight: 600; color: #fff; letter-spacing: 0.3px; }
+.topbar-logo { font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
 .topbar-badge {
   background: rgba(255,255,255,0.15); color: #fff;
   font-size: 10px; font-weight: 600;
-  padding: 3px 10px; border-radius: 3px; letter-spacing: 0.5px;
-  border: 1px solid rgba(255,255,255,0.25);
+  padding: 3px 10px; border-radius: 2px; letter-spacing: 0.8px;
+  border: 1px solid rgba(255,255,255,0.3);
 }
-.topbar-right { margin-left: auto; color: rgba(255,255,255,0.5); font-size: 11px; }
+.topbar-right { margin-left: auto; color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: 0.3px; }
 
 /* ── App Layout ── */
 .app {
@@ -34,165 +43,191 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
 /* ── Sidebar ── */
 .sidebar {
   width: 240px; flex-shrink: 0;
-  background: #fff; border-right: 1px solid #DFE1E6;
+  background: #fff; border-right: 1px solid #ADADAD;
   overflow-y: auto; display: flex; flex-direction: column;
-  box-shadow: 2px 0 4px rgba(9,30,66,0.08);
 }
 .sidebar-header {
-  padding: 18px 16px 14px;
-  border-bottom: 1px solid #DFE1E6;
-  flex-shrink: 0;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid #ADADAD; flex-shrink: 0;
+  background: #fafafa;
 }
-.sidebar-logo { font-size: 13px; font-weight: 600; color: #172B4D; }
-.sidebar-sub { font-size: 11px; color: #97A0AF; margin-top: 3px; }
+.sidebar-logo { font-size: 13px; font-weight: 700; color: #000; }
+.sidebar-sub { font-size: 11px; color: #6C6C6C; margin-top: 3px; }
 
-/* Home button */
 .nav-home {
   display: flex; align-items: center; gap: 10px;
-  padding: 10px 16px;
-  color: #42526E; font-size: 12.5px; cursor: pointer;
-  border-left: 3px solid transparent;
-  transition: all 0.12s;
-  background: none; border-top: none; border-right: none; border-bottom: none;
+  padding: 10px 16px; color: #6C6C6C; font-size: 12.5px; cursor: pointer;
+  border-left: 3px solid transparent; transition: all 0.12s;
+  background: none; border-top: none; border-right: none;
+  border-bottom: 1px solid #ADADAD;
   width: 100%; text-align: left; font-family: inherit;
-  border-bottom: 1px solid #DFE1E6;
 }
-.nav-home:hover { background: #DEEBFF; color: #0052CC; border-left-color: #0052CC; }
-.nav-home.active { background: #DEEBFF; color: #0052CC; border-left-color: #0052CC; font-weight: 600; }
-.nav-home .nav-num { font-size: 10px; color: #C1C7D0; min-width: 38px; font-family: monospace; font-weight: 600; }
-.nav-home.active .nav-num { color: #0052CC; }
+.nav-home:hover { background: #e6eef8; color: #00439C; border-left-color: #00439C; }
+.nav-home.active { background: #ddeaf7; color: #00439C; border-left-color: #00439C; font-weight: 700; }
+.nav-home .nav-num { font-size: 10px; color: #ADADAD; min-width: 38px; font-family: monospace; font-weight: 600; }
+.nav-home.active .nav-num { color: #0070CC; }
 
-/* Month group */
-.month-group { border-bottom: 1px solid #DFE1E6; }
-
+.month-group { border-bottom: 1px solid #ADADAD; }
 .month-toggle {
   display: flex; align-items: center; gap: 8px;
-  padding: 9px 16px;
-  width: 100%; background: #F8F9FA;
-  border: none; cursor: pointer;
-  font-family: inherit; font-size: 11px; font-weight: 700;
-  color: #6B778C; text-transform: uppercase; letter-spacing: 1.2px;
+  padding: 9px 16px; width: 100%; background: #f5f5f5;
+  border: none; cursor: pointer; font-family: inherit;
+  font-size: 11px; font-weight: 700; color: #6C6C6C;
+  text-transform: uppercase; letter-spacing: 1.2px;
   text-align: left; transition: background 0.12s;
   border-left: 3px solid transparent;
 }
-.month-toggle:hover { background: #DEEBFF; color: #0052CC; }
-.month-toggle.has-active { border-left-color: #0052CC; color: #0052CC; background: #EAF2FF; }
-
-.month-toggle .toggle-arrow {
-  margin-left: auto;
-  font-size: 10px; color: #97A0AF;
-  transition: transform 0.2s;
-  display: inline-block;
-}
+.month-toggle:hover { background: #e6eef8; color: #00439C; }
+.month-toggle.has-active { border-left-color: #00439C; color: #00439C; background: #ddeaf7; }
+.month-toggle .toggle-arrow { margin-left: auto; font-size: 10px; color: #ADADAD; transition: transform 0.2s; display: inline-block; }
 .month-toggle.open .toggle-arrow { transform: rotate(90deg); }
+.month-count { background: #ADADAD; color: #fff; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 8px; min-width: 18px; text-align: center; }
+.month-toggle.has-active .month-count { background: #00439C; }
 
-.month-count {
-  background: #DFE1E6; color: #6B778C;
-  font-size: 9px; font-weight: 700;
-  padding: 1px 6px; border-radius: 8px;
-  min-width: 18px; text-align: center;
-}
-.month-toggle.has-active .month-count { background: #DEEBFF; color: #0052CC; }
-
-/* Session items inside group */
-.month-items {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.25s ease;
-}
+.month-items { overflow: hidden; max-height: 0; transition: max-height 0.25s ease; }
 .month-items.open { max-height: 2000px; }
 
 .nav-item {
   display: flex; align-items: center; gap: 10px;
-  padding: 8px 16px 8px 22px;
-  text-decoration: none; color: #42526E;
-  font-size: 12px; cursor: pointer;
-  border-left: 3px solid transparent;
-  transition: all 0.12s;
-  background: none; border-top: none; border-right: none; border-bottom: none;
-  width: 100%; text-align: left; font-family: inherit;
-  border-bottom: 1px solid #F4F5F7;
+  padding: 8px 16px 8px 22px; text-decoration: none; color: #6C6C6C;
+  font-size: 12px; cursor: pointer; border-left: 3px solid transparent;
+  transition: all 0.12s; background: none; border-top: none; border-right: none;
+  border-bottom: 1px solid #f0f0f0; width: 100%; text-align: left; font-family: inherit;
 }
 .nav-item:last-child { border-bottom: none; }
-.nav-item:hover { background: #DEEBFF; color: #0052CC; border-left-color: #0052CC; }
-.nav-item.active { background: #DEEBFF; color: #0052CC; border-left-color: #0052CC; font-weight: 600; }
-.nav-num { font-size: 10px; color: #C1C7D0; min-width: 34px; font-family: monospace; font-weight: 600; flex-shrink: 0; }
-.nav-item.active .nav-num, .nav-item:hover .nav-num { color: #0052CC; }
+.nav-item:hover { background: #e6eef8; color: #00439C; border-left-color: #00439C; }
+.nav-item.active { background: #ddeaf7; color: #00439C; border-left-color: #00439C; font-weight: 700; }
+.nav-num { font-size: 10px; color: #ADADAD; min-width: 34px; font-family: monospace; font-weight: 600; flex-shrink: 0; }
+.nav-item.active .nav-num, .nav-item:hover .nav-num { color: #0070CC; }
 .nav-item .nav-tag {
-  margin-left: auto; background: #F4F5F7; color: #97A0AF;
-  font-size: 9px; padding: 1px 5px; border-radius: 8px;
-  border: 1px solid #DFE1E6; flex-shrink: 0;
+  margin-left: auto; background: #f0f0f0; color: #6C6C6C;
+  font-size: 9px; padding: 1px 5px; border-radius: 2px;
+  border: 1px solid #ADADAD; flex-shrink: 0;
 }
-.nav-item.active .nav-tag { background: #DEEBFF; color: #0052CC; border-color: #B3D4FF; }
+.nav-item.active .nav-tag { background: #ddeaf7; color: #00439C; border-color: #0070CC; }
 
 /* ── Content Pane ── */
-.content-pane { flex: 1; position: relative; overflow: hidden; background: #F4F5F7; }
-
-/* Home View */
-#home-view {
-  position: absolute; inset: 0; overflow-y: auto;
-  padding: 40px 48px 52px; background: #F4F5F7;
-}
-.hero { margin-bottom: 40px; }
-.hero-badge {
-  display: inline-block; background: #0052CC; color: #fff;
-  font-size: 11px; font-weight: 600;
-  padding: 4px 12px; border-radius: 3px;
-  letter-spacing: 0.3px; margin-bottom: 16px;
-}
-.hero h1 { font-size: 28px; font-weight: 700; color: #172B4D; margin-bottom: 10px; letter-spacing: -0.3px; }
-.hero h1 span { color: #0052CC; }
-.hero p { font-size: 14px; color: #6B778C; line-height: 1.8; }
-.hero p strong { color: #0052CC; font-weight: 600; }
-
-.stats { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
-.stat {
-  background: #fff; border: 1px solid #DFE1E6;
-  border-top: 3px solid #0052CC; border-radius: 4px;
-  padding: 12px 20px; text-align: center; min-width: 90px;
-  box-shadow: 0 1px 3px rgba(9,30,66,0.08);
-}
-.stat-num { font-size: 22px; font-weight: 700; color: #0052CC; font-family: monospace; }
-.stat-label { font-size: 10px; color: #97A0AF; margin-top: 3px; letter-spacing: 1px; text-transform: uppercase; }
-
-.section-label {
-  font-size: 11px; font-weight: 700; color: #6B778C;
-  text-transform: uppercase; letter-spacing: 1.5px;
-  margin: 32px 0 16px;
-  display: flex; align-items: center; gap: 10px;
-}
-.section-label::after { content: ''; flex: 1; height: 1px; background: #DFE1E6; }
-
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
-.card {
-  background: #fff; border: 1px solid #DFE1E6; border-radius: 4px;
-  padding: 20px; text-decoration: none; color: inherit;
-  display: block; cursor: pointer; transition: all 0.15s;
-  box-shadow: 0 1px 3px rgba(9,30,66,0.08);
-}
-.card:hover {
-  border-color: #0052CC;
-  box-shadow: 0 4px 12px rgba(0,82,204,0.15);
-  transform: translateY(-1px);
-}
-.card-icon { font-size: 20px; margin-bottom: 10px; }
-.card-date {
-  font-size: 10px; color: #0052CC; font-weight: 600;
-  background: #DEEBFF; display: inline-block;
-  padding: 2px 8px; border-radius: 3px; margin-bottom: 8px;
-  font-family: monospace; letter-spacing: 1px;
-}
-.card-title { font-size: 14px; color: #172B4D; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
-.card:hover .card-title { color: #0052CC; }
-.card-sub { font-size: 11.5px; color: #97A0AF; line-height: 1.5; }
-.card-tag {
-  display: inline-block; background: #F4F5F7; color: #6B778C;
-  font-size: 10px; font-weight: 500; padding: 2px 8px;
-  border-radius: 10px; margin-top: 10px; border: 1px solid #DFE1E6;
-}
-
-/* Session iframe */
+.content-pane { flex: 1; position: relative; overflow: hidden; background: #f0f0f0; }
 #session-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: none; }
+
+/* ── Home View ── */
+#home-view { position: absolute; inset: 0; overflow-y: auto; background: #f0f0f0; }
+
+/* Hero */
+.hero-strip {
+  background: #00439C; padding: 34px 48px 30px;
+  position: relative; overflow: hidden;
+}
+.hero-strip::before {
+  content: 'スクスク';
+  position: absolute; right: 44px; top: 50%; transform: translateY(-50%);
+  font-size: 100px; font-weight: 900; color: rgba(255,255,255,0.06);
+  letter-spacing: -4px; line-height: 1; pointer-events: none;
+}
+.hero-strip::after {
+  content: '▲';
+  position: absolute; bottom: -18px; right: 60px;
+  font-size: 40px; color: rgba(255,255,255,0.04); pointer-events: none;
+}
+.hero-eyebrow { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.55); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 12px; }
+.hero-title { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
+.hero-title span { color: rgba(255,255,255,0.6); font-weight: 400; }
+.hero-desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+.hero-stats { display: flex; gap: 0; margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; }
+.hstat { text-align: left; padding-right: 28px; border-right: 1px solid rgba(255,255,255,0.12); margin-right: 28px; }
+.hstat:last-child { border-right: none; }
+.hstat-n { font-size: 20px; font-weight: 700; color: #fff; font-family: monospace; letter-spacing: -0.5px; }
+.hstat-l { font-size: 9px; color: rgba(255,255,255,0.45); margin-top: 2px; letter-spacing: 1.5px; text-transform: uppercase; }
+
+/* Filter Tab Bar */
+.filter-bar {
+  background: #fff; border-bottom: 1px solid #ADADAD;
+  padding: 0 48px;
+  display: flex; align-items: flex-end;
+  position: sticky; top: 0; z-index: 10;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.ftab {
+  display: flex; align-items: center; gap: 7px;
+  padding: 13px 18px; font-size: 13px; font-weight: 500;
+  color: #6C6C6C; cursor: pointer; border: none; background: none;
+  border-bottom: 3px solid transparent; margin-bottom: -1px;
+  transition: all 0.15s; font-family: inherit; white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+.ftab:hover { color: #00439C; }
+.ftab.active { color: #00439C; border-bottom-color: #00439C; font-weight: 700; }
+.ftab-cnt {
+  background: #ADADAD; color: #fff;
+  font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 10px;
+}
+.ftab.active .ftab-cnt { background: #00439C; }
+
+/* Cards Grid */
+.cards-area { padding: 28px 48px 48px; }
+.cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+/* News-style card */
+.ncard {
+  background: #fff; border: 1px solid #ADADAD; border-radius: 2px;
+  overflow: hidden; cursor: pointer; transition: all 0.15s;
+  display: flex; flex-direction: column;
+}
+.ncard:hover {
+  box-shadow: 0 6px 24px rgba(0,67,156,0.2);
+  transform: translateY(-3px); border-color: #0070CC;
+}
+
+/* Thumbnail - PS Blue color family */
+.ncard-thumb {
+  height: 148px; position: relative;
+  display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 14px 16px;
+  overflow: hidden;
+}
+/* dot pattern overlay (shared) */
+.ncard-thumb::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+/* gradient overlay for readability */
+.ncard-thumb::after {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to bottom, transparent 25%, rgba(0,0,0,0.5) 100%);
+}
+/* Month thumbnail variants — all PS Blue family */
+.t01 { background: linear-gradient(140deg, #00439C 0%, #003080 100%); }
+.t02 { background: linear-gradient(140deg, #0070CC 0%, #00439C 100%); }
+.t03 { background: linear-gradient(140deg, #001D60 0%, #00439C 100%); }
+.t04 { background: linear-gradient(140deg, #00439C 0%, #0060B8 100%); }
+.t05 { background: linear-gradient(140deg, #003580 0%, #0070CC 100%); }
+.t06 { background: linear-gradient(140deg, #000000 0%, #00439C 100%); }
+
+.ncard-grammar {
+  position: relative; z-index: 2;
+  font-size: 18px; font-weight: 700; color: #fff; line-height: 1.35;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4); letter-spacing: 0.3px;
+}
+.ncard-badge {
+  position: absolute; top: 10px; right: 10px; z-index: 2;
+  background: rgba(255,255,255,0.15); color: #fff;
+  font-size: 9px; font-weight: 700; padding: 3px 8px;
+  border: 1px solid rgba(255,255,255,0.3); letter-spacing: 1px; text-transform: uppercase;
+}
+
+/* Card body */
+.ncard-body { padding: 12px 14px 14px; flex: 1; display: flex; flex-direction: column; }
+.ncard-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+.ncard-cat {
+  background: #f0f0f0; color: #6C6C6C;
+  font-size: 10px; font-weight: 700; padding: 2px 7px;
+  border: 1px solid #ADADAD; letter-spacing: 0.3px;
+}
+.ncard-date { font-size: 11px; color: #ADADAD; }
+.ncard-title { font-size: 13.5px; font-weight: 700; color: #000; line-height: 1.4; margin-bottom: 5px; }
+.ncard:hover .ncard-title { color: #00439C; }
+.ncard-sub { font-size: 11.5px; color: #6C6C6C; line-height: 1.55; margin-top: auto; padding-top: 5px; }
 </style>
 </head>
 <body>
@@ -205,7 +240,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
 
 <div class="app">
 
-  <!-- Sidebar -->
+  <!-- ── Sidebar ── -->
   <nav class="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-logo">일본어 학습노트</div>
@@ -216,507 +251,562 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
       <span class="nav-num">HOME</span> 홈
     </button>
 
-    <!-- ── 1월 ── -->
+    <!-- 1월 -->
     <div class="month-group" id="group-01">
       <button class="month-toggle open" onclick="toggleMonth('01')">
-        <span>2026년 1월</span>
-        <span class="month-count">3</span>
-        <span class="toggle-arrow">▶</span>
+        <span>2026년 1월</span><span class="month-count">3</span><span class="toggle-arrow">▶</span>
       </button>
       <div class="month-items open" id="items-01">
         <button class="nav-item" id="nav-0122" onclick="loadSession('Session_20260122.html','nav-0122','01')">
-          <span class="nav-num">01/22</span> ひらがな 학습
-          <span class="nav-tag">문자</span>
+          <span class="nav-num">01/22</span> ひらがな 학습 <span class="nav-tag">문자</span>
         </button>
         <button class="nav-item" id="nav-0127" onclick="loadSession('Session_20260127.html','nav-0127','01')">
-          <span class="nav-num">01/27</span> 〜は〜です／じゃない
-          <span class="nav-tag">명사문</span>
+          <span class="nav-num">01/27</span> 〜は〜です／じゃない <span class="nav-tag">명사문</span>
         </button>
         <button class="nav-item" id="nav-0129" onclick="loadSession('Session_20260129.html','nav-0129','01')">
-          <span class="nav-num">01/29</span> 지시대명사／시간
-          <span class="nav-tag">지시</span>
+          <span class="nav-num">01/29</span> 지시대명사／시간 <span class="nav-tag">지시</span>
         </button>
       </div>
     </div>
 
-    <!-- ── 2월 ── -->
+    <!-- 2월 -->
     <div class="month-group" id="group-02">
       <button class="month-toggle" onclick="toggleMonth('02')">
-        <span>2026년 2월</span>
-        <span class="month-count">8</span>
-        <span class="toggle-arrow">▶</span>
+        <span>2026년 2월</span><span class="month-count">8</span><span class="toggle-arrow">▶</span>
       </button>
       <div class="month-items" id="items-02">
-        <button class="nav-item" id="nav-0203" onclick="loadSession('Session_20260203.html','nav-0203','02')">
-          <span class="nav-num">02/03</span> い형용사
-          <span class="nav-tag">형용사</span>
-        </button>
-        <button class="nav-item" id="nav-0205" onclick="loadSession('Session_20260205.html','nav-0205','02')">
-          <span class="nav-num">02/05</span> な형용사
-          <span class="nav-tag">형용사</span>
-        </button>
-        <button class="nav-item" id="nav-0210" onclick="loadSession('Session_20260210.html','nav-0210','02')">
-          <span class="nav-num">02/10</span> カタカナ／비교
-          <span class="nav-tag">비교</span>
-        </button>
-        <button class="nav-item" id="nav-0212" onclick="loadSession('Session_20260212.html','nav-0212','02')">
-          <span class="nav-num">02/12</span> 숫자／가격／위치
-          <span class="nav-tag">숫자</span>
-        </button>
-        <button class="nav-item" id="nav-0217" onclick="loadSession('Session_20260217.html','nav-0217','02')">
-          <span class="nav-num">02/17</span> 가족／い형용사 과거
-          <span class="nav-tag">과거</span>
-        </button>
-        <button class="nav-item" id="nav-0219" onclick="loadSession('Session_20260219.html','nav-0219','02')">
-          <span class="nav-num">02/19</span> な형용사·명사 과거／날짜
-          <span class="nav-tag">과거</span>
-        </button>
-        <button class="nav-item" id="nav-0224" onclick="loadSession('Session_20260224.html','nav-0224','02')">
-          <span class="nav-num">02/24</span> 동사 분류／조사
-          <span class="nav-tag">동사</span>
-        </button>
-        <button class="nav-item" id="nav-0226" onclick="loadSession('Session_20260226.html','nav-0226','02')">
-          <span class="nav-num">02/26</span> 동사 공손형 ます
-          <span class="nav-tag">ます형</span>
-        </button>
+        <button class="nav-item" id="nav-0203" onclick="loadSession('Session_20260203.html','nav-0203','02')"><span class="nav-num">02/03</span> い형용사 <span class="nav-tag">형용사</span></button>
+        <button class="nav-item" id="nav-0205" onclick="loadSession('Session_20260205.html','nav-0205','02')"><span class="nav-num">02/05</span> な형용사 <span class="nav-tag">형용사</span></button>
+        <button class="nav-item" id="nav-0210" onclick="loadSession('Session_20260210.html','nav-0210','02')"><span class="nav-num">02/10</span> カタカナ／비교 <span class="nav-tag">비교</span></button>
+        <button class="nav-item" id="nav-0212" onclick="loadSession('Session_20260212.html','nav-0212','02')"><span class="nav-num">02/12</span> 숫자／가격／위치 <span class="nav-tag">숫자</span></button>
+        <button class="nav-item" id="nav-0217" onclick="loadSession('Session_20260217.html','nav-0217','02')"><span class="nav-num">02/17</span> 가족／い형용사 과거 <span class="nav-tag">과거</span></button>
+        <button class="nav-item" id="nav-0219" onclick="loadSession('Session_20260219.html','nav-0219','02')"><span class="nav-num">02/19</span> な형·명사 과거／날짜 <span class="nav-tag">과거</span></button>
+        <button class="nav-item" id="nav-0224" onclick="loadSession('Session_20260224.html','nav-0224','02')"><span class="nav-num">02/24</span> 동사 분류／조사 <span class="nav-tag">동사</span></button>
+        <button class="nav-item" id="nav-0226" onclick="loadSession('Session_20260226.html','nav-0226','02')"><span class="nav-num">02/26</span> 동사 공손형 ます <span class="nav-tag">ます형</span></button>
       </div>
     </div>
 
-    <!-- ── 3월 ── -->
+    <!-- 3월 -->
     <div class="month-group" id="group-03">
       <button class="month-toggle" onclick="toggleMonth('03')">
-        <span>2026년 3월</span>
-        <span class="month-count">7</span>
-        <span class="toggle-arrow">▶</span>
+        <span>2026년 3월</span><span class="month-count">6</span><span class="toggle-arrow">▶</span>
       </button>
       <div class="month-items" id="items-03">
-        <button class="nav-item" id="nav-0303" onclick="loadSession('Session_20260303.html','nav-0303','03')">
-          <span class="nav-num">03/03</span> 동사 과거 응용／ましょう
-          <span class="nav-tag">권유</span>
-        </button>
-        <button class="nav-item" id="nav-0305" onclick="loadSession('Session_20260305.html','nav-0305','03')">
-          <span class="nav-num">03/05</span> ます＋に／하러 가다
-          <span class="nav-tag">이동</span>
-        </button>
-        <button class="nav-item" id="nav-0310" onclick="loadSession('Session_20260310.html','nav-0310','03')">
-          <span class="nav-num">03/10</span> 〜に行く／ませんか
-          <span class="nav-tag">이동</span>
-        </button>
-        <button class="nav-item" id="nav-0317" onclick="loadSession('Session_20260317.html','nav-0317','03')">
-          <span class="nav-num">03/17</span> ながら／たいです
-          <span class="nav-tag">희망</span>
-        </button>
-        <button class="nav-item" id="nav-0324" onclick="loadSession('Session_20260324.html','nav-0324','03')">
-          <span class="nav-num">03/24</span> て형 만들기／~해 주세요
-          <span class="nav-tag">て형</span>
-        </button>
-        <button class="nav-item" id="nav-0326" onclick="loadSession('Session_20260326.html','nav-0326','03')">
-          <span class="nav-num">03/26</span> ています／~하고 있어요
-          <span class="nav-tag">진행</span>
-        </button>
+        <button class="nav-item" id="nav-0303" onclick="loadSession('Session_20260303.html','nav-0303','03')"><span class="nav-num">03/03</span> 동사 과거 응용／ましょう <span class="nav-tag">권유</span></button>
+        <button class="nav-item" id="nav-0305" onclick="loadSession('Session_20260305.html','nav-0305','03')"><span class="nav-num">03/05</span> ます＋に／하러 가다 <span class="nav-tag">이동</span></button>
+        <button class="nav-item" id="nav-0310" onclick="loadSession('Session_20260310.html','nav-0310','03')"><span class="nav-num">03/10</span> 〜に行く／ませんか <span class="nav-tag">이동</span></button>
+        <button class="nav-item" id="nav-0317" onclick="loadSession('Session_20260317.html','nav-0317','03')"><span class="nav-num">03/17</span> ながら／たいです <span class="nav-tag">희망</span></button>
+        <button class="nav-item" id="nav-0324" onclick="loadSession('Session_20260324.html','nav-0324','03')"><span class="nav-num">03/24</span> て형 만들기／てください <span class="nav-tag">て형</span></button>
+        <button class="nav-item" id="nav-0326" onclick="loadSession('Session_20260326.html','nav-0326','03')"><span class="nav-num">03/26</span> ています／진행형 <span class="nav-tag">진행</span></button>
       </div>
     </div>
 
-    <!-- ── 4월 ── -->
+    <!-- 4월 -->
     <div class="month-group" id="group-04">
       <button class="month-toggle" onclick="toggleMonth('04')">
-        <span>2026년 4월</span>
-        <span class="month-count">7</span>
-        <span class="toggle-arrow">▶</span>
+        <span>2026년 4월</span><span class="month-count">5</span><span class="toggle-arrow">▶</span>
       </button>
       <div class="month-items" id="items-04">
-        <button class="nav-item" id="nav-0402" onclick="loadSession('Session_20260402.html','nav-0402','04')">
-          <span class="nav-num">04/02</span> てもいいです／허가
-          <span class="nav-tag">허가</span>
-        </button>
-        <button class="nav-item" id="nav-0409" onclick="loadSession('Session_20260409.html','nav-0409','04')">
-          <span class="nav-num">04/09</span> たことがある／경험
-          <span class="nav-tag">경험</span>
-        </button>
-        <button class="nav-item" id="nav-0414" onclick="loadSession('Session_20260414.html','nav-0414','04')">
-          <span class="nav-num">04/14</span> 〜た형／たことがある 반말
-          <span class="nav-tag">반말</span>
-        </button>
-        <button class="nav-item" id="nav-0421" onclick="loadSession('Session_20260421.html','nav-0421','04')">
-          <span class="nav-num">04/21</span> たことがあります 응용
-          <span class="nav-tag">경험</span>
-        </button>
-        <button class="nav-item" id="nav-0428" onclick="loadSession('Session_20260428.html','nav-0428','04')">
-          <span class="nav-num">04/28</span> たばかり／ない형
-          <span class="nav-tag">방금</span>
-        </button>
+        <button class="nav-item" id="nav-0402" onclick="loadSession('Session_20260402.html','nav-0402','04')"><span class="nav-num">04/02</span> てもいいです／허가 <span class="nav-tag">허가</span></button>
+        <button class="nav-item" id="nav-0409" onclick="loadSession('Session_20260409.html','nav-0409','04')"><span class="nav-num">04/09</span> たことがある／경험 <span class="nav-tag">경험</span></button>
+        <button class="nav-item" id="nav-0414" onclick="loadSession('Session_20260414.html','nav-0414','04')"><span class="nav-num">04/14</span> 〜た형／반말 <span class="nav-tag">반말</span></button>
+        <button class="nav-item" id="nav-0421" onclick="loadSession('Session_20260421.html','nav-0421','04')"><span class="nav-num">04/21</span> たことがある 응용 <span class="nav-tag">경험</span></button>
+        <button class="nav-item" id="nav-0428" onclick="loadSession('Session_20260428.html','nav-0428','04')"><span class="nav-num">04/28</span> たばかり／ない형 <span class="nav-tag">방금</span></button>
       </div>
     </div>
 
-    <!-- ── 5월 ── -->
+    <!-- 5월 -->
     <div class="month-group" id="group-05">
       <button class="month-toggle" onclick="toggleMonth('05')">
-        <span>2026년 5월</span>
-        <span class="month-count">7</span>
-        <span class="toggle-arrow">▶</span>
+        <span>2026년 5월</span><span class="month-count">7</span><span class="toggle-arrow">▶</span>
       </button>
       <div class="month-items" id="items-05">
-        <button class="nav-item" id="nav-0507" onclick="loadSession('Session_20260507.html','nav-0507','05')">
-          <span class="nav-num">05/07</span> 형용사의 부사형
-          <span class="nav-tag">부사</span>
-        </button>
-        <button class="nav-item" id="nav-0512" onclick="loadSession('Session_20260512.html','nav-0512','05')">
-          <span class="nav-num">05/12</span> ことができる／前に
-          <span class="nav-tag">가능</span>
-        </button>
-        <button class="nav-item" id="nav-0514" onclick="loadSession('Session_20260514.html','nav-0514','05')">
-          <span class="nav-num">05/14</span> た後で／과거형반말
-          <span class="nav-tag">순서</span>
-        </button>
-        <button class="nav-item" id="nav-0519" onclick="loadSession('Session_20260519.html','nav-0519','05')">
-          <span class="nav-num">05/19</span> な형과거반말／けど
-          <span class="nav-tag">과거</span>
-        </button>
-        <button class="nav-item" id="nav-0521" onclick="loadSession('Session_20260521.html','nav-0521','05')">
-          <span class="nav-num">05/21</span> そうだ현재형／과거형
-          <span class="nav-tag">전문</span>
-        </button>
-        <button class="nav-item" id="nav-0526" onclick="loadSession('Session_20260526.html','nav-0526','05')">
-          <span class="nav-num">05/26</span> と思う／たら
-          <span class="nav-tag">가정</span>
-        </button>
-        <button class="nav-item" id="nav-0528" onclick="loadSession('Session_20260528.html','nav-0528','05')">
-          <span class="nav-num">05/28</span> あげる／くれる／もらう
-          <span class="nav-tag">수수</span>
-        </button>
+        <button class="nav-item" id="nav-0507" onclick="loadSession('Session_20260507.html','nav-0507','05')"><span class="nav-num">05/07</span> 형용사의 부사형 <span class="nav-tag">부사</span></button>
+        <button class="nav-item" id="nav-0512" onclick="loadSession('Session_20260512.html','nav-0512','05')"><span class="nav-num">05/12</span> ことができる／前に <span class="nav-tag">가능</span></button>
+        <button class="nav-item" id="nav-0514" onclick="loadSession('Session_20260514.html','nav-0514','05')"><span class="nav-num">05/14</span> た後で／과거반말 <span class="nav-tag">순서</span></button>
+        <button class="nav-item" id="nav-0519" onclick="loadSession('Session_20260519.html','nav-0519','05')"><span class="nav-num">05/19</span> な형과거반말／けど <span class="nav-tag">과거</span></button>
+        <button class="nav-item" id="nav-0521" onclick="loadSession('Session_20260521.html','nav-0521','05')"><span class="nav-num">05/21</span> そうだ현재형／과거형 <span class="nav-tag">전문</span></button>
+        <button class="nav-item" id="nav-0526" onclick="loadSession('Session_20260526.html','nav-0526','05')"><span class="nav-num">05/26</span> と思う／たら <span class="nav-tag">가정</span></button>
+        <button class="nav-item" id="nav-0528" onclick="loadSession('Session_20260528.html','nav-0528','05')"><span class="nav-num">05/28</span> あげる／くれる／もらう <span class="nav-tag">수수</span></button>
       </div>
     </div>
 
-    <!-- 06월 -->
+    <!-- 6월 -->
     <div class="month-group" id="group-06">
       <button class="month-toggle" onclick="toggleMonth('06')">
-        <span>2026년 6월</span>
-        <span class="month-count">6</span>
-        <span class="toggle-arrow">▶</span>
+        <span>2026년 6월</span><span class="month-count">6</span><span class="toggle-arrow">▶</span>
       </button>
       <div class="month-items" id="items-06">
-        <button class="nav-item" id="nav-0609" onclick="loadSession('Session_20260609.html','nav-0609','06')">
-          <span class="nav-num">06/09</span> ～ければ／動詞の～ば
-          <span class="nav-tag">조건</span>
-        </button>
-        <button class="nav-item" id="nav-0611" onclick="loadSession('Session_20260611.html','nav-0611','06')">
-          <span class="nav-num">06/11</span> 추측의 [そうだ]
-          <span class="nav-tag">추측</span>
-        </button>
-        <button class="nav-item" id="nav-0616" onclick="loadSession('Session_20260616.html','nav-0616','06')">
-          <span class="nav-num">06/16</span> そうに＋動詞／명사수식
-          <span class="nav-tag">수식</span>
-        </button>
-        <button class="nav-item" id="nav-0618" onclick="loadSession('Session_20260618.html','nav-0618','06')">
-          <span class="nav-num">06/18</span> 명사수식 (과거형)
-          <span class="nav-tag">수식</span>
-        </button>
-        <button class="nav-item" id="nav-0623" onclick="loadSession('Session_20260623.html','nav-0623','06')">
-          <span class="nav-num">06/23</span> 추측의 [ようだ]
-          <span class="nav-tag">추측</span>
-        </button>
-        <button class="nav-item" id="nav-0625" onclick="loadSession('Session_20260625.html','nav-0625','06')">
-          <span class="nav-num">06/25</span> ～ような／～に 수동형
-          <span class="nav-tag">수동</span>
-        </button>
+        <button class="nav-item" id="nav-0609" onclick="loadSession('Session_20260609.html','nav-0609','06')"><span class="nav-num">06/09</span> ～ければ／動詞の～ば <span class="nav-tag">조건</span></button>
+        <button class="nav-item" id="nav-0611" onclick="loadSession('Session_20260611.html','nav-0611','06')"><span class="nav-num">06/11</span> 추측의 [そうだ] <span class="nav-tag">추측</span></button>
+        <button class="nav-item" id="nav-0616" onclick="loadSession('Session_20260616.html','nav-0616','06')"><span class="nav-num">06/16</span> そうに＋動詞／명사수식 <span class="nav-tag">수식</span></button>
+        <button class="nav-item" id="nav-0618" onclick="loadSession('Session_20260618.html','nav-0618','06')"><span class="nav-num">06/18</span> 명사수식 (과거형) <span class="nav-tag">수식</span></button>
+        <button class="nav-item" id="nav-0623" onclick="loadSession('Session_20260623.html','nav-0623','06')"><span class="nav-num">06/23</span> 추측의 [ようだ] <span class="nav-tag">추측</span></button>
+        <button class="nav-item" id="nav-0625" onclick="loadSession('Session_20260625.html','nav-0625','06')"><span class="nav-num">06/25</span> ～ような／～に 수동형 <span class="nav-tag">수동</span></button>
       </div>
     </div>
-
   </nav>
 
-  <!-- Content Pane -->
+  <!-- ── Content Pane ── -->
   <div class="content-pane">
 
-    <!-- Home View -->
     <div id="home-view">
-      <div class="hero">
-        <div class="hero-badge">넥슨게임즈 · 전화외국어 수업</div>
-        <h1>일본어 <span>학습노트</span></h1>
-        <p>수업별 학습 자료입니다.<br>
-           좌측 메뉴에서 세션을 선택하면 <strong>일본어 원문 · 로마자 · 한국어</strong>를 바로 확인할 수 있습니다.</p>
-        <div class="stats">
-          <div class="stat"><div class="stat-num">35</div><div class="stat-label">Sessions</div></div>
-          <div class="stat"><div class="stat-num">JP·RO·KR</div><div class="stat-label">Languages</div></div>
-          <div class="stat"><div class="stat-num">スクスク</div><div class="stat-label">교재</div></div>
+
+      <!-- Hero -->
+      <div class="hero-strip">
+        <div class="hero-eyebrow">넥슨게임즈 · 전화외국어 スクスク 회화초급</div>
+        <div class="hero-title">일본어 <span>학습노트</span></div>
+        <div class="hero-desc">수업별 핵심 문법·회화 연습 자료를 월별로 확인하세요.</div>
+        <div class="hero-stats">
+          <div class="hstat"><div class="hstat-n">35</div><div class="hstat-l">Sessions</div></div>
+          <div class="hstat"><div class="hstat-n">6</div><div class="hstat-l">Months</div></div>
+          <div class="hstat"><div class="hstat-n">JP·RO·KR</div><div class="hstat-l">Languages</div></div>
         </div>
       </div>
 
-      <!-- 1월 -->
-      <div class="section-label">2026년 1월 수업 세션</div>
-      <div class="grid">
-        <div class="card" onclick="loadSession('Session_20260122.html','nav-0122','01')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-01-22</div>
-          <div class="card-title">ひらがな 학습<br><span style="color:#6B778C;font-weight:400;font-size:12px;">청음 / 탁음 / 반탁음</span></div>
-          <div class="card-sub">ひらがな 오십음도<br>기본 인사 표현</div>
-          <div class="card-tag"># 문자학습</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260127.html','nav-0127','01')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-01-27</div>
-          <div class="card-title">〜は〜です／じゃないです<br><span style="color:#6B778C;font-weight:400;font-size:12px;">긍정·부정 명사문</span></div>
-          <div class="card-sub">자기소개 표현<br>〜ですか 의문문</div>
-          <div class="card-tag"># 명사문</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260129.html','nav-0129','01')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-01-29</div>
-          <div class="card-title">지시대명사 / 시간 표현<br><span style="color:#6B778C;font-weight:400;font-size:12px;">これ・それ・あれ / 〜じ〜ふん</span></div>
-          <div class="card-sub">이것/그것/저것<br>시간 읽기</div>
-          <div class="card-tag"># 지시사</div>
-        </div>
+      <!-- Filter Tabs -->
+      <div class="filter-bar">
+        <button class="ftab active" data-m="all" onclick="filterMonth('all')">전체 <span class="ftab-cnt">35</span></button>
+        <button class="ftab" data-m="01" onclick="filterMonth('01')">1월 <span class="ftab-cnt">3</span></button>
+        <button class="ftab" data-m="02" onclick="filterMonth('02')">2월 <span class="ftab-cnt">8</span></button>
+        <button class="ftab" data-m="03" onclick="filterMonth('03')">3월 <span class="ftab-cnt">6</span></button>
+        <button class="ftab" data-m="04" onclick="filterMonth('04')">4월 <span class="ftab-cnt">5</span></button>
+        <button class="ftab" data-m="05" onclick="filterMonth('05')">5월 <span class="ftab-cnt">7</span></button>
+        <button class="ftab" data-m="06" onclick="filterMonth('06')">6월 <span class="ftab-cnt">6</span></button>
       </div>
 
-      <!-- 2월 -->
-      <div class="section-label">2026년 2월 수업 세션</div>
-      <div class="grid">
-        <div class="card" onclick="loadSession('Session_20260203.html','nav-0203','02')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-02-03</div>
-          <div class="card-title">い형용사<br><span style="color:#6B778C;font-weight:400;font-size:12px;">〜いです / 〜くないです</span></div>
-          <div class="card-sub">い형용사 긍정·부정<br>おいしい / たかい 등</div>
-          <div class="card-tag"># い형용사</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260205.html','nav-0205','02')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-02-05</div>
-          <div class="card-title">な형용사<br><span style="color:#6B778C;font-weight:400;font-size:12px;">〜です / 〜じゃないです</span></div>
-          <div class="card-sub">な형용사 긍정·부정<br>きれい / しずか 등</div>
-          <div class="card-tag"># な형용사</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260210.html','nav-0210','02')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-02-10</div>
-          <div class="card-title">カタカナ / 비교 표현<br><span style="color:#6B778C;font-weight:400;font-size:12px;">〜より / どちらが〜</span></div>
-          <div class="card-sub">カタカナ 오십음도<br>비교급・최상급</div>
-          <div class="card-tag"># 비교</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260212.html','nav-0212','02')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-02-12</div>
-          <div class="card-title">숫자 / 가격 / 위치<br><span style="color:#6B778C;font-weight:400;font-size:12px;">いくら / 〜のうえ・した</span></div>
-          <div class="card-sub">숫자 읽기 / 가격 표현<br>위치 표현 (위/아래/앞/뒤)</div>
-          <div class="card-tag"># 숫자</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260217.html','nav-0217','02')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-02-17</div>
-          <div class="card-title">가족 / い형용사 과거형<br><span style="color:#6B778C;font-weight:400;font-size:12px;">〜かったです / 〜くなかったです</span></div>
-          <div class="card-sub">가족 호칭 (身内↔敬語)<br>い형용사 과거 긍정·부정</div>
-          <div class="card-tag"># 과거형</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260219.html','nav-0219','02')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-02-19</div>
-          <div class="card-title">な형용사·명사 과거형 / 날짜<br><span style="color:#6B778C;font-weight:400;font-size:12px;">でした / じゃなかったです</span></div>
-          <div class="card-sub">な형용사·명사 과거형<br>날짜·요일 읽기</div>
-          <div class="card-tag"># 과거형</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260224.html','nav-0224','02')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-02-24</div>
-          <div class="card-title">동사 분류 / 조사<br><span style="color:#6B778C;font-weight:400;font-size:12px;">グループ1·2·3 / を·に·で·へ</span></div>
-          <div class="card-sub">동사 3그룹 분류<br>조사 を·に·で·へ·から·まで</div>
-          <div class="card-tag"># 동사</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260226.html','nav-0226','02')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-02-26</div>
-          <div class="card-title">동사 공손형 〜ます<br><span style="color:#6B778C;font-weight:400;font-size:12px;">ます / ません / ました / ませんでした</span></div>
-          <div class="card-sub">ます형 4가지 활용<br>현재·과거 긍정·부정</div>
-          <div class="card-tag"># ます형</div>
-        </div>
-      </div>
+      <!-- Cards Grid -->
+      <div class="cards-area">
+        <div class="cards-grid" id="cards-grid">
 
-      <!-- 3월 -->
-      <div class="section-label">2026년 3월 수업 세션</div>
-      <div class="grid">
-        <div class="card" onclick="loadSession('Session_20260303.html','nav-0303','03')">
-          <div class="card-icon">📘</div>
-          <div class="card-date">2026-03-03</div>
-          <div class="card-title">동사 과거 응용 / 〜ましょう<br><span style="color:#6B778C;font-weight:400;font-size:12px;">ました 응용 / 권유 표현</span></div>
-          <div class="card-sub">동사 과거형 응용<br>〜ましょう / 〜ましょうか</div>
-          <div class="card-tag"># 권유</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260305.html','nav-0305','03')">
-          <div class="card-icon">📘</div>
-          <div class="card-date">2026-03-05</div>
-          <div class="card-title">ます＋に 익히기<br><span style="color:#6B778C;font-weight:400;font-size:12px;">~하러 가다 / ~하지 않을래?</span></div>
-          <div class="card-sub">ます형＋に＋이동동사<br>〜ましょうか (권유)</div>
-          <div class="card-tag"># 이동표현</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260310.html','nav-0310','03')">
-          <div class="card-icon">📘</div>
-          <div class="card-date">2026-03-10</div>
-          <div class="card-title">〜に行く・来る・帰る<br><span style="color:#6B778C;font-weight:400;font-size:12px;">이동 목적 / 〜ませんか</span></div>
-          <div class="card-sub">〜に行く / 〜に来る<br>〜ませんか (부드러운 권유)</div>
-          <div class="card-tag"># 이동목적</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260317.html','nav-0317','03')">
-          <div class="card-icon">📘</div>
-          <div class="card-date">2026-03-17</div>
-          <div class="card-title">〜ながら / 〜たいです<br><span style="color:#6B778C;font-weight:400;font-size:12px;">동시 동작 / 희망 표현</span></div>
-          <div class="card-sub">〜ながら (하면서)<br>〜たいです / 〜たくないです</div>
-          <div class="card-tag"># 희망</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260324.html','nav-0324','03')">
-          <div class="card-icon">📙</div>
-          <div class="card-date">2026-03-24</div>
-          <div class="card-title">て형 만들기 / 〜てください<br><span style="color:#6B778C;font-weight:400;font-size:12px;">~해 주세요</span></div>
-          <div class="card-sub">동사 て형 변환 규칙<br>〜てください (의뢰·요청)</div>
-          <div class="card-tag"># て형</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260326.html','nav-0326','03')">
-          <div class="card-icon">📕</div>
-          <div class="card-date">2026-03-26</div>
-          <div class="card-title">〜ています<br><span style="color:#6B778C;font-weight:400;font-size:12px;">~하고 있어요 (진행·상태)</span></div>
-          <div class="card-sub">て형＋います<br>진행형 / 상태 표현</div>
-          <div class="card-tag"># 진행형</div>
-        </div>
-      </div>
+          <!-- ── 1월 ── -->
+          <div class="ncard" data-m="01" onclick="loadSession('Session_20260122.html','nav-0122','01')">
+            <div class="ncard-thumb t01">
+              <span class="ncard-badge">문자</span>
+              <div class="ncard-grammar">あ い う え お<br>ひらがな</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문자학습</span><span class="ncard-date">2026.01.22</span></div>
+              <div class="ncard-title">ひらがな 학습</div>
+              <div class="ncard-sub">청음 / 탁음 / 반탁음 · 오십음도 · 기본 인사</div>
+            </div>
+          </div>
 
-      <!-- 4월 -->
-      <div class="section-label">2026년 4월 수업 세션</div>
-      <div class="grid">
-        <div class="card" onclick="loadSession('Session_20260402.html','nav-0402','04')">
-          <div class="card-icon">📙</div>
-          <div class="card-date">2026-04-02</div>
-          <div class="card-title">〜てもいいです<br><span style="color:#6B778C;font-weight:400;font-size:12px;">허가 / 금지 표현</span></div>
-          <div class="card-sub">〜てもいいです (해도 됩니다)<br>〜てはいけません (하면 안 됩니다)</div>
-          <div class="card-tag"># 허가</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260409.html','nav-0409','04')">
-          <div class="card-icon">📘</div>
-          <div class="card-date">2026-04-09</div>
-          <div class="card-title">〜たことがあります<br><span style="color:#6B778C;font-weight:400;font-size:12px;">경험 표현</span></div>
-          <div class="card-sub">〜한 적이 있습니다<br>경험 묻고 답하기</div>
-          <div class="card-tag"># 경험</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260414.html','nav-0414','04')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-04-14</div>
-          <div class="card-title">〜た형 / 〜たことがある 반말<br><span style="color:#6B778C;font-weight:400;font-size:12px;">과거 반말 / 경험 표현</span></div>
-          <div class="card-sub">동사 과거형 반말<br>〜たことがある / ない (반말)</div>
-          <div class="card-tag"># 반말</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260421.html','nav-0421','04')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-04-21</div>
-          <div class="card-title">〜たことがあります(응용)<br><span style="color:#6B778C;font-weight:400;font-size:12px;">경험 응용 / たり〜たり</span></div>
-          <div class="card-sub">경험 묻고 답하기 심화<br>〜たり〜たりします</div>
-          <div class="card-tag"># 경험</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260428.html','nav-0428','04')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-04-28</div>
-          <div class="card-title">〜たばかりです / 〜ない형<br><span style="color:#6B778C;font-weight:400;font-size:12px;">방금 / 부정 반말</span></div>
-          <div class="card-sub">〜たばかりです (방금)<br>ない형 만들기 / ないでください</div>
-          <div class="card-tag"># 방금</div>
-        </div>
-      </div>
+          <div class="ncard" data-m="01" onclick="loadSession('Session_20260127.html','nav-0127','01')">
+            <div class="ncard-thumb t01">
+              <span class="ncard-badge">명사문</span>
+              <div class="ncard-grammar">〜は〜です<br>じゃないです</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.01.27</span></div>
+              <div class="ncard-title">〜は〜です／じゃないです</div>
+              <div class="ncard-sub">긍정·부정 명사문 · 자기소개 · ですか 의문문</div>
+            </div>
+          </div>
 
-      <!-- 5월 -->
-      <div class="section-label">2026년 5월 수업 세션</div>
-      <div class="grid">
-        <div class="card" onclick="loadSession('Session_20260507.html','nav-0507','05')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-05-07</div>
-          <div class="card-title">형용사의 부사형<br><span style="color:#6B778C;font-weight:400;font-size:12px;">い→く / な→に 변환</span></div>
-          <div class="card-sub">い형→〜く / な형→〜に<br>부사형 활용</div>
-          <div class="card-tag"># 부사형</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260512.html','nav-0512','05')">
-          <div class="card-icon">📗</div>
-          <div class="card-date">2026-05-12</div>
-          <div class="card-title">ことができる / 〜前に<br><span style="color:#6B778C;font-weight:400;font-size:12px;">가능 / 순서 표현</span></div>
-          <div class="card-sub">〜ことができます (할 수 있다)<br>〜前に (〜하기 전에)</div>
-          <div class="card-tag"># 가능</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260514.html','nav-0514','05')">
-          <div class="card-icon">📙</div>
-          <div class="card-date">2026-05-14</div>
-          <div class="card-title">〜た後で / い형용사 과거반말<br><span style="color:#6B778C;font-weight:400;font-size:12px;">순서 / 과거 반말</span></div>
-          <div class="card-sub">〜た後で (〜한 후에)<br>い형용사 과거 반말형</div>
-          <div class="card-tag"># 순서</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260519.html','nav-0519','05')">
-          <div class="card-icon">📕</div>
-          <div class="card-date">2026-05-19</div>
-          <div class="card-title">な형·명사 과거반말 / 〜けど<br><span style="color:#6B778C;font-weight:400;font-size:12px;">과거 반말 / 역접</span></div>
-          <div class="card-sub">な형·명사 과거반말<br>〜けど (〜지만) 역접</div>
-          <div class="card-tag"># 과거</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260521.html','nav-0521','05')">
-          <div class="card-icon">📘</div>
-          <div class="card-date">2026-05-21</div>
-          <div class="card-title">전문의 〔そうだ〕<br><span style="color:#6B778C;font-weight:400;font-size:12px;">현재형 / 과거형</span></div>
-          <div class="card-sub">〜そうです (〜라고 합니다)<br>현재형 / 과거형 패턴</div>
-          <div class="card-tag"># 전문</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260526.html','nav-0526','05')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-05-26</div>
-          <div class="card-title">〜と思う / 〜たら<br><span style="color:#6B778C;font-weight:400;font-size:12px;">추측 / 가정 표현</span></div>
-          <div class="card-sub">〜と思います (〜라고 생각합니다)<br>〜たら (〜하면/했더니)</div>
-          <div class="card-tag"># 가정</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260528.html','nav-0528','05')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-05-28</div>
-          <div class="card-title">あげる／くれる／もらう<br><span style="color:#6B778C;font-weight:400;font-size:12px;">수수 표현 / 〜ために</span></div>
-          <div class="card-sub">〜てあげる / 〜てくれる<br>〜てもらう / 〜ために</div>
-          <div class="card-tag"># 수수</div>
-      </div>
-    </div><!-- /month-05-cards -->
+          <div class="ncard" data-m="01" onclick="loadSession('Session_20260129.html','nav-0129','01')">
+            <div class="ncard-thumb t01">
+              <span class="ncard-badge">지시사</span>
+              <div class="ncard-grammar">これ・それ<br>あれ・どれ</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.01.29</span></div>
+              <div class="ncard-title">지시대명사 / 시간 표현</div>
+              <div class="ncard-sub">이것/그것/저것 · 시간 읽기 〜じ〜ふん</div>
+            </div>
+          </div>
 
-    <div class="month-section" id="month-06-cards">
-      <div class="month-label">2026년 6월</div>
-      <div class="cards-row">
-        <div class="card" onclick="loadSession('Session_20260609.html','nav-0609','06')">
-          <div class="card-icon">📘</div>
-          <div class="card-date">2026-06-09</div>
-          <div class="card-title">～ければ／動詞の～ば<br><span style="color:#6B778C;font-weight:400;font-size:12px;">~면 / ~(이)라면</span></div>
-          <div class="card-sub">～ければ／～ば<br>명사, ナ형용사 + にする</div>
-          <div class="card-tag"># 조건</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260611.html','nav-0611','06')">
-          <div class="card-icon">📗</div>
-          <div class="card-date">2026-06-11</div>
-          <div class="card-title">추측의 [そうだ]<br><span style="color:#6B778C;font-weight:400;font-size:12px;">~일 것 같다 (외관 추측)</span></div>
-          <div class="card-sub">～そうだ<br>そうな＋명사 / そうにない</div>
-          <div class="card-tag"># 추측</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260616.html','nav-0616','06')">
-          <div class="card-icon">📙</div>
-          <div class="card-date">2026-06-16</div>
-          <div class="card-title">そうに＋動詞／명사수식<br><span style="color:#6B778C;font-weight:400;font-size:12px;">~인 듯이 ~하다 / ~하는 + 명사</span></div>
-          <div class="card-sub">そうに＋동사<br>명사수식 (현재형)</div>
-          <div class="card-tag"># 수식</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260618.html','nav-0618','06')">
-          <div class="card-icon">📕</div>
-          <div class="card-date">2026-06-18</div>
-          <div class="card-title">명사수식 (과거형)<br><span style="color:#6B778C;font-weight:400;font-size:12px;">~한 + 명사 / ~밖에 없다</span></div>
-          <div class="card-sub">동사 た형 + 명사<br>～しか～ない</div>
-          <div class="card-tag"># 수식</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260623.html','nav-0623','06')">
-          <div class="card-icon">📒</div>
-          <div class="card-date">2026-06-23</div>
-          <div class="card-title">추측의 [ようだ]<br><span style="color:#6B778C;font-weight:400;font-size:12px;">~인 것 같다 (근거 있는 추측)</span></div>
-          <div class="card-sub">～ようだ<br>まるで～ようだ</div>
-          <div class="card-tag"># 추측</div>
-        </div>
-        <div class="card" onclick="loadSession('Session_20260625.html','nav-0625','06')">
-          <div class="card-icon">📘</div>
-          <div class="card-date">2026-06-25</div>
-          <div class="card-title">～ような／～に 수동형<br><span style="color:#6B778C;font-weight:400;font-size:12px;">~같은 (예시) / ~에게 ~받다</span></div>
-          <div class="card-sub">～ような＋명사<br>～に～られる</div>
-          <div class="card-tag"># 수동</div>
-        </div>
-      </div>
-    </div><!-- /month-06-cards -->
+          <!-- ── 2월 ── -->
+          <div class="ncard" data-m="02" onclick="loadSession('Session_20260203.html','nav-0203','02')">
+            <div class="ncard-thumb t02">
+              <span class="ncard-badge">형용사</span>
+              <div class="ncard-grammar">〜いです<br>〜くないです</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.02.03</span></div>
+              <div class="ncard-title">い형용사</div>
+              <div class="ncard-sub">긍정·부정 현재형 · おいしい / たかい 등</div>
+            </div>
+          </div>
 
+          <div class="ncard" data-m="02" onclick="loadSession('Session_20260205.html','nav-0205','02')">
+            <div class="ncard-thumb t02">
+              <span class="ncard-badge">형용사</span>
+              <div class="ncard-grammar">〜です<br>〜じゃないです</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.02.05</span></div>
+              <div class="ncard-title">な형용사</div>
+              <div class="ncard-sub">긍정·부정 현재형 · きれい / しずか 등</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="02" onclick="loadSession('Session_20260210.html','nav-0210','02')">
+            <div class="ncard-thumb t02">
+              <span class="ncard-badge">비교</span>
+              <div class="ncard-grammar">〜より〜<br>のほうが</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.02.10</span></div>
+              <div class="ncard-title">カタカナ / 비교 표현</div>
+              <div class="ncard-sub">カタカナ 오십음도 · 비교급 · 최상급</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="02" onclick="loadSession('Session_20260212.html','nav-0212','02')">
+            <div class="ncard-thumb t02">
+              <span class="ncard-badge">숫자</span>
+              <div class="ncard-grammar">いくらですか<br>〜のうえ・した</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.02.12</span></div>
+              <div class="ncard-title">숫자 / 가격 / 위치</div>
+              <div class="ncard-sub">숫자 읽기 · 가격 표현 · 위치 전치사</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="02" onclick="loadSession('Session_20260217.html','nav-0217','02')">
+            <div class="ncard-thumb t02">
+              <span class="ncard-badge">과거형</span>
+              <div class="ncard-grammar">〜かったです<br>〜くなかった</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.02.17</span></div>
+              <div class="ncard-title">가족 / い형용사 과거형</div>
+              <div class="ncard-sub">가족 호칭 (身内↔敬語) · い형 과거 긍정·부정</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="02" onclick="loadSession('Session_20260219.html','nav-0219','02')">
+            <div class="ncard-thumb t02">
+              <span class="ncard-badge">과거형</span>
+              <div class="ncard-grammar">でした<br>じゃなかった</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.02.19</span></div>
+              <div class="ncard-title">な형용사·명사 과거형 / 날짜</div>
+              <div class="ncard-sub">な형·명사 과거 · 날짜·요일 읽기</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="02" onclick="loadSession('Session_20260224.html','nav-0224','02')">
+            <div class="ncard-thumb t02">
+              <span class="ncard-badge">동사</span>
+              <div class="ncard-grammar">グループ 1·2·3<br>を · に · で · へ</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.02.24</span></div>
+              <div class="ncard-title">동사 분류 / 조사</div>
+              <div class="ncard-sub">동사 3그룹 분류 · 조사 を·に·で·へ·から·まで</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="02" onclick="loadSession('Session_20260226.html','nav-0226','02')">
+            <div class="ncard-thumb t02">
+              <span class="ncard-badge">ます형</span>
+              <div class="ncard-grammar">〜ます<br>〜ません</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.02.26</span></div>
+              <div class="ncard-title">동사 공손형 〜ます</div>
+              <div class="ncard-sub">ます / ません / ました / ませんでした</div>
+            </div>
+          </div>
+
+          <!-- ── 3월 ── -->
+          <div class="ncard" data-m="03" onclick="loadSession('Session_20260303.html','nav-0303','03')">
+            <div class="ncard-thumb t03">
+              <span class="ncard-badge">권유</span>
+              <div class="ncard-grammar">〜ましょう<br>〜ましょうか</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.03.03</span></div>
+              <div class="ncard-title">동사 과거 응용 / 〜ましょう</div>
+              <div class="ncard-sub">동사 과거 응용 · 권유 표현</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="03" onclick="loadSession('Session_20260305.html','nav-0305','03')">
+            <div class="ncard-thumb t03">
+              <span class="ncard-badge">이동</span>
+              <div class="ncard-grammar">〜に<br>いきます</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.03.05</span></div>
+              <div class="ncard-title">ます＋に 익히기</div>
+              <div class="ncard-sub">ます형＋に＋이동동사 · ~하러 가다</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="03" onclick="loadSession('Session_20260310.html','nav-0310','03')">
+            <div class="ncard-thumb t03">
+              <span class="ncard-badge">이동</span>
+              <div class="ncard-grammar">〜ませんか<br>〜に行く</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.03.10</span></div>
+              <div class="ncard-title">〜に行く・来る・帰る</div>
+              <div class="ncard-sub">이동 목적 표현 · 〜ませんか 권유</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="03" onclick="loadSession('Session_20260317.html','nav-0317','03')">
+            <div class="ncard-thumb t03">
+              <span class="ncard-badge">희망</span>
+              <div class="ncard-grammar">〜ながら<br>〜たいです</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.03.17</span></div>
+              <div class="ncard-title">〜ながら / 〜たいです</div>
+              <div class="ncard-sub">동시 동작 · 희망 표현 〜たくないです</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="03" onclick="loadSession('Session_20260324.html','nav-0324','03')">
+            <div class="ncard-thumb t03">
+              <span class="ncard-badge">て형</span>
+              <div class="ncard-grammar">〜てください<br>て형 변환</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.03.24</span></div>
+              <div class="ncard-title">て형 만들기 / 〜てください</div>
+              <div class="ncard-sub">동사 て형 변환 규칙 · ~해 주세요</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="03" onclick="loadSession('Session_20260326.html','nav-0326','03')">
+            <div class="ncard-thumb t03">
+              <span class="ncard-badge">진행형</span>
+              <div class="ncard-grammar">〜ています<br>진행 · 상태</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.03.26</span></div>
+              <div class="ncard-title">〜ています</div>
+              <div class="ncard-sub">て형＋います · 진행형 / 상태 표현</div>
+            </div>
+          </div>
+
+          <!-- ── 4월 ── -->
+          <div class="ncard" data-m="04" onclick="loadSession('Session_20260402.html','nav-0402','04')">
+            <div class="ncard-thumb t04">
+              <span class="ncard-badge">허가</span>
+              <div class="ncard-grammar">〜ても いい<br>〜ては いけない</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.04.02</span></div>
+              <div class="ncard-title">〜てもいいです</div>
+              <div class="ncard-sub">허가 / 금지 표현 · 해도 됩니다</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="04" onclick="loadSession('Session_20260409.html','nav-0409','04')">
+            <div class="ncard-thumb t04">
+              <span class="ncard-badge">경험</span>
+              <div class="ncard-grammar">〜たことが<br>あります</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.04.09</span></div>
+              <div class="ncard-title">〜たことがあります</div>
+              <div class="ncard-sub">경험 표현 · 〜한 적이 있습니다</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="04" onclick="loadSession('Session_20260414.html','nav-0414','04')">
+            <div class="ncard-thumb t04">
+              <span class="ncard-badge">반말</span>
+              <div class="ncard-grammar">〜た<br>과거 반말</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.04.14</span></div>
+              <div class="ncard-title">〜た형 / 반말 과거형</div>
+              <div class="ncard-sub">동사 과거 반말 · 경험 표현 반말</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="04" onclick="loadSession('Session_20260421.html','nav-0421','04')">
+            <div class="ncard-thumb t04">
+              <span class="ncard-badge">경험</span>
+              <div class="ncard-grammar">〜たり<br>〜たりします</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.04.21</span></div>
+              <div class="ncard-title">〜たことがあります (응용)</div>
+              <div class="ncard-sub">경험 묻고 답하기 심화 · 〜たり〜たりします</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="04" onclick="loadSession('Session_20260428.html','nav-0428','04')">
+            <div class="ncard-thumb t04">
+              <span class="ncard-badge">방금</span>
+              <div class="ncard-grammar">〜たばかり<br>〜ない형</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.04.28</span></div>
+              <div class="ncard-title">〜たばかりです / 〜ない형</div>
+              <div class="ncard-sub">방금 ~했습니다 · ない형 / ないでください</div>
+            </div>
+          </div>
+
+          <!-- ── 5월 ── -->
+          <div class="ncard" data-m="05" onclick="loadSession('Session_20260507.html','nav-0507','05')">
+            <div class="ncard-thumb t05">
+              <span class="ncard-badge">부사형</span>
+              <div class="ncard-grammar">〜く　〜に<br>형용사 부사형</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.05.07</span></div>
+              <div class="ncard-title">형용사의 부사형</div>
+              <div class="ncard-sub">い→〜く / な→〜に 변환 활용</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="05" onclick="loadSession('Session_20260512.html','nav-0512','05')">
+            <div class="ncard-thumb t05">
+              <span class="ncard-badge">가능</span>
+              <div class="ncard-grammar">〜ことが<br>できます</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.05.12</span></div>
+              <div class="ncard-title">ことができる / 〜前に</div>
+              <div class="ncard-sub">할 수 있다 · 〜하기 전에</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="05" onclick="loadSession('Session_20260514.html','nav-0514','05')">
+            <div class="ncard-thumb t05">
+              <span class="ncard-badge">순서</span>
+              <div class="ncard-grammar">〜た後で<br>〜かった</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.05.14</span></div>
+              <div class="ncard-title">〜た後で / い형 과거반말</div>
+              <div class="ncard-sub">〜한 후에 · い형용사 과거 반말형</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="05" onclick="loadSession('Session_20260519.html','nav-0519','05')">
+            <div class="ncard-thumb t05">
+              <span class="ncard-badge">과거반말</span>
+              <div class="ncard-grammar">〜だった<br>〜けど</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.05.19</span></div>
+              <div class="ncard-title">な형·명사 과거반말 / 〜けど</div>
+              <div class="ncard-sub">な형·명사 과거반말 · 역접 표현</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="05" onclick="loadSession('Session_20260521.html','nav-0521','05')">
+            <div class="ncard-thumb t05">
+              <span class="ncard-badge">전문</span>
+              <div class="ncard-grammar">〜そうです<br>전문 표현</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.05.21</span></div>
+              <div class="ncard-title">전문의 〔そうだ〕</div>
+              <div class="ncard-sub">~라고 합니다 · 현재형 / 과거형 패턴</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="05" onclick="loadSession('Session_20260526.html','nav-0526','05')">
+            <div class="ncard-thumb t05">
+              <span class="ncard-badge">가정</span>
+              <div class="ncard-grammar">〜と思います<br>〜たら</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.05.26</span></div>
+              <div class="ncard-title">〜と思う / 〜たら</div>
+              <div class="ncard-sub">~라고 생각합니다 · ~하면 가정 표현</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="05" onclick="loadSession('Session_20260528.html','nav-0528','05')">
+            <div class="ncard-thumb t05">
+              <span class="ncard-badge">수수</span>
+              <div class="ncard-grammar">〜てあげる<br>くれる・もらう</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.05.28</span></div>
+              <div class="ncard-title">あげる／くれる／もらう</div>
+              <div class="ncard-sub">수수 표현 · 〜てあげる / くれる / もらう</div>
+            </div>
+          </div>
+
+          <!-- ── 6월 ── -->
+          <div class="ncard" data-m="06" onclick="loadSession('Session_20260609.html','nav-0609','06')">
+            <div class="ncard-thumb t06">
+              <span class="ncard-badge">조건</span>
+              <div class="ncard-grammar">〜ければ<br>動詞の〜ば</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.06.09</span></div>
+              <div class="ncard-title">～ければ／動詞の～ば</div>
+              <div class="ncard-sub">~면 조건 / 명사·な형 + なら</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="06" onclick="loadSession('Session_20260611.html','nav-0611','06')">
+            <div class="ncard-thumb t06">
+              <span class="ncard-badge">추측</span>
+              <div class="ncard-grammar">〜そうだ<br>외관 추측</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.06.11</span></div>
+              <div class="ncard-title">추측의 〔そうだ〕</div>
+              <div class="ncard-sub">~일 것 같다 · そうな＋명사 · そうにない</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="06" onclick="loadSession('Session_20260616.html','nav-0616','06')">
+            <div class="ncard-thumb t06">
+              <span class="ncard-badge">수식</span>
+              <div class="ncard-grammar">〜そうに<br>명사수식 현재형</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.06.16</span></div>
+              <div class="ncard-title">そうに＋動詞／명사수식</div>
+              <div class="ncard-sub">~인 듯이 ~하다 · 동사 현재형＋명사</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="06" onclick="loadSession('Session_20260618.html','nav-0618','06')">
+            <div class="ncard-thumb t06">
+              <span class="ncard-badge">수식</span>
+              <div class="ncard-grammar">〜た ＋ 명사<br>〜しか〜ない</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.06.18</span></div>
+              <div class="ncard-title">명사수식 (과거형)</div>
+              <div class="ncard-sub">동사 た형＋명사 · ~밖에 없다</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="06" onclick="loadSession('Session_20260623.html','nav-0623','06')">
+            <div class="ncard-thumb t06">
+              <span class="ncard-badge">추측</span>
+              <div class="ncard-grammar">〜ようだ<br>근거 추측</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.06.23</span></div>
+              <div class="ncard-title">추측의 〔ようだ〕</div>
+              <div class="ncard-sub">~인 것 같다 · まるで〜のようだ</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="06" onclick="loadSession('Session_20260625.html','nav-0625','06')">
+            <div class="ncard-thumb t06">
+              <span class="ncard-badge">수동</span>
+              <div class="ncard-grammar">〜に〜られる<br>〜ような</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.06.25</span></div>
+              <div class="ncard-title">～ような／～に 수동형</div>
+              <div class="ncard-sub">~같은 예시 표현 · ~에게 ~받다</div>
+            </div>
+          </div>
+
+        </div><!-- /cards-grid -->
+      </div><!-- /cards-area -->
     </div><!-- /home-view -->
 
     <iframe id="session-frame" src="" title="학습 세션"></iframe>
@@ -725,36 +815,27 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
 </div><!-- /app -->
 
 <script>
-var activeMonth = null;
-
+/* ── month toggle ── */
 function toggleMonth(mm) {
   var toggle = document.querySelector('#group-' + mm + ' .month-toggle');
   var items  = document.getElementById('items-' + mm);
   var isOpen = toggle.classList.contains('open');
-  if (isOpen) {
-    toggle.classList.remove('open');
-    items.classList.remove('open');
-  } else {
-    toggle.classList.add('open');
-    items.classList.add('open');
-  }
+  toggle.classList.toggle('open', !isOpen);
+  items.classList.toggle('open', !isOpen);
 }
 
+/* ── load session ── */
 function loadSession(src, navId, mm) {
-  // clear all active states
-  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.month-toggle').forEach(b => b.classList.remove('has-active'));
+  document.querySelectorAll('.nav-item').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.month-toggle').forEach(function(b) { b.classList.remove('has-active'); });
   document.getElementById('nav-home').classList.remove('active');
 
-  // set item active
   var btn = document.getElementById(navId);
   if (btn) btn.classList.add('active');
 
-  // mark month group as has-active
   if (mm) {
     var grpToggle = document.querySelector('#group-' + mm + ' .month-toggle');
     if (grpToggle) grpToggle.classList.add('has-active');
-    // auto-open the month if closed
     var items = document.getElementById('items-' + mm);
     if (items && !items.classList.contains('open')) {
       grpToggle.classList.add('open');
@@ -763,24 +844,32 @@ function loadSession(src, navId, mm) {
   }
 
   var frame = document.getElementById('session-frame');
-  var home  = document.getElementById('home-view');
   frame.src = src;
   frame.style.display = 'block';
-  home.style.display  = 'none';
+  document.getElementById('home-view').style.display = 'none';
 }
 
+/* ── show home ── */
 function showHome() {
-  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.month-toggle').forEach(b => b.classList.remove('has-active'));
+  document.querySelectorAll('.nav-item').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.month-toggle').forEach(function(b) { b.classList.remove('has-active'); });
   document.getElementById('nav-home').classList.add('active');
   var frame = document.getElementById('session-frame');
-  var home  = document.getElementById('home-view');
   frame.style.display = 'none';
   frame.src = '';
-  home.style.display  = '';
+  document.getElementById('home-view').style.display = '';
 }
 
-window.addEventListener('message', e => {
+/* ── filter by month ── */
+function filterMonth(mm) {
+  document.querySelectorAll('.ftab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelector('.ftab[data-m="' + mm + '"]').classList.add('active');
+  document.querySelectorAll('.ncard').forEach(function(c) {
+    c.style.display = (mm === 'all' || c.dataset.m === mm) ? '' : 'none';
+  });
+}
+
+window.addEventListener('message', function(e) {
   if (e.data === 'showHome') showHome();
 });
 </script>
