@@ -7,12 +7,13 @@
 body{font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;background:var(--bg);color:var(--text);}
 :root{--blue:#0052CC;--blue-light:#DEEBFF;--bg:#F4F5F7;--surface:#fff;
       --border:#DFE1E6;--text:#172B4D;--text-sec:#6B778C;--text-mut:#97A0AF;--green:#006644;}
-.topbar{background:var(--blue);color:#fff;padding:10px 20px;display:flex;align-items:center;gap:16px;
+.topbar{background:linear-gradient(90deg, #002260 0%, #00439C 45%, #0070CC 100%);color:#fff;padding:10px 20px;display:flex;align-items:center;gap:16px;
         font-size:13px;position:sticky;top:0;z-index:100;}
 .topbar a{color:#fff;text-decoration:none;opacity:.85;}
 .topbar a:hover{opacity:1;}
+.topbar-date{margin-left:auto;color:rgba(255,255,255,0.5);font-size:11px;font-family:monospace;}
 .topbar-title{font-weight:600;font-size:15px;}
-.page{max-width:820px;margin:0 auto;padding:24px 16px;}
+.page{max-width:860px;margin:0 auto;padding:24px 16px;}
 .page-header{margin-bottom:24px;}
 .date-badge{display:inline-block;background:var(--blue-light);color:var(--blue);
             font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;margin-bottom:8px;letter-spacing:.5px;}
@@ -72,13 +73,13 @@ h1{font-size:22px;font-weight:700;color:var(--text);margin-bottom:4px;}
 <body>
 <div class="topbar">
   <a href="index.html" onclick="if(window.parent!==window){window.parent.postMessage('showHome','*');return false;}">← 홈</a>
-  <span class="topbar-title">ひらがな(히라가나) 학습</span>
+  <span class="topbar-title">ひらがな(히라가나) 학습</span><span class="topbar-date">2026-01-22</span>
 </div>
 <div class="page">
   <div class="page-header">
     <div class="date-badge">2026-01-22</div>
     <h1>ひらがな(히라가나) 학습</h1>
-    <p class="subtitle">スクスク 회화 입문 — 문자 학습</p>
+    <div class="subtitle">2026-01-22 · 넥슨게임즈 전화외국어 수업 · スクスク 회화 입문</div>
   </div>
   <div class="card"><div class="card-title">📌 학습 목표</div><div class="goals"><div class="goal-item"><div class="goal-num">1</div><div class="goal-text">ひらがな 청음 (あ～ん) 읽기・쓰기</div></div><div class="goal-item"><div class="goal-num">2</div><div class="goal-text">ひらがな 탁음(が・ざ・だ・ば행) 및 반탁음(ぱ행)</div></div></div></div>
 <div class="card"><div class="card-title">🔤 ひらがな 오십음도 (清音)</div><table class="kana-table"><thead><tr><th></th><th>a</th><th>i</th><th>u</th><th>e</th><th>o</th></tr></thead><tbody><tr><th>あ行</th><td><div class="kana-main">あ</div><div class="kana-ro">a</div></td><td><div class="kana-main">い</div><div class="kana-ro">i</div></td><td><div class="kana-main">う</div><div class="kana-ro">u</div></td><td><div class="kana-main">え</div><div class="kana-ro">e</div></td><td><div class="kana-main">お</div><div class="kana-ro">o</div></td></tr><tr><th>か行</th><td><div class="kana-main">か</div><div class="kana-ro">ka</div></td><td><div class="kana-main">き</div><div class="kana-ro">ki</div></td><td><div class="kana-main">く</div><div class="kana-ro">ku</div></td><td><div class="kana-main">け</div><div class="kana-ro">ke</div></td><td><div class="kana-main">こ</div><div class="kana-ro">ko</div></td></tr><tr><th>さ行</th><td><div class="kana-main">さ</div><div class="kana-ro">sa</div></td><td><div class="kana-main">し</div><div class="kana-ro">shi</div></td><td><div class="kana-main">す</div><div class="kana-ro">su</div></td><td><div class="kana-main">せ</div><div class="kana-ro">se</div></td><td><div class="kana-main">そ</div><div class="kana-ro">so</div></td></tr><tr><th>た行</th><td><div class="kana-main">た</div><div class="kana-ro">ta</div></td><td><div class="kana-main">ち</div><div class="kana-ro">chi</div></td><td><div class="kana-main">つ</div><div class="kana-ro">tsu</div></td><td><div class="kana-main">て</div><div class="kana-ro">te</div></td><td><div class="kana-main">と</div><div class="kana-ro">to</div></td></tr><tr><th>な行</th><td><div class="kana-main">な</div><div class="kana-ro">na</div></td><td><div class="kana-main">に</div><div class="kana-ro">ni</div></td><td><div class="kana-main">ぬ</div><div class="kana-ro">nu</div></td><td><div class="kana-main">ね</div><div class="kana-ro">ne</div></td><td><div class="kana-main">の</div><div class="kana-ro">no</div></td></tr><tr><th>は行</th><td><div class="kana-main">は</div><div class="kana-ro">ha</div></td><td><div class="kana-main">ひ</div><div class="kana-ro">hi</div></td><td><div class="kana-main">ふ</div><div class="kana-ro">fu</div></td><td><div class="kana-main">へ</div><div class="kana-ro">he</div></td><td><div class="kana-main">ほ</div><div class="kana-ro">ho</div></td></tr><tr><th>ま行</th><td><div class="kana-main">ま</div><div class="kana-ro">ma</div></td><td><div class="kana-main">み</div><div class="kana-ro">mi</div></td><td><div class="kana-main">む</div><div class="kana-ro">mu</div></td><td><div class="kana-main">め</div><div class="kana-ro">me</div></td><td><div class="kana-main">も</div><div class="kana-ro">mo</div></td></tr><tr><th>や行</th><td><div class="kana-main">や</div><div class="kana-ro">ya</div></td><td></td><td><div class="kana-main">ゆ</div><div class="kana-ro">yu</div></td><td></td><td><div class="kana-main">よ</div><div class="kana-ro">yo</div></td></tr><tr><th>ら行</th><td><div class="kana-main">ら</div><div class="kana-ro">ra</div></td><td><div class="kana-main">り</div><div class="kana-ro">ri</div></td><td><div class="kana-main">る</div><div class="kana-ro">ru</div></td><td><div class="kana-main">れ</div><div class="kana-ro">re</div></td><td><div class="kana-main">ろ</div><div class="kana-ro">ro</div></td></tr><tr><th>わ行</th><td><div class="kana-main">わ</div><div class="kana-ro">wa</div></td><td></td><td></td><td></td><td><div class="kana-main">を</div><div class="kana-ro">wo</div></td></tr><tr><th>ん</th><td><div class="kana-main">ん</div><div class="kana-ro">n</div></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
