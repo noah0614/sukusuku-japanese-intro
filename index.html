@@ -199,7 +199,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
   background: linear-gradient(to bottom, transparent 25%, rgba(0,0,0,0.5) 100%);
 }
 /* Month thumbnail — unified PS Blue */
-.t01, .t02, .t03, .t04, .t05, .t06 {
+.t01, .t02, .t03, .t04, .t05, .t06, .t07 {
   background: linear-gradient(140deg, #003580 0%, #0070CC 100%);
 }
 
@@ -333,15 +333,24 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
     <!-- 6월 -->
     <div class="month-group" id="group-06">
       <button class="month-toggle" onclick="toggleMonth('06')">
-        <span>2026년 6월</span><span class="month-count">6</span><span class="toggle-arrow">▶</span>
+        <span>2026년 6월</span><span class="month-count">4</span><span class="toggle-arrow">▶</span>
       </button>
       <div class="month-items" id="items-06">
         <button class="nav-item" id="nav-0609" onclick="loadSession('Session_20260609.html','nav-0609','06')"><span class="nav-num">06/09</span> ～ければ／動詞の～ば <span class="nav-tag">조건</span></button>
         <button class="nav-item" id="nav-0611" onclick="loadSession('Session_20260611.html','nav-0611','06')"><span class="nav-num">06/11</span> 추측의 [そうだ] <span class="nav-tag">추측</span></button>
         <button class="nav-item" id="nav-0616" onclick="loadSession('Session_20260616.html','nav-0616','06')"><span class="nav-num">06/16</span> そうに＋動詞／명사수식 <span class="nav-tag">수식</span></button>
         <button class="nav-item" id="nav-0618" onclick="loadSession('Session_20260618.html','nav-0618','06')"><span class="nav-num">06/18</span> 명사수식 (과거형) <span class="nav-tag">수식</span></button>
-        <button class="nav-item" id="nav-0623" onclick="loadSession('Session_20260623.html','nav-0623','06')"><span class="nav-num">06/23</span> 추측의 [ようだ] <span class="nav-tag">추측</span></button>
-        <button class="nav-item" id="nav-0625" onclick="loadSession('Session_20260625.html','nav-0625','06')"><span class="nav-num">06/25</span> ～ような／～に 수동형 <span class="nav-tag">수동</span></button>
+      </div>
+    </div>
+
+    <!-- 7월 -->
+    <div class="month-group" id="group-07">
+      <button class="month-toggle" onclick="toggleMonth('07')">
+        <span>2026년 7월</span><span class="month-count">2</span><span class="toggle-arrow">▶</span>
+      </button>
+      <div class="month-items" id="items-07">
+        <button class="nav-item" id="nav-0707" onclick="loadSession('Session_20260707.html','nav-0707','07')"><span class="nav-num">07/07</span> 추측의 [ようだ] <span class="nav-tag">추측</span></button>
+        <button class="nav-item" id="nav-0709" onclick="loadSession('Session_20260709.html','nav-0709','07')"><span class="nav-num">07/09</span> ～ような／～に 수동형 <span class="nav-tag">수동</span></button>
       </div>
     </div>
   </nav>
@@ -358,7 +367,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
         <div class="hero-desc">수업별 핵심 문법·회화 연습 자료를 월별로 확인하세요.</div>
         <div class="hero-stats">
           <div class="hstat"><div class="hstat-n">35</div><div class="hstat-l">Sessions</div></div>
-          <div class="hstat"><div class="hstat-n">6</div><div class="hstat-l">Months</div></div>
+          <div class="hstat"><div class="hstat-n">7</div><div class="hstat-l">Months</div></div>
           <div class="hstat"><div class="hstat-n">JP·RO·KR</div><div class="hstat-l">Languages</div></div>
         </div>
       </div>
@@ -371,7 +380,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
         <button class="ftab" data-m="03" onclick="filterMonth('03')">3월 <span class="ftab-cnt">6</span></button>
         <button class="ftab" data-m="04" onclick="filterMonth('04')">4월 <span class="ftab-cnt">5</span></button>
         <button class="ftab" data-m="05" onclick="filterMonth('05')">5월 <span class="ftab-cnt">7</span></button>
-        <button class="ftab" data-m="06" onclick="filterMonth('06')">6월 <span class="ftab-cnt">6</span></button>
+        <button class="ftab" data-m="06" onclick="filterMonth('06')">6월 <span class="ftab-cnt">4</span></button>
+        <button class="ftab" data-m="07" onclick="filterMonth('07')">7월 <span class="ftab-cnt">2</span></button>
       </div>
 
       <!-- Cards Grid -->
@@ -780,25 +790,26 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
             </div>
           </div>
 
-          <div class="ncard" data-m="06" onclick="loadSession('Session_20260623.html','nav-0623','06')">
-            <div class="ncard-thumb t06">
+          <!-- ── 7월 ── -->
+          <div class="ncard" data-m="07" onclick="loadSession('Session_20260707.html','nav-0707','07')">
+            <div class="ncard-thumb t07">
               <span class="ncard-badge">추측</span>
               <div class="ncard-grammar">〜ようだ<br>근거 추측</div>
             </div>
             <div class="ncard-body">
-              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.06.23</span></div>
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.07.07</span></div>
               <div class="ncard-title">추측의 〔ようだ〕</div>
               <div class="ncard-sub">~인 것 같다 · まるで〜のようだ</div>
             </div>
           </div>
 
-          <div class="ncard" data-m="06" onclick="loadSession('Session_20260625.html','nav-0625','06')">
-            <div class="ncard-thumb t06">
+          <div class="ncard" data-m="07" onclick="loadSession('Session_20260709.html','nav-0709','07')">
+            <div class="ncard-thumb t07">
               <span class="ncard-badge">수동</span>
               <div class="ncard-grammar">〜に〜られる<br>〜ような</div>
             </div>
             <div class="ncard-body">
-              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.06.25</span></div>
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.07.09</span></div>
               <div class="ncard-title">～ような／～に 수동형</div>
               <div class="ncard-sub">~같은 예시 표현 · ~에게 ~받다</div>
             </div>
