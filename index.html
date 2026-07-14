@@ -346,11 +346,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
     <!-- 7월 -->
     <div class="month-group" id="group-07">
       <button class="month-toggle" onclick="toggleMonth('07')">
-        <span>2026년 7월</span><span class="month-count">2</span><span class="toggle-arrow">▶</span>
+        <span>2026년 7월</span><span class="month-count">6</span><span class="toggle-arrow">▶</span>
       </button>
       <div class="month-items" id="items-07">
         <button class="nav-item" id="nav-0707" onclick="loadSession('Session_20260707.html','nav-0707','07')"><span class="nav-num">07/07</span> 추측의 [ようだ] <span class="nav-tag">추측</span></button>
         <button class="nav-item" id="nav-0709" onclick="loadSession('Session_20260709.html','nav-0709','07')"><span class="nav-num">07/09</span> ～ような／～に 수동형 <span class="nav-tag">수동</span></button>
+        <button class="nav-item" id="nav-0716" onclick="loadSession('Session_20260716.html','nav-0716','07')"><span class="nav-num">07/16</span> ～に～を 수동형／사역형 <span class="nav-tag">사역</span></button>
+        <button class="nav-item" id="nav-0721" onclick="loadSession('Session_20260721.html','nav-0721','07')"><span class="nav-num">07/21</span> ～に～を 사역형／～し～し <span class="nav-tag">나열</span></button>
+        <button class="nav-item" id="nav-0723" onclick="loadSession('Session_20260723.html','nav-0723','07')"><span class="nav-num">07/23</span> (의지형)+と思う／つもりです <span class="nav-tag">의지</span></button>
+        <button class="nav-item" id="nav-0728" onclick="loadSession('Session_20260728.html','nav-0728','07')"><span class="nav-num">07/28</span> (기본형)+予定です／やすい・にくい <span class="nav-tag">예정</span></button>
       </div>
     </div>
   </nav>
@@ -366,7 +370,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
         <div class="hero-title">일본어 <span>학습노트</span></div>
         <div class="hero-desc">수업별 핵심 문법·회화 연습 자료를 월별로 확인하세요.</div>
         <div class="hero-stats">
-          <div class="hstat"><div class="hstat-n">35</div><div class="hstat-l">Sessions</div></div>
+          <div class="hstat"><div class="hstat-n">39</div><div class="hstat-l">Sessions</div></div>
           <div class="hstat"><div class="hstat-n">7</div><div class="hstat-l">Months</div></div>
           <div class="hstat"><div class="hstat-n">JP·RO·KR</div><div class="hstat-l">Languages</div></div>
         </div>
@@ -374,14 +378,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
 
       <!-- Filter Tabs -->
       <div class="filter-bar">
-        <button class="ftab active" data-m="all" onclick="filterMonth('all')">전체 <span class="ftab-cnt">35</span></button>
+        <button class="ftab active" data-m="all" onclick="filterMonth('all')">전체 <span class="ftab-cnt">39</span></button>
         <button class="ftab" data-m="01" onclick="filterMonth('01')">1월 <span class="ftab-cnt">3</span></button>
         <button class="ftab" data-m="02" onclick="filterMonth('02')">2월 <span class="ftab-cnt">8</span></button>
         <button class="ftab" data-m="03" onclick="filterMonth('03')">3월 <span class="ftab-cnt">6</span></button>
         <button class="ftab" data-m="04" onclick="filterMonth('04')">4월 <span class="ftab-cnt">5</span></button>
         <button class="ftab" data-m="05" onclick="filterMonth('05')">5월 <span class="ftab-cnt">7</span></button>
         <button class="ftab" data-m="06" onclick="filterMonth('06')">6월 <span class="ftab-cnt">4</span></button>
-        <button class="ftab" data-m="07" onclick="filterMonth('07')">7월 <span class="ftab-cnt">2</span></button>
+        <button class="ftab" data-m="07" onclick="filterMonth('07')">7월 <span class="ftab-cnt">6</span></button>
       </div>
 
       <!-- Cards Grid -->
@@ -812,6 +816,54 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
               <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.07.09</span></div>
               <div class="ncard-title">～ような／～に 수동형</div>
               <div class="ncard-sub">~같은 예시 표현 · ~에게 ~받다</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="07" onclick="loadSession('Session_20260716.html','nav-0716','07')">
+            <div class="ncard-thumb t07">
+              <span class="ncard-badge">사역</span>
+              <div class="ncard-grammar">〜に〜を受身形<br>〜を使役形</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.07.16</span></div>
+              <div class="ncard-title">～に～を 수동형／사역형</div>
+              <div class="ncard-sub">~에게 ~을 당하다 · ~에게 ~을 시키다</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="07" onclick="loadSession('Session_20260721.html','nav-0721','07')">
+            <div class="ncard-thumb t07">
+              <span class="ncard-badge">나열</span>
+              <div class="ncard-grammar">〜に〜を使役形<br>〜し〜し</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.07.21</span></div>
+              <div class="ncard-title">～に～を 사역형／～し～し</div>
+              <div class="ncard-sub">~에게 ~을 시키다 · ~하고 ~하고(나열)</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="07" onclick="loadSession('Session_20260723.html','nav-0723','07')">
+            <div class="ncard-thumb t07">
+              <span class="ncard-badge">의지</span>
+              <div class="ncard-grammar">意志形+と思う<br>基本形+つもりです</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.07.23</span></div>
+              <div class="ncard-title">(의지형)+と思う／つもりです</div>
+              <div class="ncard-sub">~하려고 생각하다 · ~할 생각이다</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="07" onclick="loadSession('Session_20260728.html','nav-0728','07')">
+            <div class="ncard-thumb t07">
+              <span class="ncard-badge">예정</span>
+              <div class="ncard-grammar">基本形+予定です<br>〜やすい／〜にくい</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.07.28</span></div>
+              <div class="ncard-title">(기본형)+予定です／やすい・にくい</div>
+              <div class="ncard-sub">~할 예정이다 · ~하기 쉽다/어렵다</div>
             </div>
           </div>
 
