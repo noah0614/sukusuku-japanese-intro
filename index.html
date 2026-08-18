@@ -3,37 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 <title>일본어 학습노트 · 넥슨게임즈</title>
 <style>
-/* ═══════════════════════════════════════════
-   PS Brand Colors
-   Primary Blue:  #00439C
-   Light Blue:    #0070CC
-   Black:         #000000
-   Dark Gray:     #6C6C6C
-   Light Gray:    #ADADAD
-   White:         #FFFFFF
-═══════════════════════════════════════════ */
+:root{--blue:#0071e3;--blue-light:#eef6ff;--bg:#f5f5f7;--surface:#fff;--border:#d2d2d7;--border-soft:#e8e8ed;--text:#1d1d1f;--text-sec:#6e6e73;--text-mut:#86868b;}
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; overflow: hidden; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', 'Noto Sans KR', sans-serif; color: #000; background: #f0f0f0; }
+body { font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'SF Pro KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing:antialiased; }
 
 /* ── Top Bar ── */
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-  background: linear-gradient(90deg, #002260 0%, #00439C 45%, #0070CC 100%);
+  background: rgba(255,255,255,.8);
+  backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
   height: 44px;
-  display: flex; align-items: center; padding: 0 20px; gap: 12px;
-  border-bottom: 1px solid rgba(0,0,0,0.2);
+  display: flex; align-items: center; padding: 0 22px; gap: 12px;
+  border-bottom: 1px solid var(--border-soft);
 }
-.topbar-logo { font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+.topbar-logo { font-size: 13px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
 .topbar-badge {
-  background: rgba(255,255,255,0.15); color: #fff;
-  font-size: 10px; font-weight: 600;
-  padding: 3px 10px; border-radius: 2px; letter-spacing: 0.8px;
-  border: 1px solid rgba(255,255,255,0.3);
+  background: var(--bg); color: var(--text-sec);
+  font-size: 10.5px; font-weight: 600;
+  padding: 3px 10px; border-radius: 20px; letter-spacing: 0.2px;
 }
-.topbar-right { margin-left: auto; color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: 0.3px; }
+.topbar-right { margin-left: auto; color: var(--text-mut); font-size: 11.5px; }
 
 /* ── App Layout ── */
 .app {
@@ -44,189 +37,175 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
 /* ── Sidebar ── */
 .sidebar {
   width: 240px; flex-shrink: 0;
-  background: #fff; border-right: 1px solid #ADADAD;
+  background: #fff; border-right: 1px solid var(--border-soft);
   overflow-y: auto; display: flex; flex-direction: column;
 }
 .sidebar-header {
-  padding: 16px 16px 12px;
-  border-bottom: 1px solid #ADADAD; flex-shrink: 0;
-  background: #fafafa;
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid var(--border-soft); flex-shrink: 0;
 }
-.sidebar-logo { font-size: 13px; font-weight: 700; color: #000; }
-.sidebar-sub { font-size: 11px; color: #6C6C6C; margin-top: 3px; }
+.sidebar-logo { font-size: 14px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+.sidebar-sub { font-size: 11px; color: var(--text-mut); margin-top: 3px; }
 
 .nav-home {
   display: flex; align-items: center; gap: 10px;
-  padding: 10px 16px; color: #6C6C6C; font-size: 12.5px; cursor: pointer;
-  border-left: 3px solid transparent; transition: all 0.12s;
-  background: none; border-top: none; border-right: none;
-  border-bottom: 1px solid #ADADAD;
+  padding: 11px 18px; color: var(--text-sec); font-size: 13px; cursor: pointer;
+  transition: background .12s, color .12s;
+  background: none; border: none; border-bottom: 1px solid var(--border-soft);
   width: 100%; text-align: left; font-family: inherit;
 }
-.nav-home:hover { background: #e6eef8; color: #00439C; border-left-color: #00439C; }
-.nav-home.active { background: #ddeaf7; color: #00439C; border-left-color: #00439C; font-weight: 700; }
-.nav-home .nav-num { font-size: 10px; color: #ADADAD; min-width: 38px; font-family: monospace; font-weight: 600; }
-.nav-home.active .nav-num { color: #0070CC; }
+.nav-home:hover { background: var(--bg); color: var(--text); }
+.nav-home.active { background: var(--blue-light); color: var(--blue); font-weight: 600; }
+.nav-home .nav-num { font-size: 10px; color: var(--text-mut); min-width: 38px; font-family: ui-monospace,monospace; font-weight: 600; }
+.nav-home.active .nav-num { color: var(--blue); }
 
-.month-group { border-bottom: 1px solid #ADADAD; }
+.month-group { border-bottom: 1px solid var(--border-soft); }
 .month-toggle {
   display: flex; align-items: center; gap: 8px;
-  padding: 9px 16px; width: 100%; background: #f5f5f5;
+  padding: 10px 18px; width: 100%; background: none;
   border: none; cursor: pointer; font-family: inherit;
-  font-size: 11px; font-weight: 700; color: #6C6C6C;
-  text-transform: uppercase; letter-spacing: 1.2px;
-  text-align: left; transition: background 0.12s;
-  border-left: 3px solid transparent;
+  font-size: 11.5px; font-weight: 600; color: var(--text-sec);
+  letter-spacing: .02em;
+  text-align: left; transition: background 0.12s, color .12s;
 }
-.month-toggle:hover { background: #e6eef8; color: #00439C; }
-.month-toggle.has-active { border-left-color: #00439C; color: #00439C; background: #ddeaf7; }
-.month-toggle .toggle-arrow { margin-left: auto; font-size: 10px; color: #ADADAD; transition: transform 0.2s; display: inline-block; }
+.month-toggle:hover { background: var(--bg); color: var(--text); }
+.month-toggle.has-active { color: var(--blue); }
+.month-toggle .toggle-arrow { margin-left: auto; font-size: 10px; color: var(--text-mut); transition: transform 0.2s; display: inline-block; }
 .month-toggle.open .toggle-arrow { transform: rotate(90deg); }
-.month-count { background: #ADADAD; color: #fff; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 8px; min-width: 18px; text-align: center; }
-.month-toggle.has-active .month-count { background: #00439C; }
+.month-count { background: var(--border); color: #fff; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 8px; min-width: 18px; text-align: center; }
+.month-toggle.has-active .month-count { background: var(--blue); }
 
 .month-items { overflow: hidden; max-height: 0; transition: max-height 0.25s ease; }
 .month-items.open { max-height: 2000px; }
 
 .nav-item {
   display: flex; align-items: center; gap: 10px;
-  padding: 8px 16px 8px 22px; text-decoration: none; color: #6C6C6C;
-  font-size: 12px; cursor: pointer; border-left: 3px solid transparent;
-  transition: all 0.12s; background: none; border-top: none; border-right: none;
-  border-bottom: 1px solid #f0f0f0; width: 100%; text-align: left; font-family: inherit;
+  padding: 8px 18px 8px 26px; text-decoration: none; color: var(--text-sec);
+  font-size: 12.5px; cursor: pointer;
+  transition: background .12s, color .12s; background: none; border: none;
+  width: 100%; text-align: left; font-family: inherit;
 }
-.nav-item:last-child { border-bottom: none; }
-.nav-item:hover { background: #e6eef8; color: #00439C; border-left-color: #00439C; }
-.nav-item.active { background: #ddeaf7; color: #00439C; border-left-color: #00439C; font-weight: 700; }
-.nav-num { font-size: 10px; color: #ADADAD; min-width: 34px; font-family: monospace; font-weight: 600; flex-shrink: 0; }
-.nav-item.active .nav-num, .nav-item:hover .nav-num { color: #0070CC; }
+.nav-item:hover { background: var(--bg); color: var(--text); }
+.nav-item.active { background: var(--blue-light); color: var(--blue); font-weight: 600; }
+.nav-num { font-size: 10px; color: var(--text-mut); min-width: 34px; font-family: ui-monospace,monospace; font-weight: 600; flex-shrink: 0; }
+.nav-item.active .nav-num { color: var(--blue); }
 .nav-item .nav-tag {
-  margin-left: auto; background: #f0f0f0; color: #6C6C6C;
-  font-size: 9px; padding: 1px 5px; border-radius: 2px;
-  border: 1px solid #ADADAD; flex-shrink: 0;
+  margin-left: auto; background: var(--bg); color: var(--text-mut);
+  font-size: 9px; padding: 2px 7px; border-radius: 8px;
+  flex-shrink: 0;
 }
-.nav-item.active .nav-tag { background: #ddeaf7; color: #00439C; border-color: #0070CC; }
+.nav-item.active .nav-tag { background: #fff; color: var(--blue); }
 
 /* ── Content Pane ── */
-.content-pane { flex: 1; position: relative; overflow: hidden; background: #f0f0f0; }
+.content-pane { flex: 1; position: relative; overflow: hidden; background: var(--bg); }
 #session-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: none; }
 
 /* ── Home View ── */
-#home-view { position: absolute; inset: 0; overflow-y: auto; background: #f0f0f0; }
+#home-view { position: absolute; inset: 0; overflow-y: auto; background: var(--bg); }
 
 /* Hero */
 .hero-strip {
-  background: linear-gradient(135deg, #002260 0%, #003580 40%, #0065BB 80%, #0070CC 100%);
-  padding: 34px 48px 30px;
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  padding: 56px 48px 40px;
   position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--border-soft);
 }
 .hero-strip::before {
   content: 'スクスク';
   position: absolute; right: 44px; top: 50%; transform: translateY(-50%);
-  font-size: 100px; font-weight: 900; color: rgba(255,255,255,0.06);
+  font-size: 130px; font-weight: 800; color: rgba(0,0,0,0.03);
   letter-spacing: -4px; line-height: 1; pointer-events: none;
 }
-.hero-strip::after {
-  content: '▲';
-  position: absolute; bottom: -18px; right: 60px;
-  font-size: 40px; color: rgba(255,255,255,0.04); pointer-events: none;
-}
-.hero-eyebrow { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.55); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 12px; }
-.hero-title { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.3px; }
-.hero-title span { color: rgba(255,255,255,0.6); font-weight: 400; }
-.hero-desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; }
-.hero-stats { display: flex; gap: 0; margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; }
-.hstat { text-align: left; padding-right: 28px; border-right: 1px solid rgba(255,255,255,0.12); margin-right: 28px; }
+.hero-strip::after { content: none; }
+.hero-eyebrow { font-size: 11px; font-weight: 600; color: var(--text-mut); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+.hero-title { font-size: 42px; font-weight: 700; color: var(--text); margin-bottom: 10px; letter-spacing: -0.03em; }
+.hero-title span { color: var(--text-mut); font-weight: 500; }
+.hero-desc { font-size: 15px; color: var(--text-sec); line-height: 1.65; max-width: 520px; }
+.hero-stats { display: flex; gap: 0; margin-top: 30px; border-top: none; padding-top: 0; }
+.hstat { text-align: left; padding-right: 32px; border-right: 1px solid var(--border); margin-right: 32px; }
 .hstat:last-child { border-right: none; }
-.hstat-n { font-size: 20px; font-weight: 700; color: #fff; font-family: monospace; letter-spacing: -0.5px; }
-.hstat-l { font-size: 9px; color: rgba(255,255,255,0.45); margin-top: 2px; letter-spacing: 1.5px; text-transform: uppercase; }
+.hstat-n { font-size: 28px; font-weight: 700; color: var(--text); font-family: inherit; letter-spacing: -0.02em; }
+.hstat-l { font-size: 10px; color: var(--text-mut); margin-top: 4px; letter-spacing: 1.5px; text-transform: uppercase; }
 
 /* Filter Tab Bar */
 .filter-bar {
-  background: #fff; border-bottom: 1px solid #ADADAD;
-  padding: 0 48px;
-  display: flex; align-items: flex-end;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 14px 48px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
   position: sticky; top: 0; z-index: 10;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 .ftab {
-  display: flex; align-items: center; gap: 7px;
-  padding: 13px 18px; font-size: 13px; font-weight: 500;
-  color: #6C6C6C; cursor: pointer; border: none; background: none;
-  border-bottom: 3px solid transparent; margin-bottom: -1px;
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 16px; font-size: 13px; font-weight: 500;
+  color: var(--text-sec); cursor: pointer; border: none; background: var(--bg);
+  border-radius: 20px;
   transition: all 0.15s; font-family: inherit; white-space: nowrap;
-  letter-spacing: 0.2px;
 }
-.ftab:hover { color: #00439C; }
-.ftab.active { color: #00439C; border-bottom-color: #00439C; font-weight: 700; }
+.ftab:hover { background: #e8e8ed; color: var(--text); }
+.ftab.active { color: #fff; background: var(--text); font-weight: 600; }
 .ftab-cnt {
-  background: #ADADAD; color: #fff;
-  font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 10px;
+  background: rgba(0,0,0,.08); color: inherit;
+  font-size: 10.5px; font-weight: 700; padding: 1px 7px; border-radius: 10px;
 }
-.ftab.active .ftab-cnt { background: #00439C; }
+.ftab.active .ftab-cnt { background: rgba(255,255,255,.25); color: #fff; }
 
 /* Cards Grid */
-.cards-area { padding: 28px 48px 48px; }
-.cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.cards-area { padding: 32px 48px 56px; }
+.cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 
-/* News-style card */
+/* Card */
 .ncard {
-  background: #fff; border: 1px solid #ADADAD; border-radius: 2px;
-  overflow: hidden; cursor: pointer; transition: all 0.15s;
+  background: #fff; border: 1px solid var(--border-soft); border-radius: 18px;
+  overflow: hidden; cursor: pointer; transition: all 0.2s;
   display: flex; flex-direction: column;
+  box-shadow: 0 1px 2px rgba(0,0,0,.03);
 }
 .ncard:hover {
-  box-shadow: 0 6px 24px rgba(0,67,156,0.2);
-  transform: translateY(-3px); border-color: #0070CC;
+  box-shadow: 0 14px 30px rgba(0,0,0,.08);
+  transform: translateY(-3px); border-color: var(--border);
 }
 
-/* Thumbnail - PS Blue color family */
+/* Thumbnail */
 .ncard-thumb {
-  height: 108px; position: relative;
+  height: 104px; position: relative;
   display: flex; flex-direction: column;
-  justify-content: flex-end; padding: 10px 12px;
+  justify-content: flex-end; padding: 12px 14px;
   overflow: hidden;
+  background: linear-gradient(140deg, #eef3fc 0%, #e4edfb 100%);
 }
-/* dot pattern overlay (shared) */
-.ncard-thumb::before {
-  content: ''; position: absolute; inset: 0; z-index: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-  background-size: 18px 18px;
-}
-/* gradient overlay for readability */
-.ncard-thumb::after {
-  content: ''; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(to bottom, transparent 25%, rgba(0,0,0,0.5) 100%);
-}
-/* Month thumbnail — unified PS Blue */
+.ncard-thumb::before { content: none; }
+.ncard-thumb::after { content: none; }
 .t01, .t02, .t03, .t04, .t05, .t06, .t07, .t08 {
-  background: linear-gradient(140deg, #003580 0%, #0070CC 100%);
+  background: linear-gradient(140deg, #eef3fc 0%, #e4edfb 100%);
 }
 
 .ncard-grammar {
   position: relative; z-index: 2;
-  font-size: 15px; font-weight: 700; color: #fff; line-height: 1.35;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.4); letter-spacing: 0.2px;
+  font-size: 14.5px; font-weight: 700; color: var(--text); line-height: 1.35;
+  letter-spacing: -0.01em;
 }
 .ncard-badge {
-  position: absolute; top: 8px; right: 8px; z-index: 2;
-  background: rgba(255,255,255,0.15); color: #fff;
-  font-size: 9px; font-weight: 700; padding: 2px 7px;
-  border: 1px solid rgba(255,255,255,0.3); letter-spacing: 0.8px; text-transform: uppercase;
+  position: absolute; top: 10px; right: 10px; z-index: 2;
+  background: #fff; color: var(--blue);
+  font-size: 9px; font-weight: 700; padding: 3px 8px;
+  border-radius: 20px; letter-spacing: 0.3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
 }
 
 /* Card body */
-.ncard-body { padding: 10px 12px 12px; flex: 1; display: flex; flex-direction: column; }
+.ncard-body { padding: 12px 14px 14px; flex: 1; display: flex; flex-direction: column; }
 .ncard-meta { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
 .ncard-cat {
-  background: #f0f0f0; color: #6C6C6C;
-  font-size: 9px; font-weight: 700; padding: 2px 6px;
-  border: 1px solid #ADADAD; letter-spacing: 0.3px;
+  background: var(--bg); color: var(--text-sec);
+  font-size: 9px; font-weight: 700; padding: 2px 7px;
+  border-radius: 8px; letter-spacing: 0.2px;
 }
-.ncard-date { font-size: 10.5px; color: #ADADAD; }
-.ncard-title { font-size: 12.5px; font-weight: 700; color: #000; line-height: 1.4; margin-bottom: 4px; }
-.ncard:hover .ncard-title { color: #00439C; }
-.ncard-sub { font-size: 11px; color: #6C6C6C; line-height: 1.5; margin-top: auto; padding-top: 4px; }
+.ncard-date { font-size: 10.5px; color: var(--text-mut); }
+.ncard-title { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 4px; letter-spacing: -0.01em; }
+.ncard:hover .ncard-title { color: var(--blue); }
+.ncard-sub { font-size: 11px; color: var(--text-sec); line-height: 1.5; margin-top: auto; padding-top: 4px; }
 </style>
 </head>
 <body>
@@ -361,10 +340,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
     <!-- 8월 -->
     <div class="month-group" id="group-08">
       <button class="month-toggle" onclick="toggleMonth('08')">
-        <span>2026년 8월</span><span class="month-count">1</span><span class="toggle-arrow">▶</span>
+        <span>2026년 8월</span><span class="month-count">4</span><span class="toggle-arrow">▶</span>
       </button>
       <div class="month-items" id="items-08">
-        <button class="nav-item" id="nav-0813" onclick="loadSession('Session_20260813.html','nav-0813','08')"><span class="nav-num">08/13</span> ～すぎる／～ことにする・になる <span class="nav-tag">정도</span></button>
+        <button class="nav-item" id="nav-0818" onclick="loadSession('Session_20260818.html','nav-0818','08')"><span class="nav-num">08/18</span> ～すぎる／～ことにする・になる <span class="nav-tag">정도</span></button>
+        <button class="nav-item" id="nav-0820" onclick="loadSession('Session_20260820.html','nav-0820','08')"><span class="nav-num">08/20</span> ～ように／～ないように／가능형 <span class="nav-tag">가능</span></button>
+        <button class="nav-item" id="nav-0825" onclick="loadSession('Session_20260825.html','nav-0825','08')"><span class="nav-num">08/25</span> 가능형+ようになる／まで·までに <span class="nav-tag">변화</span></button>
+        <button class="nav-item" id="nav-0827" onclick="loadSession('Session_20260827.html','nav-0827','08')"><span class="nav-num">08/27</span> ～くなる／～になる／～と·～ても <span class="nav-tag">변화</span></button>
       </div>
     </div>
   </nav>
@@ -380,7 +362,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
         <div class="hero-title">일본어 <span>학습노트</span></div>
         <div class="hero-desc">수업별 핵심 문법·회화 연습 자료를 월별로 확인하세요.</div>
         <div class="hero-stats">
-          <div class="hstat"><div class="hstat-n">40</div><div class="hstat-l">Sessions</div></div>
+          <div class="hstat"><div class="hstat-n">43</div><div class="hstat-l">Sessions</div></div>
           <div class="hstat"><div class="hstat-n">8</div><div class="hstat-l">Months</div></div>
           <div class="hstat"><div class="hstat-n">JP·RO·KR</div><div class="hstat-l">Languages</div></div>
         </div>
@@ -388,7 +370,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
 
       <!-- Filter Tabs -->
       <div class="filter-bar">
-        <button class="ftab active" data-m="all" onclick="filterMonth('all')">전체 <span class="ftab-cnt">40</span></button>
+        <button class="ftab active" data-m="all" onclick="filterMonth('all')">전체 <span class="ftab-cnt">43</span></button>
         <button class="ftab" data-m="01" onclick="filterMonth('01')">1월 <span class="ftab-cnt">3</span></button>
         <button class="ftab" data-m="02" onclick="filterMonth('02')">2월 <span class="ftab-cnt">8</span></button>
         <button class="ftab" data-m="03" onclick="filterMonth('03')">3월 <span class="ftab-cnt">6</span></button>
@@ -396,7 +378,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
         <button class="ftab" data-m="05" onclick="filterMonth('05')">5월 <span class="ftab-cnt">7</span></button>
         <button class="ftab" data-m="06" onclick="filterMonth('06')">6월 <span class="ftab-cnt">4</span></button>
         <button class="ftab" data-m="07" onclick="filterMonth('07')">7월 <span class="ftab-cnt">6</span></button>
-        <button class="ftab" data-m="08" onclick="filterMonth('08')">8월 <span class="ftab-cnt">1</span></button>
+        <button class="ftab" data-m="08" onclick="filterMonth('08')">8월 <span class="ftab-cnt">4</span></button>
       </div>
 
       <!-- Cards Grid -->
@@ -879,15 +861,51 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothi
           </div>
 
           <!-- ── 8월 ── -->
-          <div class="ncard" data-m="08" onclick="loadSession('Session_20260813.html','nav-0813','08')">
+          <div class="ncard" data-m="08" onclick="loadSession('Session_20260818.html','nav-0818','08')">
             <div class="ncard-thumb t08">
               <span class="ncard-badge">정도</span>
               <div class="ncard-grammar">〜すぎる<br>〜ことにする／になる</div>
             </div>
             <div class="ncard-body">
-              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.08.13</span></div>
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.08.18</span></div>
               <div class="ncard-title">～すぎる／～ことにする・になる</div>
               <div class="ncard-sub">너무 ~하다 · ~하기로 하다／~하게 되다</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="08" onclick="loadSession('Session_20260820.html','nav-0820','08')">
+            <div class="ncard-thumb t08">
+              <span class="ncard-badge">가능</span>
+              <div class="ncard-grammar">〜ように／〜ないように<br>가능형</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.08.20</span></div>
+              <div class="ncard-title">～ように／～ないように／가능형</div>
+              <div class="ncard-sub">~하도록 · ~하지 않도록 · ~할 수 있다</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="08" onclick="loadSession('Session_20260825.html','nav-0825','08')">
+            <div class="ncard-thumb t08">
+              <span class="ncard-badge">변화</span>
+              <div class="ncard-grammar">가능형+ようになる<br>〜まで／〜までに</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.08.25</span></div>
+              <div class="ncard-title">가능형／기본형＋ようになる／～まで・までに</div>
+              <div class="ncard-sub">~할 수 있게 되다 · ~까지(지속) · ~까지(기한)</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="08" onclick="loadSession('Session_20260827.html','nav-0827','08')">
+            <div class="ncard-thumb t08">
+              <span class="ncard-badge">변화</span>
+              <div class="ncard-grammar">〜くなる／〜になる<br>〜と／〜ても</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.08.27</span></div>
+              <div class="ncard-title">～くなる／～になる／～と・～ても</div>
+              <div class="ncard-sub">~해지다(변화) · ~하면 · ~해도</div>
             </div>
           </div>
 

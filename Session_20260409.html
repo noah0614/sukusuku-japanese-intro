@@ -1,46 +1,88 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1.0" name="viewport"/><title>2026-04-09 ～た ／ ～たことがあります (반말) (~한적 있나요?) · 넥슨게임즈</title><style>
-:root{--blue:#0052CC;--blue-light:#DEEBFF;--bg:#F4F5F7;--surface:#fff;--border:#DFE1E6;--text:#172B4D;--text-sec:#6B778C;--text-mut:#97A0AF;--green:#006644;}
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1.0" name="viewport"/><link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<title>2026-04-09 ～た ／ ～たことがあります (반말) (~한적 있나요?) · 넥슨게임즈</title><style>
+:root{--blue:#0071e3;--blue-light:#eef6ff;--bg:#f5f5f7;--surface:#fff;--border:#d2d2d7;--border-soft:#e8e8ed;--text:#1d1d1f;--text-sec:#6e6e73;--text-mut:#86868b;--green:#1d7a46;}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Malgun Gothic','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);}
-.topbar{background:linear-gradient(90deg, #002260 0%, #00439C 45%, #0070CC 100%);height:44px;display:flex;align-items:center;padding:0 20px;gap:12px;border-bottom:1px solid rgba(0,0,0,0.2);position:sticky;top:0;z-index:100;}
-.topbar a{color:rgba(255,255,255,0.85);font-size:13px;text-decoration:none;font-weight:500;}
-.topbar a:hover{color:#fff;}
-.topbar-title{color:#fff;font-size:13px;font-weight:600;}
-.topbar-date{margin-left:auto;color:rgba(255,255,255,0.5);font-size:11px;font-family:monospace;}
-.page{max-width:860px;margin:0 auto;padding:32px 24px 64px;}
-h2{font-size:22px;font-weight:700;color:var(--text);margin-bottom:6px;}
+body{font-family:'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'SF Pro KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+
+.topbar{background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);height:44px;display:flex;align-items:center;padding:0 20px;gap:12px;font-size:13px;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border-soft);}
+.topbar a{color:var(--text-sec);text-decoration:none;font-weight:500;}
+.topbar a:hover{color:var(--blue);}
+.topbar-title{color:var(--text);font-size:13px;font-weight:600;}
+.topbar-date{margin-left:auto;color:var(--text-mut);font-size:11px;font-family:ui-monospace,monospace;}
+
+.page{max-width:none;margin:0;padding:32px 48px 64px;}
+.page-header{margin-bottom:28px;}
+h1,h2{font-size:26px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-0.02em;}
+.date-badge{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px;letter-spacing:.03em;}
 .subtitle{font-size:13px;color:var(--text-sec);margin-bottom:28px;}
-.section{background:var(--surface);border:1px solid var(--border);border-radius:6px;margin-bottom:24px;overflow:hidden;box-shadow:0 1px 3px rgba(9,30,66,0.08);}
-.section-head{background:var(--blue);color:#fff;padding:10px 18px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
-.section-body{padding:20px 18px;}
-.grammar-box{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 4px 4px 0;padding:14px 16px;margin-bottom:16px;}
+
+.section,.card{background:var(--surface);border:1px solid var(--border-soft);border-radius:18px;margin-bottom:20px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+.section-head{padding:14px 20px;font-size:13px;font-weight:700;color:var(--text);letter-spacing:.01em;border-bottom:1px solid var(--border-soft);}
+.section-body{padding:22px 20px;}
+.card{padding:22px;}
+.card-title{font-size:13px;font-weight:700;color:var(--text);letter-spacing:.02em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border-soft);}
+
+.goals{display:flex;flex-direction:column;gap:8px;}
+.goal-item{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:var(--bg);border-radius:12px;}
+.goal-num{background:var(--blue);color:#fff;font-size:11px;font-weight:700;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.goal-text{font-size:14px;font-weight:600;color:var(--text);line-height:1.5;}
+
+.grammar-box{background:var(--bg);border-radius:14px;padding:16px 18px;margin-bottom:16px;}
 .grammar-box:last-child{margin-bottom:0;}
-.grammar-label{font-size:10px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
-.grammar-form{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:0.3px;}
-.grammar-sub{font-size:12px;color:var(--text-sec);line-height:1.7;}
+.grammar-label{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px;}
+.grammar-form{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-0.01em;}
+.grammar-sub{font-size:12.5px;color:var(--text-sec);line-height:1.75;}
 .grammar-sub b{color:var(--text);font-weight:600;}
-.example-block{background:#FFFAE6;border:1px solid #FFE380;border-radius:4px;padding:12px 14px;margin-top:10px;font-size:12.5px;color:#172B4D;line-height:1.9;}
+.example-block{background:#fff;border:1px solid var(--border-soft);border-radius:12px;padding:14px 16px;margin-top:10px;font-size:12.5px;color:var(--text);line-height:1.9;}
 .example-block .kr{color:var(--green);font-size:11.5px;}
-.pitem{display:grid;grid-template-columns:32px 1fr;gap:0 14px;padding:16px 0;border-bottom:1px solid var(--border);}
+
+.pitem{display:grid;grid-template-columns:32px 1fr;gap:0 14px;padding:16px 0;border-bottom:1px solid var(--border-soft);}
 .pitem:last-child{border-bottom:none;padding-bottom:0;}
 .pitem-num{width:28px;height:28px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px;}
 .pitem-body{min-width:0;}
 .jp{font-size:15px;font-weight:600;color:var(--text);line-height:1.6;}
-.ro{font-size:12px;color:var(--text-sec);margin:2px 0;}
+.ro{font-size:12px;color:var(--text-mut);margin:2px 0;font-style:italic;}
 .kr{font-size:12.5px;color:var(--green);font-weight:500;}
+
 .ex{margin-top:10px;}
+.ex-box{background:var(--blue-light);border:1px solid #cfe4ff;border-radius:12px;padding:12px 14px;margin-top:10px;font-size:12.5px;color:var(--text);}
+.form-label{font-size:10.5px;font-weight:700;color:var(--text-mut);letter-spacing:.05em;margin-bottom:5px;margin-top:10px;text-transform:uppercase;}
+.form-label:first-child{margin-top:0;}
+.divider{height:1px;background:var(--border-soft);margin:8px 0;}
+
+.dl-list{display:flex;flex-direction:column;gap:2px;}
 .dl-row{display:grid;grid-template-columns:52px 1fr;gap:4px 12px;margin-bottom:6px;}
 .dl-row:last-child{margin-bottom:0;}
 .dl-speaker{font-size:11px;font-weight:700;color:var(--blue);padding-top:2px;}
 .dl-lines{min-width:0;overflow-wrap:break-word;word-break:keep-all;}
 .dl-jp{font-size:14px;font-weight:600;color:var(--text);line-height:1.6;word-break:keep-all;overflow-wrap:break-word;}
-.dl-ro{font-size:11.5px;color:var(--text-sec);}
+.dl-ro{font-size:11.5px;color:var(--text-mut);font-style:italic;}
 .dl-kr{font-size:12px;color:var(--green);font-weight:500;}
-.page-img{width:100%;border:1px solid var(--border);border-radius:4px;display:block;margin-bottom:12px;}
-.hint-box{background:#F4F5F7;border:1px solid #DFE1E6;border-radius:4px;padding:10px 14px;margin-bottom:16px;font-size:12.5px;color:#42526E;}
+
+.page-img{width:100%;border:1px solid var(--border-soft);border-radius:14px;display:block;margin-bottom:12px;}
+.hint-box{background:var(--bg);border:1px solid var(--border-soft);border-radius:12px;padding:10px 14px;margin-bottom:16px;font-size:12.5px;color:var(--text-sec);}
+.tip{background:#eefaf2;border-radius:12px;padding:10px 14px;font-size:12px;color:var(--green);margin-top:10px;line-height:1.7;}
+
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
+.vocab-card{background:var(--surface);border:1px solid var(--border-soft);border-radius:10px;padding:10px 12px;}
+.vocab-jp{font-size:14px;font-weight:700;color:var(--text);}
+.vocab-ro{font-size:11px;color:var(--text-mut);}
+.vocab-kr{font-size:12px;color:var(--text-sec);margin-top:2px;}
+
+.kana-table{border-collapse:collapse;width:100%;font-size:14px;}
+.kana-table td{border:1px solid var(--border-soft);padding:8px;text-align:center;min-width:48px;}
+.kana-table th{background:var(--blue-light);color:var(--blue);padding:6px;text-align:center;font-size:11px;font-weight:700;}
+.kana-main{font-size:16px;font-weight:700;color:var(--text);}
+.kana-ro{font-size:10px;color:var(--text-mut);}
+
+.ref-table{border-collapse:collapse;width:100%;font-size:12.5px;}
+.ref-table th{background:var(--blue-light);color:var(--blue);padding:8px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.02em;}
+.ref-table td{padding:8px 12px;border-bottom:1px solid var(--border-soft);vertical-align:top;}
+.ref-table tr:last-child td{border-bottom:none;}
+.ref-table .jp-cell{font-weight:600;color:var(--text);}
 </style></head><body>
-<div class="topbar"><a href="index.html" onclick="if(window.parent!==window){window.parent.postMessage('showHome','*');return false;}">← 홈</a><span style="color:rgba(255,255,255,0.3)">|</span><span class="topbar-title">～たことがあります ／ 반말</span><span class="topbar-date">2026-04-09</span></div>
+<div class="topbar"><a href="index.html" onclick="if(window.parent!==window){window.parent.postMessage('showHome','*');return false;}">← 홈</a><span style="color:rgba(0,0,0,0.12)">|</span><span class="topbar-title">～たことがあります ／ 반말</span><span class="topbar-date">2026-04-09</span></div>
 <div class="page"><h2>～た ／ ～たことがあります (반말) (~한적 있나요?)</h2><div class="subtitle">2026-04-09 · 넥슨게임즈 전화외국어 수업 · スクスク 회화 초급</div>
 <div class="section"><div class="section-head">💬 본문 회화</div><div class="section-body"><div class="dl-row"><div class="dl-speaker">キム</div><div class="dl-lines"><div class="dl-jp">来週(らいしゅう)の月曜日(げつようび)から仕事(しごと)で北海道(ほっかいどう)に行(い)きます。山田(やまだ)さんは北海道(ほっかいどう)に行(い)ったことがありますか。</div><div class="dl-ro">Raishū no getsuyōbi kara shigoto de Hokkaidō ni ikimasu. Yamada-san wa Hokkaidō ni itta koto ga arimasu ka.</div><div class="dl-kr">다음 주 월요일부터 일로 홋카이도에 가요. 야마다 씨는 홋카이도에 간 적이 있어요?</div></div></div>
 <div class="dl-row"><div class="dl-speaker">山田(やまだ)</div><div class="dl-lines"><div class="dl-jp">いいえ、まだ行(い)ったことがありません。北海道(ほっかいどう)はおいしいものがたくさんありますから、行(い)きたいです。</div><div class="dl-ro">Iie, mada itta koto ga arimasen. Hokkaidō wa oishii mono ga takusan arimasu kara, ikitai desu.</div><div class="dl-kr">아니요, 아직 간 적이 없어요. 홋카이도는 맛있는 게 많이 있어서 가고 싶어요.</div></div></div>
@@ -50,8 +92,8 @@ h2{font-size:22px;font-weight:700;color:var(--text);margin-bottom:6px;}
 <div class="dl-row"><div class="dl-speaker">山田(やまだ)</div><div class="dl-lines"><div class="dl-jp">北海道(ほっかいどう)はチョコレートがおいしいから、頼(たの)んでもいいですか。</div><div class="dl-ro">Hokkaidō wa chokoreēto ga oishii kara, tanonde mo ii desu ka.</div><div class="dl-kr">홋카이도는 초콜릿이 맛있어서, 부탁해도 될까요?</div></div></div>
 <div class="dl-row"><div class="dl-speaker">キム</div><div class="dl-lines"><div class="dl-jp">じゃあ、お土産(みやげ)はチョコレートですね。</div><div class="dl-ro">Jā, omiyage wa chokoreēto desu ne.</div><div class="dl-kr">그럼, 선물은 초콜릿이네요.</div></div></div>
 </div></div>
-<div class="section"><div class="section-head">📖 문법 포인트</div><div class="section-body"><div class="grammar-box"><div class="grammar-label">Grammar ① — ～て から ／ ～て ～ます</div><div class="grammar-form">～て から — ~하고 나서 / 동작 연결</div><div class="grammar-sub"><b>동작의 순서·연결</b>을 나타냅니다.<br/><br/>～てから: <b>동사て형</b> + から　→　ごはんを食(た)べ<b>てから</b>、勉強(べんきょう)します</div><div class="example-block">A: 朝(あさ)７時(じ)に起(お)きて、何(なに)をしますか。<span style="color:#6B778C;font-size:11.5px;">Asa shichiji ni okite, nani wo shimasu ka.</span> <span class="kr">아침 7시에 일어나서 뭐 해요?</span><br/>B: 顔(かお)を洗(あら)って、朝(あさ)ごはんを食(た)べます。<span style="color:#6B778C;font-size:11.5px;">Kao wo aratte, asagohan wo tabemasu.</span> <span class="kr">세수하고 아침밥을 먹어요.</span></div></div>
-<div class="grammar-box"><div class="grammar-label">Grammar ② — ～た ／ ～たことがある（반말）</div><div class="grammar-form">～た / ～たことがある — ~했어 / ~한 적 있어 (반말)</div><div class="grammar-sub">과거(반말): 行(い)き<b>ました</b> → 行(い)<b>った</b><br/>경험: <b>た형</b> + ことがある　→　日本人(にほんじん)と話(はな)した<b>ことがある</b>?<br/>긍정: うん、ある。　부정: ううん、ない。</div><div class="example-block">A: 日本人(にほんじん)と話(はな)したことある？<span style="color:#6B778C;font-size:11.5px;">Nihonjin to hanashita koto aru?</span> <span class="kr">일본인과 이야기한 적 있어?</span><br/>B: うん、ある。／ ううん、ない。<span style="color:#6B778C;font-size:11.5px;">Un, aru. / Uun, nai.</span> <span class="kr">응, 있어. / 아니, 없어.</span></div></div>
+<div class="section"><div class="section-head">📖 문법 포인트</div><div class="section-body"><div class="grammar-box"><div class="grammar-label">Grammar ① — ～て から ／ ～て ～ます</div><div class="grammar-form">～て から — ~하고 나서 / 동작 연결</div><div class="grammar-sub"><b>동작의 순서·연결</b>을 나타냅니다.<br/><br/>～てから: <b>동사て형</b> + から　→　ごはんを食(た)べ<b>てから</b>、勉強(べんきょう)します</div><div class="example-block">A: 朝(あさ)７時(じ)に起(お)きて、何(なに)をしますか。<span style="color:#86868B;font-size:11.5px;">Asa shichiji ni okite, nani wo shimasu ka.</span> <span class="kr">아침 7시에 일어나서 뭐 해요?</span><br/>B: 顔(かお)を洗(あら)って、朝(あさ)ごはんを食(た)べます。<span style="color:#86868B;font-size:11.5px;">Kao wo aratte, asagohan wo tabemasu.</span> <span class="kr">세수하고 아침밥을 먹어요.</span></div></div>
+<div class="grammar-box"><div class="grammar-label">Grammar ② — ～た ／ ～たことがある（반말）</div><div class="grammar-form">～た / ～たことがある — ~했어 / ~한 적 있어 (반말)</div><div class="grammar-sub">과거(반말): 行(い)き<b>ました</b> → 行(い)<b>った</b><br/>경험: <b>た형</b> + ことがある　→　日本人(にほんじん)と話(はな)した<b>ことがある</b>?<br/>긍정: うん、ある。　부정: ううん、ない。</div><div class="example-block">A: 日本人(にほんじん)と話(はな)したことある？<span style="color:#86868B;font-size:11.5px;">Nihonjin to hanashita koto aru?</span> <span class="kr">일본인과 이야기한 적 있어?</span><br/>B: うん、ある。／ ううん、ない。<span style="color:#86868B;font-size:11.5px;">Un, aru. / Uun, nai.</span> <span class="kr">응, 있어. / 아니, 없어.</span></div></div>
 </div></div>
 <div class="section"><div class="section-head">✏️ 회화연습 1</div><div class="section-body"><div class="hint-box">아래 일과를 참고하여 선생님과 대화해 봅시다. (て형으로 동작 연결)</div><div class="pitem"><div class="pitem-num">예</div><div class="pitem-body"><div class="jp">A: 朝(あさ)７時(じ)に起(お)きて、何(なに)をしますか。B: 顔(かお)を洗(あら)って、朝(あさ)ごはんを食(た)べます。</div><div class="ro">Asa shichiji ni okite, nani wo shimasu ka. / Kao wo aratte, asagohan wo tabemasu.</div><div class="kr">아침 7시에 일어나서 뭐 해요? / 세수하고 아침밥을 먹어요.</div><div class="ex"><div class="dl-row"><div class="dl-speaker">A</div><div class="dl-lines"><div class="dl-jp">朝(あさ)７時(じ)に起(お)きて、何(なに)をしますか。</div><div class="dl-ro">Asa shichiji ni okite, nani wo shimasu ka.</div><div class="dl-kr">아침 7시에 일어나서 뭐 해요?</div></div></div><div class="dl-row"><div class="dl-speaker">B</div><div class="dl-lines"><div class="dl-jp">顔(かお)を洗(あら)って、朝(あさ)ごはんを食(た)べます。</div><div class="dl-ro">Kao wo aratte, asagohan wo tabemasu.</div><div class="dl-kr">세수하고 아침밥을 먹어요.</div></div></div></div></div></div>
 <div class="pitem"><div class="pitem-num">①</div><div class="pitem-body"><div class="jp">服(ふく)を着(き)る → うちを出(で)る → 駅(えき)まで歩(ある)く</div><div class="ro">Fuku wo kiru → uchi wo deru → eki made aruku</div><div class="kr">옷을 입다 → 집을 나가다 → 역까지 걷다</div><div class="ex"><div class="dl-row"><div class="dl-speaker">A</div><div class="dl-lines"><div class="dl-jp">うちを出(で)てから何(なに)をしますか。</div><div class="dl-ro">Uchi wo dete kara nani wo shimasu ka.</div><div class="dl-kr">집을 나가서 뭐 해요?</div></div></div><div class="dl-row"><div class="dl-speaker">B</div><div class="dl-lines"><div class="dl-jp">服(ふく)を着(き)て、うちを出(で)て、駅(えき)まで歩(ある)きます。</div><div class="dl-ro">Fuku wo kite, uchi wo dete, eki made arukimasu.</div><div class="dl-kr">옷을 입고, 집을 나가고, 역까지 걸어요.</div></div></div></div></div></div>

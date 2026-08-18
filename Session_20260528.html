@@ -1,48 +1,87 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>2026-05-28 ～あげる ／ ～くれる ／ ～もらう ／ ～ために · 넥슨게임즈</title><style>
-:root{--blue:#0052CC;--blue-light:#DEEBFF;--bg:#F4F5F7;--surface:#fff;--border:#DFE1E6;--text:#172B4D;--text-sec:#6B778C;--text-mut:#97A0AF;--green:#006644;}
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<title>2026-05-28 ～あげる ／ ～くれる ／ ～もらう ／ ～ために · 넥슨게임즈</title><style>
+:root{--blue:#0071e3;--blue-light:#eef6ff;--bg:#f5f5f7;--surface:#fff;--border:#d2d2d7;--border-soft:#e8e8ed;--text:#1d1d1f;--text-sec:#6e6e73;--text-mut:#86868b;--green:#1d7a46;}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Malgun Gothic','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);}
-.topbar{background:linear-gradient(90deg, #002260 0%, #00439C 45%, #0070CC 100%);height:44px;display:flex;align-items:center;padding:0 20px;gap:12px;border-bottom:1px solid rgba(0,0,0,0.2);position:sticky;top:0;z-index:100;}
-.topbar a{color:rgba(255,255,255,0.85);font-size:13px;text-decoration:none;font-weight:500;}
-.topbar a:hover{color:#fff;}
-.topbar-title{color:#fff;font-size:13px;font-weight:600;}
-.topbar-date{margin-left:auto;color:rgba(255,255,255,0.5);font-size:11px;font-family:monospace;}
-.page{max-width:860px;margin:0 auto;padding:32px 24px 64px;}
-h2{font-size:22px;font-weight:700;color:var(--text);margin-bottom:6px;}
+body{font-family:'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'SF Pro KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+
+.topbar{background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);height:44px;display:flex;align-items:center;padding:0 20px;gap:12px;font-size:13px;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border-soft);}
+.topbar a{color:var(--text-sec);text-decoration:none;font-weight:500;}
+.topbar a:hover{color:var(--blue);}
+.topbar-title{color:var(--text);font-size:13px;font-weight:600;}
+.topbar-date{margin-left:auto;color:var(--text-mut);font-size:11px;font-family:ui-monospace,monospace;}
+
+.page{max-width:none;margin:0;padding:32px 48px 64px;}
+.page-header{margin-bottom:28px;}
+h1,h2{font-size:26px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-0.02em;}
+.date-badge{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px;letter-spacing:.03em;}
 .subtitle{font-size:13px;color:var(--text-sec);margin-bottom:28px;}
-.section{background:var(--surface);border:1px solid var(--border);border-radius:6px;margin-bottom:24px;overflow:hidden;box-shadow:0 1px 3px rgba(9,30,66,0.08);}
-.section-head{background:var(--blue);color:#fff;padding:10px 18px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
-.section-body{padding:20px 18px;}
-.grammar-box{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 4px 4px 0;padding:14px 16px;margin-bottom:16px;}
+
+.section,.card{background:var(--surface);border:1px solid var(--border-soft);border-radius:18px;margin-bottom:20px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+.section-head{padding:14px 20px;font-size:13px;font-weight:700;color:var(--text);letter-spacing:.01em;border-bottom:1px solid var(--border-soft);}
+.section-body{padding:22px 20px;}
+.card{padding:22px;}
+.card-title{font-size:13px;font-weight:700;color:var(--text);letter-spacing:.02em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border-soft);}
+
+.goals{display:flex;flex-direction:column;gap:8px;}
+.goal-item{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:var(--bg);border-radius:12px;}
+.goal-num{background:var(--blue);color:#fff;font-size:11px;font-weight:700;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.goal-text{font-size:14px;font-weight:600;color:var(--text);line-height:1.5;}
+
+.grammar-box{background:var(--bg);border-radius:14px;padding:16px 18px;margin-bottom:16px;}
 .grammar-box:last-child{margin-bottom:0;}
-.grammar-label{font-size:10px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
-.grammar-form{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:0.3px;}
-.grammar-sub{font-size:12px;color:var(--text-sec);line-height:1.7;}
+.grammar-label{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px;}
+.grammar-form{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-0.01em;}
+.grammar-sub{font-size:12.5px;color:var(--text-sec);line-height:1.75;}
 .grammar-sub b{color:var(--text);font-weight:600;}
-.example-block{background:#FFFAE6;border:1px solid #FFE380;border-radius:4px;padding:12px 14px;margin-top:10px;font-size:12.5px;color:#172B4D;line-height:1.9;}
+.example-block{background:#fff;border:1px solid var(--border-soft);border-radius:12px;padding:14px 16px;margin-top:10px;font-size:12.5px;color:var(--text);line-height:1.9;}
 .example-block .kr{color:var(--green);font-size:11.5px;}
-.pitem{display:grid;grid-template-columns:32px 1fr;gap:0 14px;padding:16px 0;border-bottom:1px solid var(--border);}
+
+.pitem{display:grid;grid-template-columns:32px 1fr;gap:0 14px;padding:16px 0;border-bottom:1px solid var(--border-soft);}
 .pitem:last-child{border-bottom:none;padding-bottom:0;}
 .pitem-num{width:28px;height:28px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px;}
 .pitem-body{min-width:0;}
 .jp{font-size:15px;font-weight:600;color:var(--text);line-height:1.6;}
-.ro{font-size:12px;color:var(--text-sec);margin:2px 0;}
+.ro{font-size:12px;color:var(--text-mut);margin:2px 0;font-style:italic;}
 .kr{font-size:12.5px;color:var(--green);font-weight:500;}
+
 .ex{margin-top:10px;}
+.ex-box{background:var(--blue-light);border:1px solid #cfe4ff;border-radius:12px;padding:12px 14px;margin-top:10px;font-size:12.5px;color:var(--text);}
+.form-label{font-size:10.5px;font-weight:700;color:var(--text-mut);letter-spacing:.05em;margin-bottom:5px;margin-top:10px;text-transform:uppercase;}
+.form-label:first-child{margin-top:0;}
+.divider{height:1px;background:var(--border-soft);margin:8px 0;}
+
+.dl-list{display:flex;flex-direction:column;gap:2px;}
 .dl-row{display:grid;grid-template-columns:52px 1fr;gap:4px 12px;margin-bottom:6px;}
 .dl-row:last-child{margin-bottom:0;}
 .dl-speaker{font-size:11px;font-weight:700;color:var(--blue);padding-top:2px;}
 .dl-lines{min-width:0;overflow-wrap:break-word;word-break:keep-all;}
 .dl-jp{font-size:14px;font-weight:600;color:var(--text);line-height:1.6;word-break:keep-all;overflow-wrap:break-word;}
-.dl-ro{font-size:11.5px;color:var(--text-sec);}
+.dl-ro{font-size:11.5px;color:var(--text-mut);font-style:italic;}
 .dl-kr{font-size:12px;color:var(--green);font-weight:500;}
-.divider{height:1px;background:#EEF0F3;margin:10px 0;}
-.page-img{width:100%;border:1px solid var(--border);border-radius:4px;display:block;margin-bottom:12px;}
-.tip{background:#E3FCEF;border-left:4px solid #00875A;border-radius:0 4px 4px 0;padding:10px 14px;font-size:12px;color:#006644;margin-top:10px;line-height:1.7;}
-.hint-box{background:#F4F5F7;border:1px solid #DFE1E6;border-radius:4px;padding:10px 14px;margin-bottom:16px;font-size:12.5px;color:#42526E;}
-.ex-box{background:#E8F4FD;border:1px solid #B3D4F0;border-radius:4px;padding:12px 14px;margin-bottom:16px;font-size:12.5px;color:#172B4D;}
+
+.page-img{width:100%;border:1px solid var(--border-soft);border-radius:14px;display:block;margin-bottom:12px;}
+.hint-box{background:var(--bg);border:1px solid var(--border-soft);border-radius:12px;padding:10px 14px;margin-bottom:16px;font-size:12.5px;color:var(--text-sec);}
+.tip{background:#eefaf2;border-radius:12px;padding:10px 14px;font-size:12px;color:var(--green);margin-top:10px;line-height:1.7;}
+
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
+.vocab-card{background:var(--surface);border:1px solid var(--border-soft);border-radius:10px;padding:10px 12px;}
+.vocab-jp{font-size:14px;font-weight:700;color:var(--text);}
+.vocab-ro{font-size:11px;color:var(--text-mut);}
+.vocab-kr{font-size:12px;color:var(--text-sec);margin-top:2px;}
+
+.kana-table{border-collapse:collapse;width:100%;font-size:14px;}
+.kana-table td{border:1px solid var(--border-soft);padding:8px;text-align:center;min-width:48px;}
+.kana-table th{background:var(--blue-light);color:var(--blue);padding:6px;text-align:center;font-size:11px;font-weight:700;}
+.kana-main{font-size:16px;font-weight:700;color:var(--text);}
+.kana-ro{font-size:10px;color:var(--text-mut);}
+
+.ref-table{border-collapse:collapse;width:100%;font-size:12.5px;}
+.ref-table th{background:var(--blue-light);color:var(--blue);padding:8px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.02em;}
+.ref-table td{padding:8px 12px;border-bottom:1px solid var(--border-soft);vertical-align:top;}
+.ref-table tr:last-child td{border-bottom:none;}
+.ref-table .jp-cell{font-weight:600;color:var(--text);}
 </style></head><body>
-<div class="topbar"><a href="index.html" onclick="if(window.parent!==window){window.parent.postMessage('showHome','*');return false;}">← 홈</a><span style="color:rgba(255,255,255,0.3)">|</span><span class="topbar-title">～あげる ／ ～くれる ／ ～もらう ／ ～ために</span><span class="topbar-date">2026-05-28</span></div>
+<div class="topbar"><a href="index.html" onclick="if(window.parent!==window){window.parent.postMessage('showHome','*');return false;}">← 홈</a><span style="color:rgba(0,0,0,0.12)">|</span><span class="topbar-title">～あげる ／ ～くれる ／ ～もらう ／ ～ために</span><span class="topbar-date">2026-05-28</span></div>
 <div class="page"><h2>～あげる ／ ～くれる ／ ～もらう ／ ～ために</h2><div class="subtitle">2026-05-28 · 넥슨게임즈 전화외국어 수업 · スクスク 회화 초급</div>
 <div class="section"><div class="section-head">📖 본문 회화</div><div class="section-body">
 <div class="dl-row"><div class="dl-speaker">キム</div><div class="dl-lines"><div class="dl-jp">山田(やまだ)さん、このミュージカルのチケット、よかったらあげましょうか。</div><div class="dl-ro">Yamada-san, kono myūjikaru no chiketto, yokattara agemashou ka.</div><div class="dl-kr">야마다 씨, 이 뮤지컬 티켓, 괜찮으시면 드릴까요?</div></div></div>
@@ -64,9 +103,9 @@ h2{font-size:22px;font-weight:700;color:var(--text);margin-bottom:6px;}
 <b>もらう</b>　나 ← 상대방　받다　<span style="color:#0052CC">私は友だちにかばんをもらいました。</span>
 </div>
 <div class="example-block">
-私(わたし)は友(とも)だちに本(ほん)を<b>あげました</b>。　<span style="color:#6B778C;font-size:11.5px;">Watashi wa tomodachi ni hon wo agemashita.</span>　<span class="kr">저는 친구에게 책을 줬어요.</span><br>
-友(とも)だちは私(わたし)にかばんを<b>くれました</b>。　<span style="color:#6B778C;font-size:11.5px;">Tomodachi wa watashi ni kaban wo kuremashita.</span>　<span class="kr">친구는 저에게 가방을 줬어요.</span><br>
-私(わたし)は友(とも)だちにかばんを<b>もらいました</b>。　<span style="color:#6B778C;font-size:11.5px;">Watashi wa tomodachi ni kaban wo moraimashita.</span>　<span class="kr">저는 친구에게 가방을 받았어요.</span>
+私(わたし)は友(とも)だちに本(ほん)を<b>あげました</b>。　<span style="color:#86868B;font-size:11.5px;">Watashi wa tomodachi ni hon wo agemashita.</span>　<span class="kr">저는 친구에게 책을 줬어요.</span><br>
+友(とも)だちは私(わたし)にかばんを<b>くれました</b>。　<span style="color:#86868B;font-size:11.5px;">Tomodachi wa watashi ni kaban wo kuremashita.</span>　<span class="kr">친구는 저에게 가방을 줬어요.</span><br>
+私(わたし)は友(とも)だちにかばんを<b>もらいました</b>。　<span style="color:#86868B;font-size:11.5px;">Watashi wa tomodachi ni kaban wo moraimashita.</span>　<span class="kr">저는 친구에게 가방을 받았어요.</span>
 </div>
 </div>
 <div class="grammar-box">
@@ -78,8 +117,8 @@ h2{font-size:22px;font-weight:700;color:var(--text);margin-bottom:6px;}
 <b>명사</b> + のために　→　健康(けんこう)の<b>ために</b>、運動します
 </div>
 <div class="example-block">
-A: 何(なん)のためにプサンへ行(い)きますか。　<span style="color:#6B778C;font-size:11.5px;">Nan no tame ni Pusan e ikimasu ka.</span>　<span class="kr">무엇 때문에 부산에 가요?</span><br>
-B: 友(とも)だちの結婚式(けっこんしき)に出(で)るために、プサンへ行(い)きます。　<span style="color:#6B778C;font-size:11.5px;">Tomodachi no kekkonshiki ni deru tame ni, Pusan e ikimasu.</span>　<span class="kr">친구 결혼식에 참석하기 위해 부산에 가요.</span>
+A: 何(なん)のためにプサンへ行(い)きますか。　<span style="color:#86868B;font-size:11.5px;">Nan no tame ni Pusan e ikimasu ka.</span>　<span class="kr">무엇 때문에 부산에 가요?</span><br>
+B: 友(とも)だちの結婚式(けっこんしき)に出(で)るために、プサンへ行(い)きます。　<span style="color:#86868B;font-size:11.5px;">Tomodachi no kekkonshiki ni deru tame ni, Pusan e ikimasu.</span>　<span class="kr">친구 결혼식에 참석하기 위해 부산에 가요.</span>
 </div>
 </div>
 </div></div><div class="section"><div class="section-head">🗣 회화연습 ① — あげる (私→他)</div><div class="section-body">

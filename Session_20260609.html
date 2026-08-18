@@ -4,53 +4,95 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 <title>2026-06-09 ～ければ／動詞の～ば</title>
 <style>
-    :root{--blue:#0052CC;--blue-light:#DEEBFF;--bg:#F4F5F7;--surface:#fff;--border:#DFE1E6;--text:#172B4D;--text-sec:#6B778C;--text-mut:#97A0AF;--green:#006644;}
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Malgun Gothic','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);}
-    .topbar{background:linear-gradient(90deg, #002260 0%, #00439C 45%, #0070CC 100%);height:44px;display:flex;align-items:center;padding:0 20px;gap:12px;border-bottom:1px solid rgba(0,0,0,0.2);position:sticky;top:0;z-index:100;}
-    .topbar a{color:rgba(255,255,255,0.85);font-size:13px;text-decoration:none;font-weight:500;}
-    .topbar a:hover{color:#fff;}
-    .topbar-title{color:#fff;font-size:13px;font-weight:600;}
-    .topbar-date{margin-left:auto;color:rgba(255,255,255,0.5);font-size:11px;font-family:monospace;}
-    .page{max-width:860px;margin:0 auto;padding:32px 24px 64px;}
-    h2{font-size:22px;font-weight:700;color:var(--text);margin-bottom:6px;}
-    .subtitle{font-size:13px;color:var(--text-sec);margin-bottom:28px;}
-    .section{background:var(--surface);border:1px solid var(--border);border-radius:6px;margin-bottom:24px;overflow:hidden;box-shadow:0 1px 3px rgba(9,30,66,0.08);}
-    .section-head{background:var(--blue);color:#fff;padding:10px 18px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
-    .section-body{padding:20px 18px;}
-    .grammar-box{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 4px 4px 0;padding:14px 16px;margin-bottom:16px;}
-    .grammar-box:last-child{margin-bottom:0;}
-    .grammar-label{font-size:10px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
-    .grammar-form{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:0.3px;}
-    .grammar-sub{font-size:12px;color:var(--text-sec);line-height:1.7;}
-    .grammar-sub b{color:var(--text);font-weight:600;}
-    .example-block{background:#FFFAE6;border:1px solid #FFE380;border-radius:4px;padding:12px 14px;margin-top:10px;font-size:12.5px;color:#172B4D;line-height:1.9;}
-    .example-block .kr{color:var(--green);font-size:11.5px;}
-    .pitem{display:grid;grid-template-columns:32px 1fr;gap:0 14px;padding:16px 0;border-bottom:1px solid var(--border);}
-    .pitem:last-child{border-bottom:none;padding-bottom:0;}
-    .pitem-num{width:28px;height:28px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px;}
-    .pitem-body{min-width:0;}
-    .jp{font-size:15px;font-weight:600;color:var(--text);line-height:1.6;}
-    .ro{font-size:12px;color:var(--text-sec);margin:2px 0;}
-    .kr{font-size:12.5px;color:var(--green);font-weight:500;}
-    .ex{margin-top:10px;}
-    .dl-row{display:grid;grid-template-columns:52px 1fr;gap:4px 12px;margin-bottom:6px;}
-    .dl-row:last-child{margin-bottom:0;}
-    .dl-speaker{font-size:11px;font-weight:700;color:var(--blue);padding-top:2px;}
-    .dl-lines{min-width:0;overflow-wrap:break-word;word-break:keep-all;}
-    .dl-jp{font-size:14px;font-weight:600;color:var(--text);line-height:1.6;word-break:keep-all;overflow-wrap:break-word;}
-    .dl-ro{font-size:11.5px;color:var(--text-sec);}
-    .dl-kr{font-size:12px;color:var(--green);font-weight:500;}
-    .page-img{width:100%;border:1px solid var(--border);border-radius:4px;display:block;margin-bottom:12px;}
-    .hint-box{background:#F4F5F7;border:1px solid #DFE1E6;border-radius:4px;padding:10px 14px;margin-bottom:16px;font-size:12.5px;color:#42526E;}
+:root{--blue:#0071e3;--blue-light:#eef6ff;--bg:#f5f5f7;--surface:#fff;--border:#d2d2d7;--border-soft:#e8e8ed;--text:#1d1d1f;--text-sec:#6e6e73;--text-mut:#86868b;--green:#1d7a46;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'SF Pro KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+
+.topbar{background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);height:44px;display:flex;align-items:center;padding:0 20px;gap:12px;font-size:13px;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border-soft);}
+.topbar a{color:var(--text-sec);text-decoration:none;font-weight:500;}
+.topbar a:hover{color:var(--blue);}
+.topbar-title{color:var(--text);font-size:13px;font-weight:600;}
+.topbar-date{margin-left:auto;color:var(--text-mut);font-size:11px;font-family:ui-monospace,monospace;}
+
+.page{max-width:none;margin:0;padding:32px 48px 64px;}
+.page-header{margin-bottom:28px;}
+h1,h2{font-size:26px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-0.02em;}
+.date-badge{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px;letter-spacing:.03em;}
+.subtitle{font-size:13px;color:var(--text-sec);margin-bottom:28px;}
+
+.section,.card{background:var(--surface);border:1px solid var(--border-soft);border-radius:18px;margin-bottom:20px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+.section-head{padding:14px 20px;font-size:13px;font-weight:700;color:var(--text);letter-spacing:.01em;border-bottom:1px solid var(--border-soft);}
+.section-body{padding:22px 20px;}
+.card{padding:22px;}
+.card-title{font-size:13px;font-weight:700;color:var(--text);letter-spacing:.02em;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border-soft);}
+
+.goals{display:flex;flex-direction:column;gap:8px;}
+.goal-item{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:var(--bg);border-radius:12px;}
+.goal-num{background:var(--blue);color:#fff;font-size:11px;font-weight:700;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.goal-text{font-size:14px;font-weight:600;color:var(--text);line-height:1.5;}
+
+.grammar-box{background:var(--bg);border-radius:14px;padding:16px 18px;margin-bottom:16px;}
+.grammar-box:last-child{margin-bottom:0;}
+.grammar-label{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px;}
+.grammar-form{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-0.01em;}
+.grammar-sub{font-size:12.5px;color:var(--text-sec);line-height:1.75;}
+.grammar-sub b{color:var(--text);font-weight:600;}
+.example-block{background:#fff;border:1px solid var(--border-soft);border-radius:12px;padding:14px 16px;margin-top:10px;font-size:12.5px;color:var(--text);line-height:1.9;}
+.example-block .kr{color:var(--green);font-size:11.5px;}
+
+.pitem{display:grid;grid-template-columns:32px 1fr;gap:0 14px;padding:16px 0;border-bottom:1px solid var(--border-soft);}
+.pitem:last-child{border-bottom:none;padding-bottom:0;}
+.pitem-num{width:28px;height:28px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px;}
+.pitem-body{min-width:0;}
+.jp{font-size:15px;font-weight:600;color:var(--text);line-height:1.6;}
+.ro{font-size:12px;color:var(--text-mut);margin:2px 0;font-style:italic;}
+.kr{font-size:12.5px;color:var(--green);font-weight:500;}
+
+.ex{margin-top:10px;}
+.ex-box{background:var(--blue-light);border:1px solid #cfe4ff;border-radius:12px;padding:12px 14px;margin-top:10px;font-size:12.5px;color:var(--text);}
+.form-label{font-size:10.5px;font-weight:700;color:var(--text-mut);letter-spacing:.05em;margin-bottom:5px;margin-top:10px;text-transform:uppercase;}
+.form-label:first-child{margin-top:0;}
+.divider{height:1px;background:var(--border-soft);margin:8px 0;}
+
+.dl-list{display:flex;flex-direction:column;gap:2px;}
+.dl-row{display:grid;grid-template-columns:52px 1fr;gap:4px 12px;margin-bottom:6px;}
+.dl-row:last-child{margin-bottom:0;}
+.dl-speaker{font-size:11px;font-weight:700;color:var(--blue);padding-top:2px;}
+.dl-lines{min-width:0;overflow-wrap:break-word;word-break:keep-all;}
+.dl-jp{font-size:14px;font-weight:600;color:var(--text);line-height:1.6;word-break:keep-all;overflow-wrap:break-word;}
+.dl-ro{font-size:11.5px;color:var(--text-mut);font-style:italic;}
+.dl-kr{font-size:12px;color:var(--green);font-weight:500;}
+
+.page-img{width:100%;border:1px solid var(--border-soft);border-radius:14px;display:block;margin-bottom:12px;}
+.hint-box{background:var(--bg);border:1px solid var(--border-soft);border-radius:12px;padding:10px 14px;margin-bottom:16px;font-size:12.5px;color:var(--text-sec);}
+.tip{background:#eefaf2;border-radius:12px;padding:10px 14px;font-size:12px;color:var(--green);margin-top:10px;line-height:1.7;}
+
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
+.vocab-card{background:var(--surface);border:1px solid var(--border-soft);border-radius:10px;padding:10px 12px;}
+.vocab-jp{font-size:14px;font-weight:700;color:var(--text);}
+.vocab-ro{font-size:11px;color:var(--text-mut);}
+.vocab-kr{font-size:12px;color:var(--text-sec);margin-top:2px;}
+
+.kana-table{border-collapse:collapse;width:100%;font-size:14px;}
+.kana-table td{border:1px solid var(--border-soft);padding:8px;text-align:center;min-width:48px;}
+.kana-table th{background:var(--blue-light);color:var(--blue);padding:6px;text-align:center;font-size:11px;font-weight:700;}
+.kana-main{font-size:16px;font-weight:700;color:var(--text);}
+.kana-ro{font-size:10px;color:var(--text-mut);}
+
+.ref-table{border-collapse:collapse;width:100%;font-size:12.5px;}
+.ref-table th{background:var(--blue-light);color:var(--blue);padding:8px 12px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.02em;}
+.ref-table td{padding:8px 12px;border-bottom:1px solid var(--border-soft);vertical-align:top;}
+.ref-table tr:last-child td{border-bottom:none;}
+.ref-table .jp-cell{font-weight:600;color:var(--text);}
 </style>
 </head>
 <body>
 <div class="topbar">
 <a href="../index.html">← 홈</a>
-<span style="color:rgba(255,255,255,0.4)">|</span>
+<span style="color:rgba(0,0,0,0.15)">|</span>
 <span class="topbar-title">06-09 ～ければ／動詞の～ば</span>
 <span class="topbar-date">2026-06-09</span>
 </div>
@@ -65,7 +107,7 @@
 <div class="dl-row"><div class="dl-speaker">キム</div><div class="dl-lines"><div class="dl-jp">車（くるま）があれば便利（べんり）ですが、なければバスで行くこともできますよ。</div><div class="dl-ro">Kuruma ga areba benri desu ga, nakereba basu de iku koto mo dekimasu yo.</div><div class="dl-kr">차가 있으면 편리하지만, 없으면 버스로 갈 수도 있어요.</div></div></div>
 <div class="dl-row"><div class="dl-speaker">山田</div><div class="dl-lines"><div class="dl-jp">じゃあ、バスにします。</div><div class="dl-ro">Jā, basu ni shimasu.</div><div class="dl-kr">그럼, 버스로 하겠습니다.</div></div></div>
 </div></div>
-<div class="section"><div class="section-head">📖 문법 포인트</div><div class="section-body"><div class="grammar-box"><div class="grammar-label">Grammar ① — ～ければ／動詞（どうし）の～ば</div><div class="grammar-form">～ければ／～ば　—　~면</div><div class="grammar-sub"><b>이형용사</b>: 어간 + <b>ければ</b>　→　高<b>ければ</b>（비싸면）<br/><b>나형용사/명사</b>: + <b>なら(ば)</b>　→　暇（ひま）<b>なら</b>（한가하면）<br/><b>동사</b>: ば형　→　行<b>けば</b>（가면）、食<b>べれば</b>（먹으면）<br/><br/>가정·조건을 나타내는 표현.</div><div class="example-block">A: 土曜日（どようび）、海（うみ）で泳（およ）ぎませんか。<br/><span style="color:#6B778C;font-size:11px;">Doyōbi, umi de oyogimasen ka.</span><br/><span style="color:#006644;font-size:11.5px;">토요일에 바다에서 수영하지 않겠어요?</span><br/><br/>B: そうですね。風邪（かぜ）が治（なお）れば、泳ぎます。そうですね。人が少（すく）なければ、泳ぎます。<br/><span style="color:#6B778C;font-size:11px;">Kaze ga naoreba, oyogimasu. Hito ga sukunakereba, oyogimasu.</span><br/><span style="color:#006644;font-size:11.5px;">감기가 나으면 수영하겠습니다. 사람이 적으면 수영하겠습니다.</span></div></div>
+<div class="section"><div class="section-head">📖 문법 포인트</div><div class="section-body"><div class="grammar-box"><div class="grammar-label">Grammar ① — ～ければ／動詞（どうし）の～ば</div><div class="grammar-form">～ければ／～ば　—　~면</div><div class="grammar-sub"><b>이형용사</b>: 어간 + <b>ければ</b>　→　高<b>ければ</b>（비싸면）<br/><b>나형용사/명사</b>: + <b>なら(ば)</b>　→　暇（ひま）<b>なら</b>（한가하면）<br/><b>동사</b>: ば형　→　行<b>けば</b>（가면）、食<b>べれば</b>（먹으면）<br/><br/>가정·조건을 나타내는 표현.</div><div class="example-block">A: 土曜日（どようび）、海（うみ）で泳（およ）ぎませんか。<br/><span style="color:#86868B;font-size:11px;">Doyōbi, umi de oyogimasen ka.</span><br/><span style="color:#1D7A46;font-size:11.5px;">토요일에 바다에서 수영하지 않겠어요?</span><br/><br/>B: そうですね。風邪（かぜ）が治（なお）れば、泳ぎます。そうですね。人が少（すく）なければ、泳ぎます。<br/><span style="color:#86868B;font-size:11px;">Kaze ga naoreba, oyogimasu. Hito ga sukunakereba, oyogimasu.</span><br/><span style="color:#1D7A46;font-size:11.5px;">감기가 나으면 수영하겠습니다. 사람이 적으면 수영하겠습니다.</span></div></div>
 <div class="grammar-box"><div class="grammar-label">Grammar ② — 명사, ナ형용사 ／ 명사 + にする</div><div class="grammar-form">～にする　—　~으로 하다</div><div class="grammar-sub"><b>결정·선택</b>을 나타내는 표현.<br/><br/>명사・ナ형용사 어간 + <b>にする</b>　→　全州<b>にします</b>（전주로 하겠습니다）</div></div>
 </div></div>
 <div class="section"><div class="section-head">✏️ 회화연습 1</div><div class="section-body"><div class="hint-box">그림과 어휘를 참고하여 선생님과 대화해 봅시다.</div>
