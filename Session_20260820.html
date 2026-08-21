@@ -91,7 +91,7 @@ h1,h2{font-size:26px;font-weight:700;color:var(--text);margin-bottom:6px;letter-
 </head>
 <body>
 <div class="topbar">
-<a href="../index.html">← 홈</a>
+<a href="index.html" onclick="if(window.parent!==window){window.parent.postMessage('showHome','*');return false;}">← 홈</a>
 <span style="color:rgba(0,0,0,0.15)">|</span>
 <span class="topbar-title">08-20 ～ように／～ないように／가능형</span>
 <span class="topbar-date">2026-08-20</span>

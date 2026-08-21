@@ -92,7 +92,7 @@ h1,h2{font-size:26px;font-weight:700;color:var(--text);margin-bottom:6px;letter-
 </head>
 <body>
 <div class="topbar">
-<a href="../index.html">← 홈</a>
+<a href="index.html" onclick="if(window.parent!==window){window.parent.postMessage('showHome','*');return false;}">← 홈</a>
 <span style="color:rgba(0,0,0,0.15)">|</span>
 <span class="topbar-title">06-16 そうに＋動詞／명사수식</span>
 <span class="topbar-date">2026-06-16</span>
