@@ -139,13 +139,27 @@
     <!-- 8월 -->
     <div class="month-group" id="group-08">
       <button class="month-toggle" onclick="toggleMonth('08')">
-        <span>2026년 8월</span><span class="month-count">4</span><span class="toggle-arrow">▶</span>
+        <span>2026년 8월</span><span class="month-count">1</span><span class="toggle-arrow">▶</span>
       </button>
       <div class="month-items" id="items-08">
         <button class="nav-item" id="nav-0818" onclick="loadSession('Session_20260818.html','nav-0818','08')"><span class="nav-num">08/18</span> ～すぎる／～ことにする・になる <span class="nav-tag">정도</span></button>
-        <button class="nav-item" id="nav-0820" onclick="loadSession('Session_20260820.html','nav-0820','08')"><span class="nav-num">08/20</span> ～ように／～ないように／가능형 <span class="nav-tag">가능</span></button>
-        <button class="nav-item" id="nav-0825" onclick="loadSession('Session_20260825.html','nav-0825','08')"><span class="nav-num">08/25</span> 가능형+ようになる／まで·までに <span class="nav-tag">변화</span></button>
-        <button class="nav-item" id="nav-0827" onclick="loadSession('Session_20260827.html','nav-0827','08')"><span class="nav-num">08/27</span> ～くなる／～になる／～と·～ても <span class="nav-tag">변화</span></button>
+      </div>
+    </div>
+
+    <!-- 9월 -->
+    <div class="month-group" id="group-09">
+      <button class="month-toggle" onclick="toggleMonth('09')">
+        <span>2026년 9월</span><span class="month-count">8</span><span class="toggle-arrow">▶</span>
+      </button>
+      <div class="month-items" id="items-09">
+        <button class="nav-item" id="nav-0901" onclick="loadSession('Session_20260901.html','nav-0901','09')"><span class="nav-num">09/01</span> ～ように／～ないように／가능형 <span class="nav-tag">가능</span></button>
+        <button class="nav-item" id="nav-0903" onclick="loadSession('Session_20260903.html','nav-0903','09')"><span class="nav-num">09/03</span> 가능형+ようになる／まで·までに <span class="nav-tag">변화</span></button>
+        <button class="nav-item" id="nav-0908" onclick="loadSession('Session_20260908.html','nav-0908','09')"><span class="nav-num">09/08</span> ～くなる／～になる／～と·～ても <span class="nav-tag">변화</span></button>
+        <button class="nav-item" id="nav-0910" onclick="loadSession('Session_20260910.html','nav-0910','09')"><span class="nav-num">09/10</span> ～てあげる／～てくれる／～てもらう <span class="nav-tag">수수</span></button>
+        <button class="nav-item" id="nav-0915" onclick="loadSession('Session_20260915.html','nav-0915','09')"><span class="nav-num">09/15</span> ～なければなりません／～なくてもいい <span class="nav-tag">의무</span></button>
+        <button class="nav-item" id="nav-0917" onclick="loadSession('Session_20260917.html','nav-0917','09')"><span class="nav-num">09/17</span> ～ので／～のに <span class="nav-tag">이유</span></button>
+        <button class="nav-item" id="nav-0922" onclick="loadSession('Session_20260922.html','nav-0922','09')"><span class="nav-num">09/22</span> んです／～た方がいいです <span class="nav-tag">조언</span></button>
+        <button class="nav-item" id="nav-0929" onclick="loadSession('Session_20260929.html','nav-0929','09')"><span class="nav-num">09/29</span> ～たらどうですか／～らしいです <span class="nav-tag">전문</span></button>
       </div>
     </div>
   </nav>
@@ -161,15 +175,15 @@
         <div class="hero-title">일본어 <span>학습노트</span></div>
         <div class="hero-desc">수업별 핵심 문법·회화 연습 자료를 월별로 확인하세요.</div>
         <div class="hero-stats">
-          <div class="hstat"><div class="hstat-n">43</div><div class="hstat-l">Sessions</div></div>
-          <div class="hstat"><div class="hstat-n">8</div><div class="hstat-l">Months</div></div>
+          <div class="hstat"><div class="hstat-n">48</div><div class="hstat-l">Sessions</div></div>
+          <div class="hstat"><div class="hstat-n">9</div><div class="hstat-l">Months</div></div>
           <div class="hstat"><div class="hstat-n">JP·RO·KR</div><div class="hstat-l">Languages</div></div>
         </div>
       </div>
 
       <!-- Filter Tabs -->
       <div class="filter-bar">
-        <button class="ftab active" data-m="all" onclick="filterMonth('all')">전체 <span class="ftab-cnt">43</span></button>
+        <button class="ftab active" data-m="all" onclick="filterMonth('all')">전체 <span class="ftab-cnt">48</span></button>
         <button class="ftab" data-m="01" onclick="filterMonth('01')">1월 <span class="ftab-cnt">3</span></button>
         <button class="ftab" data-m="02" onclick="filterMonth('02')">2월 <span class="ftab-cnt">8</span></button>
         <button class="ftab" data-m="03" onclick="filterMonth('03')">3월 <span class="ftab-cnt">6</span></button>
@@ -177,7 +191,8 @@
         <button class="ftab" data-m="05" onclick="filterMonth('05')">5월 <span class="ftab-cnt">7</span></button>
         <button class="ftab" data-m="06" onclick="filterMonth('06')">6월 <span class="ftab-cnt">4</span></button>
         <button class="ftab" data-m="07" onclick="filterMonth('07')">7월 <span class="ftab-cnt">6</span></button>
-        <button class="ftab" data-m="08" onclick="filterMonth('08')">8월 <span class="ftab-cnt">4</span></button>
+        <button class="ftab" data-m="08" onclick="filterMonth('08')">8월 <span class="ftab-cnt">1</span></button>
+        <button class="ftab" data-m="09" onclick="filterMonth('09')">9월 <span class="ftab-cnt">8</span></button>
       </div>
 
       <!-- Cards Grid -->
@@ -672,39 +687,100 @@
             </div>
           </div>
 
-          <div class="ncard" data-m="08" onclick="loadSession('Session_20260820.html','nav-0820','08')">
-            <div class="ncard-thumb t08">
+          <!-- ── 9월 ── -->
+          <div class="ncard" data-m="09" onclick="loadSession('Session_20260901.html','nav-0901','09')">
+            <div class="ncard-thumb t09">
               <span class="ncard-badge">가능</span>
               <div class="ncard-grammar">〜ように／〜ないように<br>가능형</div>
             </div>
             <div class="ncard-body">
-              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.08.20</span></div>
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.09.01</span></div>
               <div class="ncard-title">～ように／～ないように／가능형</div>
               <div class="ncard-sub">~하도록 · ~하지 않도록 · ~할 수 있다</div>
             </div>
           </div>
 
-          <div class="ncard" data-m="08" onclick="loadSession('Session_20260825.html','nav-0825','08')">
-            <div class="ncard-thumb t08">
+          <div class="ncard" data-m="09" onclick="loadSession('Session_20260903.html','nav-0903','09')">
+            <div class="ncard-thumb t09">
               <span class="ncard-badge">변화</span>
               <div class="ncard-grammar">가능형+ようになる<br>〜まで／〜までに</div>
             </div>
             <div class="ncard-body">
-              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.08.25</span></div>
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.09.03</span></div>
               <div class="ncard-title">가능형／기본형＋ようになる／～まで・までに</div>
               <div class="ncard-sub">~할 수 있게 되다 · ~까지(지속) · ~까지(기한)</div>
             </div>
           </div>
 
-          <div class="ncard" data-m="08" onclick="loadSession('Session_20260827.html','nav-0827','08')">
-            <div class="ncard-thumb t08">
+          <div class="ncard" data-m="09" onclick="loadSession('Session_20260908.html','nav-0908','09')">
+            <div class="ncard-thumb t09">
               <span class="ncard-badge">변화</span>
               <div class="ncard-grammar">〜くなる／〜になる<br>〜と／〜ても</div>
             </div>
             <div class="ncard-body">
-              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.08.27</span></div>
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.09.08</span></div>
               <div class="ncard-title">～くなる／～になる／～と・～ても</div>
               <div class="ncard-sub">~해지다(변화) · ~하면 · ~해도</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="09" onclick="loadSession('Session_20260910.html','nav-0910','09')">
+            <div class="ncard-thumb t09">
+              <span class="ncard-badge">수수</span>
+              <div class="ncard-grammar">〜てあげる／〜てくれる<br>〜てもらう</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.09.10</span></div>
+              <div class="ncard-title">～てあげる／～てくれる／～てもらう</div>
+              <div class="ncard-sub">~해 주다 · ~해 받다 · ~해 줬으면 좋겠다</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="09" onclick="loadSession('Session_20260915.html','nav-0915','09')">
+            <div class="ncard-thumb t09">
+              <span class="ncard-badge">의무</span>
+              <div class="ncard-grammar">〜なければなりません<br>〜なくてもいいです</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.09.15</span></div>
+              <div class="ncard-title">～なければなりません／～なくてもいいです</div>
+              <div class="ncard-sub">~해야 한다 · ~하지 않아도 된다 · ~하지 않고</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="09" onclick="loadSession('Session_20260917.html','nav-0917','09')">
+            <div class="ncard-thumb t09">
+              <span class="ncard-badge">이유</span>
+              <div class="ncard-grammar">〜ので<br>〜のに</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.09.17</span></div>
+              <div class="ncard-title">～ので／～のに</div>
+              <div class="ncard-sub">~하기 때문에(이유) · ~인데도(역접)</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="09" onclick="loadSession('Session_20260922.html','nav-0922','09')">
+            <div class="ncard-thumb t09">
+              <span class="ncard-badge">조언</span>
+              <div class="ncard-grammar">んです<br>〜た方がいいです</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.09.22</span></div>
+              <div class="ncard-title">んです／～た方がいいです</div>
+              <div class="ncard-sub">~한 거예요(설명) · ~하는 게 좋아요(충고)</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="09" onclick="loadSession('Session_20260929.html','nav-0929','09')">
+            <div class="ncard-thumb t09">
+              <span class="ncard-badge">전문</span>
+              <div class="ncard-grammar">〜たらどうですか／〜てみる<br>〜らしいです</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.09.29</span></div>
+              <div class="ncard-title">～たらどうですか／～てみる／～らしいです</div>
+              <div class="ncard-sub">~하는 게 어때요 · ~해 보다 · ~라고 해요</div>
             </div>
           </div>
 
