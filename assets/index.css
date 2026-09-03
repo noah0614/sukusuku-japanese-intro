@@ -170,7 +170,7 @@ body { font-family: 'Pretendard Variable', Pretendard, 'SF Pro JP', 'SF Pro Text
 }
 .ncard-thumb::before { content: none; }
 .ncard-thumb::after { content: none; }
-.t01, .t02, .t03, .t04, .t05, .t06, .t07, .t08 {
+.t01, .t02, .t03, .t04, .t05, .t06, .t07, .t08, .t09 {
   background: linear-gradient(140deg, #eef3fc 0%, #e4edfb 100%);
 }
 
