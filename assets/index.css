@@ -31,8 +31,26 @@ body { font-family: 'Pretendard Variable', Pretendard, 'SF Pro JP', 'SF Pro Text
 .sidebar {
   width: 240px; flex-shrink: 0;
   background: #fff; border-right: 1px solid var(--border-soft);
-  overflow-y: auto; display: flex; flex-direction: column;
+  overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column;
+  transition: width .22s ease;
 }
+.app.sidebar-collapsed .sidebar { width: 0; border-right: none; }
+
+/* Sidebar collapse/expand handle */
+.sidebar-toggle {
+  position: absolute; top: 50%; left: 240px; transform: translateY(-50%);
+  width: 22px; height: 46px; z-index: 60;
+  border-radius: 0 8px 8px 0;
+  background: #fff; border: 1px solid var(--border-soft); border-left: none;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--text-mut);
+  box-shadow: 2px 0 6px rgba(0,0,0,.05);
+  transition: left .22s ease, background .16s, color .16s;
+}
+.sidebar-toggle:hover { background: var(--bg); color: var(--text); }
+.sidebar-toggle svg { width: 13px; height: 13px; transition: transform .22s ease; }
+.app.sidebar-collapsed .sidebar-toggle { left: 0; }
+.app.sidebar-collapsed .sidebar-toggle svg { transform: rotate(180deg); }
 .sidebar-header {
   padding: 18px 18px 14px;
   border-bottom: 1px solid var(--border-soft); flex-shrink: 0;
