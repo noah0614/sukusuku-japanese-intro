@@ -63,8 +63,13 @@ body { font-family: 'Pretendard Variable', Pretendard, 'SF Pro JP', 'SF Pro Text
 }
 .month-toggle:hover { background: var(--bg); color: var(--text); }
 .month-toggle.has-active { color: var(--blue); }
-.month-toggle .toggle-arrow { margin-left: auto; font-size: 10px; color: var(--text-mut); transition: transform 0.2s; display: inline-block; }
-.month-toggle.open .toggle-arrow { transform: rotate(90deg); }
+.month-toggle .toggle-arrow {
+  margin-left: auto; width: 14px; flex-shrink: 0;
+  font-size: 13px; font-weight: 600; color: var(--text-mut);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.month-toggle .toggle-arrow::before { content: "+"; }
+.month-toggle.open .toggle-arrow::before { content: "\2212"; }
 .month-count { background: var(--border); color: #fff; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 8px; min-width: 18px; text-align: center; }
 .month-toggle.has-active .month-count { background: var(--blue); }
 
@@ -92,6 +97,24 @@ body { font-family: 'Pretendard Variable', Pretendard, 'SF Pro JP', 'SF Pro Text
 /* ── Content Pane ── */
 .content-pane { flex: 1; position: relative; overflow: hidden; background: var(--bg); }
 #session-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: none; }
+
+/* Fullscreen toggle */
+.fullscreen-btn {
+  position: absolute; top: 14px; right: 14px; z-index: 50;
+  width: 36px; height: 36px; border-radius: 10px;
+  background: rgba(255,255,255,.9); border: 1px solid var(--border-soft);
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  display: none; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--text-sec);
+  transition: background .16s, color .16s;
+}
+.fullscreen-btn:hover { background: #fff; color: var(--blue); }
+.fullscreen-btn svg { width: 18px; height: 18px; }
+.fullscreen-btn .icon-compress { display: none; }
+.fullscreen-btn.is-fullscreen .icon-expand { display: none; }
+.fullscreen-btn.is-fullscreen .icon-compress { display: block; }
+.content-pane:fullscreen { background: #000; }
+.content-pane:fullscreen #session-frame { background: #fff; }
 
 /* ── Home View ── */
 #home-view { position: absolute; inset: 0; overflow-y: auto; background: var(--bg); }
