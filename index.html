@@ -162,6 +162,12 @@
     </div>
   </nav>
 
+  <button class="sidebar-toggle" id="sidebar-toggle" onclick="toggleSidebar()" title="인덱스 접기/펼치기">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 6l-6 6 6 6"/>
+    </svg>
+  </button>
+
   <!-- ── Content Pane ── -->
   <div class="content-pane">
 
@@ -777,6 +783,11 @@
 </div><!-- /app -->
 
 <script>
+/* ── sidebar toggle ── */
+function toggleSidebar() {
+  document.querySelector('.app').classList.toggle('sidebar-collapsed');
+}
+
 /* ── month toggle ── */
 function toggleMonth(mm) {
   var toggle = document.querySelector('#group-' + mm + ' .month-toggle');
