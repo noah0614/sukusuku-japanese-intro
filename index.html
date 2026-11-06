@@ -28,6 +28,13 @@
       <span class="nav-num">HOME</span> 홈
     </button>
 
+    <!-- ══ 교재 ══ -->
+    <div class="nav-section" id="sec-text">
+      <button class="section-toggle open" onclick="toggleSection('text')">
+        <span>교재</span><span class="section-count">55</span><span class="toggle-arrow"></span>
+      </button>
+      <div class="section-items open" id="secitems-text">
+
     <!-- 1월 -->
     <div class="month-group" id="group-01">
       <button class="month-toggle open" onclick="toggleMonth('01')">
@@ -100,7 +107,7 @@
         <button class="nav-item" id="nav-0512" onclick="loadSession('Session_20260512.html','nav-0512','05')"><span class="nav-num">05/12(화)</span> ことができる／前に <span class="nav-tag">가능</span></button>
         <button class="nav-item" id="nav-0514" onclick="loadSession('Session_20260514.html','nav-0514','05')"><span class="nav-num">05/14(목)</span> た後で／과거반말 <span class="nav-tag">순서</span></button>
         <button class="nav-item" id="nav-0519" onclick="loadSession('Session_20260519.html','nav-0519','05')"><span class="nav-num">05/19(화)</span> な형과거반말／けど <span class="nav-tag">과거</span></button>
-        <button class="nav-item" id="nav-0521" onclick="loadSession('Session_20260521.html','nav-0521','05')"><span class="nav-num">05/21(목)</span> そうだ현재형／과거형 <span class="nav-tag">전문</span></button>
+        <button class="nav-item" id="nav-0521" onclick="loadSession('Session_20260521.html','nav-0521','05')"><span class="nav-num">05/21(목)</span> そうだ 현재형／과거형 <span class="nav-tag">전문</span></button>
         <button class="nav-item" id="nav-0526" onclick="loadSession('Session_20260526.html','nav-0526','05')"><span class="nav-num">05/26(화)</span> と思う／たら <span class="nav-tag">가정</span></button>
         <button class="nav-item" id="nav-0528" onclick="loadSession('Session_20260528.html','nav-0528','05')"><span class="nav-num">05/28(목)</span> あげる／くれる／もらう <span class="nav-tag">수수</span></button>
       </div>
@@ -177,7 +184,7 @@
         <span>2026년 11월</span><span class="month-count">8</span><span class="toggle-arrow"></span>
       </button>
       <div class="month-items" id="items-11">
-        <button class="nav-item" id="nav-1103" onclick="loadSession('Session_20261103.html','nav-1103','11')"><span class="nav-num">11/03(화)</span> そうだ현재형／과거형 <span class="nav-tag">전문</span></button>
+        <button class="nav-item" id="nav-1103" onclick="loadSession('Session_20261103.html','nav-1103','11')"><span class="nav-num">11/03(화)</span> そうだ 현재형／과거형 <span class="nav-tag">전문</span></button>
         <button class="nav-item" id="nav-1105" onclick="loadSession('Session_20261105.html','nav-1105','11')"><span class="nav-num">11/05(목)</span> と思う／たら <span class="nav-tag">가정</span></button>
         <button class="nav-item" id="nav-1110" onclick="loadSession('Session_20261110.html','nav-1110','11')"><span class="nav-num">11/10(화)</span> あげる／くれる／もらう <span class="nav-tag">수수</span></button>
         <button class="nav-item" id="nav-1112" onclick="loadSession('Session_20261112.html','nav-1112','11')"><span class="nav-num">11/12(목)</span> 〜ければ／動詞の〜ば <span class="nav-tag">조건</span></button>
@@ -185,6 +192,21 @@
         <button class="nav-item" id="nav-1119" onclick="loadSession('Session_20261119.html','nav-1119','11')"><span class="nav-num">11/19(목)</span> そうに＋動詞／명사수식 <span class="nav-tag">수식</span></button>
         <button class="nav-item" id="nav-1124" onclick="loadSession('Session_20261124.html','nav-1124','11')"><span class="nav-num">11/24(화)</span> 명사수식 (과거형) <span class="nav-tag">수식</span></button>
         <button class="nav-item" id="nav-1126" onclick="loadSession('Session_20261126.html','nav-1126','11')"><span class="nav-num">11/26(목)</span> 추측의 [ようだ] <span class="nav-tag">추측</span></button>
+      </div>
+    </div>
+
+      </div>
+    </div>
+
+    <!-- ══ 부록 ══ -->
+    <div class="nav-section" id="sec-appx">
+      <button class="section-toggle open" onclick="toggleSection('appx')">
+        <span>부록</span><span class="section-count">3</span><span class="toggle-arrow"></span>
+      </button>
+      <div class="section-items open" id="secitems-appx">
+        <button class="nav-item nav-appx" id="nav-hira" onclick="loadSession('Appendix_Hiragana.html','nav-hira')"><span class="nav-num" lang="ja">あ</span> 히라가나 <span class="nav-tag">문자</span></button>
+        <button class="nav-item nav-appx" id="nav-kata" onclick="loadSession('Appendix_Katakana.html','nav-kata')"><span class="nav-num" lang="ja">ア</span> 가타카나 <span class="nav-tag">문자</span></button>
+        <button class="nav-item nav-appx" id="nav-kanji" onclick="loadSession('Appendix_Kanji.html','nav-kanji')"><span class="nav-num" lang="ja">漢</span> 일본어 한자 <span class="nav-tag">어휘</span></button>
       </div>
     </div>
   </nav>
@@ -208,9 +230,12 @@
         <div class="hero-stats">
           <div class="hstat"><div class="hstat-n">55</div><div class="hstat-l">Sessions</div></div>
           <div class="hstat"><div class="hstat-n">11</div><div class="hstat-l">Months</div></div>
+          <div class="hstat"><div class="hstat-n">3</div><div class="hstat-l">Appendix</div></div>
           <div class="hstat"><div class="hstat-n">JP·RO·KR</div><div class="hstat-l">Languages</div></div>
         </div>
       </div>
+
+      <div class="home-sec-head"><span class="home-sec-title">교재</span><span class="home-sec-desc">수업별 핵심 문법 · 회화 연습</span></div>
 
       <!-- Filter Tabs -->
       <div class="filter-bar">
@@ -497,7 +522,7 @@
             <div class="ncard-body">
               <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.05.12(화)</span></div>
               <div class="ncard-title">ことができる / 〜前に</div>
-              <div class="ncard-sub">할 수 있다 · 〜하기 전에</div>
+              <div class="ncard-sub">할 수 있다 · ~하기 전에</div>
             </div>
           </div>
 
@@ -509,7 +534,7 @@
             <div class="ncard-body">
               <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.05.14(목)</span></div>
               <div class="ncard-title">〜た後で / い형 과거반말</div>
-              <div class="ncard-sub">〜한 후에 · い형용사 과거 반말형</div>
+              <div class="ncard-sub">~한 후에 · い형용사 과거 반말형</div>
             </div>
           </div>
 
@@ -903,6 +928,25 @@
 
         </div><!-- /cards-grid -->
       </div><!-- /cards-area -->
+
+      <!-- ── 부록 ── -->
+      <div class="home-sec-head" id="home-appx"><span class="home-sec-title">부록</span><span class="home-sec-desc">교재를 보완하는 복습 · 참고 자료</span></div>
+      <div class="cards-area">
+        <div class="cards-grid">
+          <div class="ncard" onclick="loadSession('Appendix_Hiragana.html','nav-hira')">
+            <div class="ncard-thumb tapx"><span class="ncard-badge">문자</span><div class="ncard-grammar" lang="ja">あいうえお</div></div>
+            <div class="ncard-body"><div class="ncard-meta"><span class="ncard-cat">부록</span></div><div class="ncard-title">히라가나</div><div class="ncard-sub">청음 · 탁음 · 반탁음 · 요음 읽기 복습</div></div>
+          </div>
+          <div class="ncard" onclick="loadSession('Appendix_Katakana.html','nav-kata')">
+            <div class="ncard-thumb tapx"><span class="ncard-badge">문자</span><div class="ncard-grammar" lang="ja">アイウエオ</div></div>
+            <div class="ncard-body"><div class="ncard-meta"><span class="ncard-cat">부록</span></div><div class="ncard-title">가타카나</div><div class="ncard-sub">청음 · 탁음 · 반탁음 · 요음 · 외래어 표기 읽기 복습</div></div>
+          </div>
+          <div class="ncard" onclick="loadSession('Appendix_Kanji.html','nav-kanji')">
+            <div class="ncard-thumb tapx"><span class="ncard-badge">어휘</span><div class="ncard-grammar" lang="ja">漢字</div></div>
+            <div class="ncard-body"><div class="ncard-meta"><span class="ncard-cat">부록</span></div><div class="ncard-title">일본어 한자</div><div class="ncard-sub">교재에 나온 한자 단어 · 독음 · 로마자 · 뜻</div></div>
+          </div>
+        </div>
+      </div>
     </div><!-- /home-view -->
 
     <iframe id="session-frame" src="" title="학습 세션"></iframe>
@@ -934,6 +978,15 @@ function toggleMonth(mm) {
   items.classList.toggle('open', !isOpen);
 }
 
+/* ── section toggle (교재 / 부록) ── */
+function toggleSection(id) {
+  var t = document.querySelector('#sec-' + id + ' .section-toggle');
+  var items = document.getElementById('secitems-' + id);
+  var open = !t.classList.contains('open');
+  t.classList.toggle('open', open);
+  items.classList.toggle('open', open);
+}
+
 /* ── load session ── */
 function loadSession(src, navId, mm) {
   document.querySelectorAll('.nav-item').forEach(function(b) { b.classList.remove('active'); });
@@ -941,7 +994,14 @@ function loadSession(src, navId, mm) {
   document.getElementById('nav-home').classList.remove('active');
 
   var btn = document.getElementById(navId);
-  if (btn) btn.classList.add('active');
+  if (btn) {
+    btn.classList.add('active');
+    var sec = btn.closest('.section-items');
+    if (sec && !sec.classList.contains('open')) {
+      sec.classList.add('open');
+      sec.parentNode.querySelector('.section-toggle').classList.add('open');
+    }
+  }
 
   if (mm) {
     var grpToggle = document.querySelector('#group-' + mm + ' .month-toggle');
@@ -998,6 +1058,10 @@ function filterMonth(mm) {
 
 window.addEventListener('message', function(e) {
   if (e.data === 'showHome') showHome();
+  if (e.data && e.data.openSession) {
+    var m = /^Session_\d{4}(\d\d)(\d\d)\.html$/.exec(e.data.openSession);
+    if (m) loadSession(e.data.openSession, 'nav-' + m[1] + m[2], m[1]);
+  }
 });
 </script>
 </body>
