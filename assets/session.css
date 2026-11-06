@@ -93,3 +93,30 @@ h1,h2{font-size:26px;font-weight:700;color:var(--text);margin-bottom:6px;}
 .note-box.blue{background:var(--blue-light);border-color:var(--ex-line);padding:12px 14px;color:var(--text);}
 .note-sub{margin-top:12px;font-size:12px;color:var(--text-sec);}
 .accent{color:var(--blue);}
+
+/* 후리가나 — 괄호 대신 한자 위 ruby (2026.11.06(금) 시범: 03-03)
+   크기: 일본어 줄(대화 .dl-jp · 연습 .jp)을 15px 로 통일, 독음은 0.58em = 8.7px (케빈님 확정). 표 · 설명처럼 작은 글씨에서도 7.25px 아래로는 내리지 않는다.
+   참고 — JLREQ §3.3.3 의 인쇄 표준은 친문자의 50% 이나, 화면 판독을 위해 58% 를 쓴다.
+   <rp> 는 복사 · 미지원 환경에서 「漢字（かな）」 로 보이게 남긴다 */
+ruby{ruby-position:over;ruby-align:center;}
+rt{font-size:max(.58em,7.25px);font-weight:400;color:#3a3a3c;letter-spacing:0;line-height:1;}
+/* 세로 리듬 — ruby 페이지 공통 (2026.11.06(금)). 독음 유무와 상자 종류(대화 · 연습 · 문법 예문)에 상관없이 같은 간격.
+   일본어 줄 15/32px · 로마자 · 번역 18px · 화자 사이 14px · 같은 화자의 두 답 사이 10px · 연습 머리 → 예문 14px.
+   전 세션 변환 전까지는 body:has(ruby) 로 범위를 묶어 아직 괄호 독음인 페이지는 그대로 둔다. */
+body:has(ruby) .dl-jp,body:has(ruby) .jp{font-size:15px;line-height:32px;}
+body:has(ruby) .dl-ro,body:has(ruby) .ro,body:has(ruby) .dl-kr,body:has(ruby) .kr{line-height:18px;margin:0;}
+body:has(ruby) .dl-row{row-gap:0;margin-bottom:14px;}
+body:has(ruby) .dl-row:last-child{margin-bottom:0;}
+body:has(ruby) .sp4{height:10px;}
+body:has(ruby) .dl-speaker{line-height:32px;padding-top:0;}
+body:has(ruby) .ex{margin-top:14px;}
+/* 표기 통일 — 일본어 · 로마자 · 번역 세 줄은 어디서나 같은 글꼴 크기 · 색 (2026.11.06(금) 감사)
+   로마자 #6e6e73: 흰 바탕 5.07:1 · 회색 바탕 4.66:1 (이전 #86868b 는 3.62:1 로 WCAG AA 4.5:1 미달) */
+body:has(ruby) .dl-ro,body:has(ruby) .ro{font-size:12px;color:#6e6e73;}
+body:has(ruby) .dl-kr,body:has(ruby) .kr{font-size:12.5px;color:var(--green);font-weight:500;}
+/* 문법 예문 — 회색(설명) · 흰 상자(예문)로 역할을 나눈다. 문법마다 예문은 흰 상자 하나, 대화 묶음 사이는 1px 선.
+   선 위아래 14px = 화자 사이 간격과 같게(앞 행의 margin-bottom 14 + 선 아래 14). 설명 → 상자 12px */
+body:has(ruby) .example-block{margin-top:12px;}
+body:has(ruby) .ex-sep{height:1px;background:var(--border-soft);margin:0 0 14px;}
+body:has(ruby) .grammar-sub{line-height:1.75;}
+.grammar-form:has(ruby),.grammar-sub:has(ruby),.example-block:has(ruby),.vocab-jp:has(ruby),.kana-main:has(ruby),.jp-cell:has(ruby){line-height:2.15;}
