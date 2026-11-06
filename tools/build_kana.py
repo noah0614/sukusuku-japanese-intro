@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""부록 「히라가나」 · 「가타카나」 페이지 생성. 저장소 루트에서: python tools/build_kana.py"""
+"""부록 「히라가나」 · 「카타가나」 페이지 생성. 저장소 루트에서: python tools/build_kana.py"""
 import json
 import os
 
@@ -63,7 +63,7 @@ def table(rows, cols, conv):
 def page(kind):
     is_k = kind == 'kata'
     conv = kata if is_k else (lambda s: s)
-    name = '가타카나' if is_k else '히라가나'
+    name = '카타가나' if is_k else '히라가나'
     jp = 'カタカナ' if is_k else 'ひらがな'
     fname = 'Appendix_Katakana.html' if is_k else 'Appendix_Hiragana.html'
     all_cells = []
