@@ -2,7 +2,7 @@
 :root{--blue:#0071e3;--blue-light:#eef6ff;--bg:#f5f5f7;--surface:#fff;--border:#d2d2d7;--border-soft:#e8e8ed;--text:#1d1d1f;--text-sec:#6e6e73;--text-mut:#86868b;--thumb-1:#eef3fc;--thumb-2:#e4edfb;}
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; overflow: hidden; }
-body { font-family: 'Pretendard Variable', Pretendard, 'SF Pro JP', 'SF Pro Text', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'ヒラギノ角ゴ Pro W3', 'Yu Gothic Medium', YuGothic, 'Yu Gothic', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', 'Malgun Gothic', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing:antialiased; letter-spacing: 0; word-break: keep-all; overflow-wrap: anywhere; text-wrap: pretty; }
+body { font-family: 'Pretendard Variable', Pretendard, 'Noto Sans JP Sub', 'SF Pro JP', 'SF Pro Text', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'ヒラギノ角ゴ Pro W3', 'Yu Gothic Medium', YuGothic, 'Yu Gothic', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', 'Malgun Gothic', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--bg); -webkit-font-smoothing:antialiased; letter-spacing: 0; word-break: keep-all; overflow-wrap: anywhere; text-wrap: pretty; }
 
 /* ── Top Bar ── */
 .topbar {
@@ -239,3 +239,37 @@ body { font-family: 'Pretendard Variable', Pretendard, 'SF Pro JP', 'SF Pro Text
 .ncard-title { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 4px; }
 .ncard:hover .ncard-title { color: var(--blue); }
 .ncard-sub { font-size: 11px; color: var(--text-sec); line-height: 1.5; margin-top: auto; padding-top: 4px; }
+
+/* ── 교재 / 부록 섹션 (2026.11.06(금)) ── */
+.nav-section { border-bottom: 1px solid var(--border-soft); }
+.section-toggle {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  padding: 14px 18px 10px; background: var(--surface); border: none; cursor: pointer;
+  font-family: inherit; font-size: 13px; font-weight: 700; color: var(--text); text-align: left;
+  border-bottom: 1px solid var(--border-soft); transition: background .16s;
+}
+.section-toggle:hover { background: var(--bg); }
+.section-count { background: var(--text); color: #fff; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 8px; min-width: 18px; text-align: center; }
+.section-toggle .toggle-arrow {
+  margin-left: auto; width: 14px; flex-shrink: 0; font-size: 13px; font-weight: 600; color: var(--text-mut);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.section-toggle .toggle-arrow::before { content: "+"; }
+.section-toggle.open .toggle-arrow::before { content: "\2212"; }
+.section-items { overflow: hidden; max-height: 0; transition: max-height .2s ease; }
+.section-items.open { max-height: 9000px; }
+.section-items .month-group:last-child { border-bottom: none; }
+.section-items .month-toggle { padding-left: 26px; }
+.section-items .month-items .nav-item { padding-left: 34px; }
+.nav-appx { padding-top: 10px; padding-bottom: 10px; }
+.nav-appx .nav-num { min-width: 22px; font-size: 14px; font-weight: 700; color: var(--text-sec); }
+
+.home-sec-head { display: flex; align-items: baseline; gap: 12px; padding: 32px 48px 14px; }
+.home-sec-title { font-size: 22px; font-weight: 700; color: var(--text); }
+.home-sec-desc { font-size: 13px; color: var(--text-sec); }
+#home-appx { border-top: 1px solid var(--border-soft); padding-top: 36px; }
+#home-appx + .cards-area { padding-top: 4px; }
+.tapx { background: linear-gradient(140deg, #eef7f1 0%, #e1f0e6 100%); }
+
+/* 일본어 웹폰트 Noto Sans JP (2026.11.06(금)) */
+[lang="ja"]{font-family:'Noto Sans JP Sub', 'SF Pro JP', 'SF Pro Text', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'ヒラギノ角ゴ Pro W3', 'Yu Gothic Medium', YuGothic, 'Yu Gothic', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', 'Pretendard Variable', Pretendard, 'Malgun Gothic', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;font-feature-settings:"palt" 1;}
