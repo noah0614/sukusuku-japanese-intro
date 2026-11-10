@@ -31,7 +31,7 @@
     <!-- ══ 교재 ══ -->
     <div class="nav-section" id="sec-text">
       <button class="section-toggle open" onclick="toggleSection('text')">
-        <span>교재</span><span class="section-count">47</span><span class="toggle-arrow"></span>
+        <span>교재</span><span class="section-count">48</span><span class="toggle-arrow"></span>
       </button>
       <div class="section-items open" id="secitems-text">
 
@@ -178,6 +178,16 @@
       </div>
     </div>
 
+    <!-- 11월 -->
+    <div class="month-group" id="group-11">
+      <button class="month-toggle" onclick="toggleMonth('11')">
+        <span>2026년 11월</span><span class="month-count">1</span><span class="toggle-arrow"></span>
+      </button>
+      <div class="month-items" id="items-11">
+        <button class="nav-item" id="nav-1112" onclick="loadSession('Session_20261112.html','nav-1112','11')"><span class="nav-num">11/12(목)</span> 피해 수동／무생물 수동 <span class="nav-tag">수동</span></button>
+      </div>
+    </div>
+
 
       </div>
     </div>
@@ -212,8 +222,8 @@
         <div class="hero-title">일본어 <span>학습노트</span></div>
         <div class="hero-desc">수업별 핵심 문법·회화 연습 자료를 월별로 확인하세요.</div>
         <div class="hero-stats">
-          <div class="hstat"><div class="hstat-n">47</div><div class="hstat-l">Sessions</div></div>
-          <div class="hstat"><div class="hstat-n">10</div><div class="hstat-l">Months</div></div>
+          <div class="hstat"><div class="hstat-n">48</div><div class="hstat-l">Sessions</div></div>
+          <div class="hstat"><div class="hstat-n">11</div><div class="hstat-l">Months</div></div>
           <div class="hstat"><div class="hstat-n">3</div><div class="hstat-l">Appendix</div></div>
           <div class="hstat"><div class="hstat-n">JP·RO·KR</div><div class="hstat-l">Languages</div></div>
         </div>
@@ -223,7 +233,7 @@
 
       <!-- Filter Tabs -->
       <div class="filter-bar">
-        <button class="ftab active" data-m="all" onclick="filterMonth('all')">전체 <span class="ftab-cnt">47</span></button>
+        <button class="ftab active" data-m="all" onclick="filterMonth('all')">전체 <span class="ftab-cnt">48</span></button>
         <button class="ftab" data-m="01" onclick="filterMonth('01')">1월 <span class="ftab-cnt">3</span></button>
         <button class="ftab" data-m="02" onclick="filterMonth('02')">2월 <span class="ftab-cnt">8</span></button>
         <button class="ftab" data-m="03" onclick="filterMonth('03')">3월 <span class="ftab-cnt">5</span></button>
@@ -234,6 +244,7 @@
         <button class="ftab" data-m="08" onclick="filterMonth('08')">8월 <span class="ftab-cnt">1</span></button>
         <button class="ftab" data-m="09" onclick="filterMonth('09')">9월 <span class="ftab-cnt">7</span></button>
         <button class="ftab" data-m="10" onclick="filterMonth('10')">10월 <span class="ftab-cnt">2</span></button>
+        <button class="ftab" data-m="11" onclick="filterMonth('11')">11월 <span class="ftab-cnt">1</span></button>
       </div>
 
       <!-- Cards Grid -->
@@ -810,6 +821,18 @@
               <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.10.27(화)</span></div>
               <div class="ncard-title">명사＋らしい／〜でしょう／〜かもしれません</div>
               <div class="ncard-sub">~답다 · ~겠지요 · ~일지도 몰라요</div>
+            </div>
+          </div>
+
+          <div class="ncard" data-m="11" onclick="loadSession('Session_20261112.html','nav-1112','11')">
+            <div class="ncard-thumb t11">
+              <span class="ncard-badge">수동</span>
+              <div class="ncard-grammar">〜に〜（ら）れる<br>〜は〜で／から〜（ら）れる</div>
+            </div>
+            <div class="ncard-body">
+              <div class="ncard-meta"><span class="ncard-cat">문법</span><span class="ncard-date">2026.11.12(목)</span></div>
+              <div class="ncard-title">피해 수동／무생물 수동</div>
+              <div class="ncard-sub">~ 때문에 곤란했다 · ~되다 · ~받다</div>
             </div>
           </div>
 
